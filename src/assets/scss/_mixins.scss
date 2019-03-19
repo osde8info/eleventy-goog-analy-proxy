@@ -1,0 +1,58 @@
+/*--------------------------------------------------------------
+Breakpoints
+--------------------------------------------------------------*/
+
+@mixin bp-min($point) {
+	@media only screen and (min-width: $point) { @content; }
+}
+@mixin bp-max($point) {
+	@media only screen and (max-width: $point) { @content; }
+}
+@mixin bp-min-max($point1, $point2) {
+	@media only screen and (min-width: $point1) and (max-width: $point2) { @content; }
+}
+
+/* Tablet: 640px */
+/* Laptop: 1024px */
+/* Desktop: 1440px */
+
+@mixin bp-tablet {
+	@media only screen and (min-width: 40em) { @content; }
+}
+@mixin bp-laptop {
+	@media only screen and (min-width: 64em) { @content; }
+}
+@mixin bp-desktop {
+	@media only screen and (min-width: 90em) { @content; }
+}
+
+/*--------------------------------------------------------------
+Sizes
+--------------------------------------------------------------*/
+
+$maxContentWidth: 40rem;
+
+/*--------------------------------------------------------------
+Fonts
+--------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700');
+
+$mainFont: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+$headingFont: 'Playfair Display', serif;
+
+$baseFontWeight: 400;
+$headingFontWeight: 700;
+
+$baseFontSize: 18;
+$baseLineHeight: 1.5;
+
+/*--------------------------------------------------------------
+Colors
+--------------------------------------------------------------*/
+
+$baseColor: #ffc400;
+$altColor: #ff8010;
+
+$baseFontColor: #111;
+$headingColor: #111;
+$linkColor: $baseFontColor;

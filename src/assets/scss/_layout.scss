@@ -1,0 +1,61 @@
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+.site-header {
+    grid-area: navigation;
+}
+
+.site-navigation {
+    font-family: $headingFont;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+.excerpt {
+    font-size: 1.3em;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+.site-content {
+    grid-area: content;
+	width: 100%;
+	max-width: $maxContentWidth;
+    margin: 0 auto;
+}
+
+/*--------------------------------------------------------------
+# Article Header
+--------------------------------------------------------------*/
+.content-header {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    
+    height: 35vw;
+    margin-bottom: 1.5rem;
+    background: $baseColor;
+    background: linear-gradient(135deg, $altColor 0%,$baseColor 100%);
+    
+    .meta {
+        font-family: $headingFont;
+        
+        time,
+        .categories {
+            display: inline-block;
+        }
+    }
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.rights-navigation {
+    grid-area: footer-navigation;
+    font-family: $headingFont;
+}
+
+.site-footer {
+    grid-area: footer-content;
+}

@@ -1,0 +1,34 @@
+/*--------------------------------------------------------------
+# Global
+--------------------------------------------------------------*/
+html {
+	box-sizing: border-box;
+	font-size: $baseFontSize / 20 * 100%;
+	
+	@include bp-tablet {
+		font-size: $baseFontSize / 18 * 100%;
+	}
+	@include bp-laptop {
+		font-size: $baseFontSize / 16 * 100%;
+	}
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	background: #fff;
+    border-top: .5rem solid $baseFontColor;
+}
+
+.site {
+    display: grid;
+	grid-template-columns: 1fr 3fr 1fr;
+	grid-gap: 1rem;
+	grid-template-areas:
+        "navigation content sidebar"
+        "footer-navigation footer-content footer-sidebar";
+}

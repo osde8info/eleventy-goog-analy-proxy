@@ -1,0 +1,33 @@
+---
+layout: layouts/base.njk
+section: article
+---
+
+<header class="content-header">
+    
+    <h1>{{ title }}</h1>
+    
+    <div class="meta">
+        <time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time>
+        
+        <div class="categories">
+            {% for tag in tags %}
+                {% if 'article' not in tag  %}
+                    <a href="{{ metadata.url }}/{{ tag }}">#{{ tag }}</a>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+    </div>
+
+</header>
+
+<div class="content">
+
+<div class="excerpt">
+    {{ excerpt | safe }}
+</div>
+
+{{ layoutContent | safe }}
+
+</div>

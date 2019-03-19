@@ -1,0 +1,9 @@
+{
+  "title": "Personal website d-hagemeier.de",
+  "url": "http://localhost:8081",
+  "author": {
+    "name": "Dennis Hagemeier",
+    "email": "hello@d-hagemeier.de",
+    "github": "https://github.com/dennishagemeier"
+  }
+}

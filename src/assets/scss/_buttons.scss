@@ -1,0 +1,24 @@
+/*--------------------------------------------------------------
+# Buttons
+--------------------------------------------------------------*/
+.btn,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	padding: .4em .75em;
+	background: $linkColor;
+	color: #fff;
+	line-height: 1;
+	font-family: $headingFont;
+	text-decoration: none;
+	border: 1px solid darken($linkColor, 5%);
+	border-radius: 0;
+	
+	&:hover {
+		background: lighten($linkColor, 10%);
+	}
+	&:focus {
+		background: darken($linkColor, 3%);
+	}
+}

@@ -1,0 +1,27 @@
+---
+layout: layouts/base.njk
+section: article
+---
+
+<article>
+	<h1>{{ title }}</h1>
+	
+	<p>{{ layoutContent | safe }}</p>
+    
+    {%- for article in collections.article -%}
+    
+        <article>
+            
+            <h2>{{ article.data.title }}</h2>
+            
+            <div class="excerpt">
+                {{ article.data.excerpt }}
+            </div>
+            
+            <a href="{{ metadata.url }}/{{ article.data.permalink }}">Artikel lesen</a>
+        
+        </article>
+    
+    {%- endfor -%}
+
+</article>

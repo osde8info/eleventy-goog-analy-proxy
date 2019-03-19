@@ -1,0 +1,28 @@
+/*--------------------------------------------------------------
+# Links
+--------------------------------------------------------------*/
+a {
+	color: $linkColor;
+	text-decoration: none;
+}
+a:hover,
+a:focus {}
+a:active {}
+
+.content {
+	a {
+        position: relative;
+        color: $linkColor;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            top: .875rem;
+            width: 100%;
+            height: .5rem;
+            background: $baseColor;
+        }
+    }
+}

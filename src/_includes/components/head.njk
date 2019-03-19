@@ -1,0 +1,43 @@
+<!doctype html>
+<html {% if section %} data-current="{{ section }}"{% endif %} lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ seotitle }}</title>
+    <meta name="description" content="{{ seodescription }}"/>
+
+    <!-- Open Graph & Twitter Tags-->
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ seotitle }}" />
+    <meta property="og:description" content="{{ seodescription }}" />
+    <meta property="og:url" content="{{ metadata.url }}" />
+    <meta property="og:site_name" content="Dennis Hagemeier" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="{{ seotitle }}" />
+    <meta name="twitter:description" content="{{ seodescription }}" />
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+    
+<div class="site">
+
+<header class="site-header">
+    <div class="logo">
+		<img src="/assets/images/dh-logo.svg" width="60" height="73" />
+    </div>
+    
+	<nav class="site-navigation">
+		<ul>
+			<li><a href="/">01 Home</a></li>
+			<li><a href="/articles/">02 Articles</a></li>
+			<li><a href="/about">03 About</a></li>
+			<li><a href="">04 LinkedIn</a></li>
+			<li><a href="">05 Twitter</a></li>
+			<li><a href="">06 Instagram</a></li>
+		</ul>
+	</nav>
+</header>

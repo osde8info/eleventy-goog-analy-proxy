@@ -1,0 +1,53 @@
+const { DateTime } = require("luxon");
+const dotenv = require("dotenv");
+
+module.exports = function(eleventyConfig) {
+
+  eleventyConfig.addLayoutAlias("article", "layouts/article.njk");
+
+  // Date formatting (human readable)
+  eleventyConfig.addFilter("readableDate", dateObj => {
+    return DateTime.fromJSDate(dateObj).toFormat("dd LLL yyyy");
+  });
+
+  // Date formatting (machine readable)
+  eleventyConfig.addFilter("machineDate", dateObj => {
+    return DateTime.fromJSDate(dateObj).toFormat("yyyy-MM-dd");
+  });
+  
+  // Don't process folders with static assets e.g. images
+  eleventyConfig.addPassthroughCopy("src/assets/images");
+  
+  /* Markdown Plugins */
+  let markdownIt = require("markdown-it");
+  let options = {
+    html: true,
+	xhtmlOut: true,
+    breaks: true,
+    linkify: true,
+	typographer: true
+  };
+  let opts = {
+    permalink: true,
+    permalinkClass: "direct-link",
+    permalinkSymbol: "#"
+  };
+
+  return {
+    templateFormats: [ "md", "njk", "html" ],
+    
+	pathPrefix: "/",
+	
+    markdownTemplateEngine: "liquid",
+    htmlTemplateEngine: "njk",
+    dataTemplateEngine: "njk",
+    passthroughFileCopy: true,
+    dir: {
+      input: "src",
+      includes: "_includes",
+      data: "_data",
+      output: "_site"
+    }
+  };
+
+};
