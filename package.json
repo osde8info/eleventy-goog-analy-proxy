@@ -4,28 +4,33 @@
   "description": "Source code for personal website of Dennis Hagemeier",
   "devDependencies": {
     "@11ty/eleventy": "^0.7.1",
-    "dotenv": "^6.2.0",
+    "dotenv": "^7.0.0",
+    "fs": "0.0.1-security",
     "gulp": "^4.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
-    "luxon": "^1.11.2",
+    "luxon": "^1.11.4",
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.0.2",
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "opn": "^5.5.0",
+    "twitter": "^1.7.1"
   },
   "scripts": {
+    "get:tweets": "node gettweets.js",
+    "open-localhost": "node open-localhost.js",
     "serve-eleventy": "eleventy --serve --port=8081",
     "serve-assets": "gulp build & gulp dev",
-    "serve": "npm-run-all -p serve-eleventy serve-assets",
-    "build": "gulp build && eleventy"
+    "serve": "npm-run-all -p get:tweets serve-eleventy serve-assets open-localhost",
+    "build": "npm-run-all -s get:tweets && gulp build && eleventy"
   },
   "author": "Dennis Hagemeier <hello@d-hagemeier.de> (https://d-hagemeier.de/)",
   "license": "MIT",
-  "repository": "git+https://github.com/dennishagemeier/dh_v14.git",
+  "repository": "git+https://github.com/dennishagemeier/d-hagemeier.git",
   "bugs": {
-    "url": "https://github.com/dennishagemeier/dh_v14/issues"
+    "url": "https://github.com/dennishagemeier/d-hagemeier/issues"
   },
-  "homepage": "https://github.com/dennishagemeier/dh_v14/",
+  "homepage": "https://github.com/dennishagemeier/d-hagemeier/",
   "dependencies": {},
   "main": "index.js"
 }
