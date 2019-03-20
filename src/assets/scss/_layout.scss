@@ -2,18 +2,10 @@
 # Navigation
 --------------------------------------------------------------*/
 .site-header {
-    grid-area: navigation;
     position: absolute;
     top: 0;
     z-index: 1;
     padding: 0 2rem;
-    
-    @include bp-laptop {
-        position: fixed;
-        top: 3rem;
-        left: 3rem;
-        padding: 0;
-    }
 }
 
 .logo {
@@ -38,25 +30,44 @@
         display: none;
     }
     .site-navigation-btn {
+        position: relative;
+        z-index: 999;
+        color: #111;
         cursor: pointer;
     }
 
     .site-navigation {
+        display: flex;
         position: fixed;
         top: 0;
         left: 0;
-        bottom: 0;
+        width: 100vw;
+        height: 100vh;
         background: #111;
         color: #fff;
-        transform: translateX(-200%);
+        transform: translateX(-101vw);
         transition: transform ease-in-out .2s;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-content: stretch;
+            padding: 0 3rem 0 2rem;
+        }
+
+        a {
+            color: #fff;
+        }
     }
     input#site-navigation-input[type=checkbox]:checked {
         & ~ .site-navigation {
             transform: translateX(0);
         }
-        & ~.site {
-            transform: translateX(3rem);
+        & ~ .site-navigation-btn {
+            position: fixed;
+            color: #fff;
         }
     }
 }
@@ -68,10 +79,6 @@
     font-size: 1.3em;
     font-weight: 300;
     margin-bottom: 1.5rem;
-}
-
-.site-content {
-    grid-area: content;
 }
 
 .content {
@@ -98,7 +105,7 @@
     clip-path: polygon(0 0, 100% 0, 100% 85%, 30% 100%, 0 90%);
     
     @include bp-laptop {
-        clip-path: polygon(0 0, 100% 0, 100% 85%, 10% 100%);
+    //    clip-path: polygon(0 0, 100% 0, 100% 85%, 10% 100%);
     }
     
     .wrapper {
@@ -122,11 +129,6 @@
 # Footer
 --------------------------------------------------------------*/
 .rights-navigation {
-    grid-area: footer-navigation;
     padding: 0 0 3rem 3rem;
     font-family: $headingFont;
-}
-
-.site-footer {
-    grid-area: footer-content;
 }
