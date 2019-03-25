@@ -23,3 +23,9 @@ body {
 	background: #fff;
     border-top: .5rem solid $baseFontColor;
 }
+
+.container {
+	width: calc(100% - 2 * #{$sidepadding});
+	max-width: $maxContentWidth;
+	margin: 0 auto;
+}

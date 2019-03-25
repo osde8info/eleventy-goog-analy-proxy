@@ -1,0 +1,14 @@
+{% set otherposts = collections.article | slice(-10) %}
+
+<ol class="otherposts">
+    {% for post in otherposts | reverse %}
+
+        <li class="otherposts-item">
+            <a href="{{ post.url | url }}" class="">
+                <div class="">{{ post.data.title }}</div>
+                <time class="otherposts__date" datetime="{{ post.date | iso }}">{{ post.date | readableDate }}</time>
+            </a>
+        </li>
+
+    {%- endfor -%}
+</ol>

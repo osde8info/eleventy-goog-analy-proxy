@@ -5,33 +5,40 @@ section: article
 
 <header class="content-header">
     
-    <div class="wrapper">
-    
-        <h1>{{ title }}</h1>
+    <div class="container">
+
+    <h1>{{ title }}</h1>
         
-        <div class="meta">
-            <time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time>
-            |
-            <div class="categories">
-                {% for tag in tags %}
-                    {% if 'article' not in tag  %}
-                        <a href="{{ metadata.url }}/{{ tag }}">#{{ tag }}</a>
-                    {% endif %}
-                {% endfor %}
-            </div>
-    
+    <div class="meta">
+        <time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time>
+        |
+        <div class="categories">
+            {% for tag in tags %}
+                {% if 'article' not in tag  %}
+                    <a href="{{ metadata.url }}/{{ tag }}">#{{ tag }}</a>
+                {% endif %}
+            {% endfor %}
         </div>
-        
+    
     </div>
 
+    </div>
+    
 </header>
 
-<div class="content">
+<div class="content container">
 
-<div class="excerpt">
-    {{ excerpt | safe }}
+    <div class="excerpt">
+        {{ excerpt | safe }}
+    </div>
+
+    {{ layoutContent | safe }}
+
 </div>
 
-{{ layoutContent | safe }}
+<div class="recommendations">
+    <h2>Other written things</h2>
+
+    {% include "components/recommendations.njk" %}
 
 </div>
