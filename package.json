@@ -20,7 +20,7 @@
     "get:tweets": "node gettweets.js",
     "open-localhost": "node open-localhost.js",
     "serve-eleventy": "eleventy --serve --port=8081",
-    "serve-assets": "gulp build & gulp dev",
+    "serve-assets": "gulp build && gulp dev",
     "serve": "npm-run-all -p get:tweets serve-eleventy serve-assets open-localhost",
     "build": "npm-run-all -s get:tweets && gulp build && eleventy"
   },
