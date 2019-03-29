@@ -1,14 +1,18 @@
-{% set otherposts = collections.article | slice(-10) %}
+{% set recommendations = collections.article %}
 
-<ol class="otherposts">
-    {% for post in otherposts | reverse %}
+<ol class="recommendations-list">
 
-        <li class="otherposts-item">
-            <a href="{{ post.url | url }}" class="">
-                <div class="">{{ post.data.title }}</div>
-                <time class="otherposts__date" datetime="{{ post.date | iso }}">{{ post.date | readableDate }}</time>
+    {% for article in recommendations | reverse %}
+        {% if loop.index < 6 %}
+
+        <li class="recommendations-item">
+            <a href="/{{ article.data.permalink | url }}">
+                <span class="recommendations-title">{{ article.data.title }}</span>
+                <time class="recommendations-date" datetime="{{ article.data.date | machineDate }}">{{ article.data.date | readableDate }}</time>
             </a>
         </li>
 
+        {% endif %}
     {%- endfor -%}
+
 </ol>

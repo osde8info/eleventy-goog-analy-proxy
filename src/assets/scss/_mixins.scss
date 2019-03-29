@@ -22,6 +22,9 @@ Breakpoints
 @mixin bp-laptop {
 	@media only screen and (min-width: 64em) { @content; }
 }
+@mixin max-bp-laptop {
+	@media only screen and (max-width: 63.999em) { @content; }
+}
 @mixin bp-desktop {
 	@media only screen and (min-width: 90em) { @content; }
 }
@@ -53,7 +56,23 @@ Colors
 
 $baseColor: #ffc400;
 $altColor: #ff8010;
+$gradient: linear-gradient(135deg, $altColor 0%,$baseColor 100%);
 
 $baseFontColor: #111;
 $headingColor: #111;
 $linkColor: $baseFontColor;
+
+.gradient-border {
+	position: relative;
+	padding-top: 3rem;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: .8rem;
+		left: 0;
+		right: 0;
+		height: .4rem;
+		background: $gradient;
+	}
+}

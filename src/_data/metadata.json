@@ -1,9 +1,30 @@
 {
   "title": "Personal website d-hagemeier.de",
-  "url": "http://localhost:8081",
-  "author": {
-    "name": "Dennis Hagemeier",
-    "email": "hello@d-hagemeier.de",
-    "github": "https://github.com/dennishagemeier"
+  "url": "http://localhost:3000",
+  "type": "website",
+  "name": "Dennis Hagemeier",
+  "email": "hello@d-hagemeier.de",
+  "social": {
+    "linkedin": {
+      "name": "Dennis Hagemeier",
+      "url": "https://www.linkedin.com/in/dennishagemeier"
+    },
+    "twitter": {
+      "name": "@DennisView",
+      "url": "https://twitter.com/DennisView"
+    },
+    "xing": {
+      "name": "Dennis Hagemeier",
+      "url": "https://www.xing.com/profile/Dennis_Hagemeier/"
+    },
+    "instagram": {
+      "name": "@dennis.hagemeier",
+      "url": "https://www.instagram.com/dennis.hagemeier/"
+    },
+    "github": {
+      "name": "dennishagemeier",
+      "url": "https://github.com/dennishagemeier",
+      "source": "https://github.com/dennishagemeier/d-hagemeier"
+    }
   }
 }

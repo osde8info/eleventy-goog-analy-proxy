@@ -18,7 +18,7 @@ section: article
                 {{ article.data.excerpt }}
             </div>
             
-            <a href="{{ metadata.url }}/{{ article.data.permalink }}">Artikel lesen</a>
+            <a href="/{{ article.data.permalink | url }}">Artikel lesen</a>
         
         </article>
     

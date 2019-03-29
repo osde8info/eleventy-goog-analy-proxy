@@ -8,12 +8,12 @@
     <meta name="description" content="{{ seodescription }}"/>
 
     <!-- Open Graph & Twitter Tags-->
-    <meta property="og:locale" content="de_DE" />
-    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="{{ website }}" />
     <meta property="og:title" content="{{ seotitle }}" />
     <meta property="og:description" content="{{ seodescription }}" />
     <meta property="og:url" content="{{ metadata.url }}" />
-    <meta property="og:site_name" content="Dennis Hagemeier" />
+    <meta property="og:site_name" content="{{ metadata.name }}" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="{{ seotitle }}" />
     <meta name="twitter:description" content="{{ seodescription }}" />
@@ -31,24 +31,27 @@
     </div>
     
     <input type="checkbox" id="site-navigation-input" class="site-navigation-input">
-    <label for="site-navigation-input" class="site-navigation-btn">Navigation</label>
+    <label for="site-navigation-input" class="site-navigation-btn"></label>
 	
-    <nav class="site-navigation">
-		<ul>
-			<li><a href="/">01 Home</a></li>
-			<li><a href="/articles/">02 Articles</a></li>
-			<li><a href="/about">03 About</a></li>
-			<li><a href="">04 LinkedIn</a></li>
-			<li><a href="">05 Twitter</a></li>
-			<li><a href="">06 Instagram</a></li>
-		</ul>
-	</nav>
-    <nav class="footer-navigation">
-        <ul>
-            <li><a href="">Imprint</a> | <a href="">Data Policy</a></li>
-            <li>Built with <a href="">Eleventy</a></li>
-            <li>Hosted on <a href="">Netlify</a></li>
-            <li>View source at <a href="">Github</a></li>
-        </ul>
-    </nav>
+    <div class="navigation-wrapper">
+        <nav class="site-navigation">
+	    	<ul>
+	    		<li><a href="{{ metadata.url }}/">01 Home</a></li>
+	    		<li><a href="{{ metadata.url }}/articles/">02 Articles</a></li>
+	    		<li><a href="{{ metadata.url }}/about">03 About</a></li>
+	    		<li><a href="{{ metadata.social.linkedin.url }}" target="_blank" rel="noopener">04 LinkedIn</a></li>
+	    		<li><a href="{{ metadata.social.twitter.url }}" target="_blank" rel="noopener">05 Twitter</a></li>
+	    		<li><a href="{{ metadata.social.xing.url }}" target="_blank" rel="noopener">06 Xing</a></li>
+	    		<li><a href="{{ metadata.social.instagram.url }}" target="_blank" rel="noopener">07 Instagram</a></li>
+	    	</ul>
+	    </nav>
+        <nav class="footer-navigation">
+            <ul>
+                <li><a href="">Imprint</a> | <a href="">Data Policy</a></li>
+                <li>Built with <a href="https://www.11ty.io/" target="_blank" rel="noopener">Eleventy</a></li>
+                <li>Hosted on <a href="https://www.netlify.com/" target="_blank" rel="noopener">Netlify</a></li>
+                <li>View source at <a href="{{ metadata.social.github.source }}" target="_blank" rel="noopener">Github</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>

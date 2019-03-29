@@ -24,6 +24,21 @@ body {
     border-top: .5rem solid $baseFontColor;
 }
 
+@include bp-laptop {
+	.site {
+		display: flex;
+	
+		&-header {
+			width: 12vw;
+			margin-left: 4vw;
+		}
+		&-content {
+			width: 100%;
+			margin-left: 16vw;
+		}
+	}
+}
+
 .container {
 	width: calc(100% - 2 * #{$sidepadding});
 	max-width: $maxContentWidth;
