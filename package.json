@@ -4,10 +4,13 @@
   "description": "Source code for personal website of Dennis Hagemeier",
   "devDependencies": {
     "@11ty/eleventy": "^0.7.1",
+    "browser-sync": "^2.26.3",
     "dotenv": "^7.0.0",
     "fs": "0.0.1-security",
     "gulp": "^4.0.0",
+    "gulp-csso": "^3.0.1",
     "gulp-sass": "^4.0.2",
+    "gulp-shell": "^0.7.0",
     "gulp-sourcemaps": "^2.6.5",
     "luxon": "^1.11.4",
     "markdown-it": "^8.4.2",
@@ -21,7 +24,7 @@
     "open-localhost": "node open-localhost.js",
     "serve-eleventy": "eleventy --serve --port=8081",
     "serve-assets": "gulp build && gulp dev",
-    "serve": "npm-run-all -p get:tweets serve-eleventy serve-assets open-localhost",
+    "serve": "gulp serve",
     "build": "npm-run-all -s get:tweets && gulp build && eleventy"
   },
   "author": "Dennis Hagemeier <hello@d-hagemeier.de> (https://d-hagemeier.de/)",

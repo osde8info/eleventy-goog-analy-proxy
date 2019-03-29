@@ -14,7 +14,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("machineDate", dateObj => {
     return DateTime.fromJSDate(dateObj).toFormat("yyyy-MM-dd");
   });
-  
+
   // Don't process folders with static assets e.g. images
   eleventyConfig.addPassthroughCopy("src/assets/images");
   
