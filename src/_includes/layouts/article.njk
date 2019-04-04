@@ -14,9 +14,7 @@ section: article
         |
         <div class="categories">
             {% for tag in tags %}
-                {% if 'article' not in tag  %}
-                    <a href="{{ metadata.url }}/{{ tag }}">#{{ tag }}</a>
-                {% endif %}
+                <a href="{{ metadata.url }}/{{ tag }}">#{{ tag }}</a>
             {% endfor %}
         </div>
     
@@ -37,7 +35,7 @@ section: article
 </div>
 
 <div class="recommendations container">
-    <h2>Other written things</h2>
+    <h2>Latest Articles</h2>
 
     {% include "components/recommendations.njk" %}
 

@@ -8,7 +8,7 @@ section: article
 	
 	<p>{{ layoutContent | safe }}</p>
     
-    {%- for article in collections.article -%}
+    {%- for article in collections.articles | reverse -%}
     
         <article>
             

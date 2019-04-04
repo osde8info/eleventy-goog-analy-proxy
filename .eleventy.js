@@ -5,6 +5,14 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addLayoutAlias("article", "layouts/article.njk");
 
+  // Collections: Articles
+  eleventyConfig.addCollection('articles', function(collection) {
+    return collection.getFilteredByGlob('./src/articles/*').filter(function(item) {
+      // Only include items with a permalink.
+      return !!item.data.permalink;
+    });
+  });
+
   // Date formatting (human readable)
   eleventyConfig.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj).toFormat("dd LLL yyyy");
