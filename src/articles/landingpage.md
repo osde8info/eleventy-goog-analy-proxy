@@ -2,7 +2,7 @@
 title: Was ist eine Landing Page und welche Elemente braucht jede Landing Page?
 permalink: articles/landingpage/index.html
 date: 2019-02-07T14:14:00.000Z
-tags: ["article","marketing"]
+tags: ["article","marketing","code"]
 excerpt: "Als Landing Page bezeichnen wir die Website, auf der ein User nach dem Klick auf eine Werbeanzeige landet (bspw. auf Facebook oder über eine bezahlte Suchanzeige bei Google). Wie du eine Landing Page für dich einsetzen kannst und welche Elemente die wichtigsten sind, erfährst du in diesem Artikel."
 seoindex: true
 seotitle: Dies ist ein SEO Title-Tag für den Landingpage-Artikel
