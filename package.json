@@ -4,15 +4,20 @@
   "description": "Source code for personal website of Dennis Hagemeier",
   "devDependencies": {
     "@11ty/eleventy": "^0.7.1",
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
     "browser-sync": "^2.26.3",
     "dotenv": "^7.0.0",
     "fs": "0.0.1-security",
     "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
     "gulp-csso": "^3.0.1",
     "gulp-purgecss": "^1.1.1",
     "gulp-sass": "^4.0.2",
     "gulp-shell": "^0.7.0",
     "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
     "luxon": "^1.11.4",
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.0.2",
@@ -31,7 +36,9 @@
   },
   "homepage": "https://github.com/dennishagemeier/d-hagemeier/",
   "dependencies": {
+    "@babel/polyfill": "^7.4.3",
     "debug": "^4.1.1"
   },
+  "browserslist": "> 0.25%, not dead",
   "main": "index.js"
 }

@@ -6,6 +6,8 @@ const csso = require('gulp-csso');
 const browserSync = require('browser-sync')
 const server = browserSync.create()
 const purgecss = require('gulp-purgecss')
+const babel = require("gulp-babel");
+const uglifyjs = require('uglify-js');
 
 // Reload Callback
 function reload(done) {
@@ -35,6 +37,15 @@ gulp.task('css:prod', function() {
 	.pipe(sourcemaps.write(''))
     .pipe(gulp.dest('_site/assets/css'));
 })
+
+// JS
+gulp.task('js', function () {
+  return gulp.src('src/assets/js/*.js')
+    .pipe(babel())
+    .pipe(uglify())
+    .pipe(gulp.dest('_site/assets/js'));
+});
+
 
 // BrowserSync Server
 gulp.task('browsersync', function(done) {
