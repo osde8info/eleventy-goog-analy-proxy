@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Source code for personal website of Dennis Hagemeier",
   "devDependencies": {
-    "@11ty/eleventy": "^0.7.1",
+    "@11ty/eleventy": "^0.8.1",
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
@@ -18,7 +18,7 @@
     "gulp-shell": "^0.7.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
-    "luxon": "^1.11.4",
+    "luxon": "^1.12.1",
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.0.2",
     "twitter": "^1.7.1"
@@ -26,7 +26,7 @@
   "scripts": {
     "serve": "gulp serve",
     "build:dev": "gulp build:dev",
-    "build:": "gulp build:prod"
+    "build": "gulp build:prod"
   },
   "author": "Dennis Hagemeier <hello@d-hagemeier.de> (https://d-hagemeier.de/)",
   "license": "MIT",
