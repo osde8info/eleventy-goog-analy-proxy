@@ -7,7 +7,7 @@ const browserSync = require('browser-sync')
 const server = browserSync.create()
 const purgecss = require('gulp-purgecss')
 const babel = require("gulp-babel");
-const uglifyjs = require('uglify-js');
+const uglify = require('gulp-uglify');
 
 // Reload Callback
 function reload(done) {
@@ -24,7 +24,7 @@ gulp.task('css:dev', function() {
     .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
     .pipe(csso({ restructure: true, debug: true }))
-	.pipe(sourcemaps.write(''))
+	  .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('_site/assets/css'));
 })
 
@@ -32,9 +32,9 @@ gulp.task('css:prod', function() {
   return gulp.src('src/assets/scss/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-	.pipe(purgecss({ content: ['_site/**/*.html'] }))
+	  .pipe(purgecss({ content: ['_site/**/*.html'] }))
     .pipe(csso({ restructure: true, debug: false }))
-	.pipe(sourcemaps.write(''))
+	  .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('_site/assets/css'));
 })
 
@@ -45,7 +45,6 @@ gulp.task('js', function () {
     .pipe(uglify())
     .pipe(gulp.dest('_site/assets/js'));
 });
-
 
 // BrowserSync Server
 gulp.task('browsersync', function(done) {
@@ -58,10 +57,8 @@ gulp.task('browsersync', function(done) {
 // BrowserSync Server
 gulp.task('watch', function() {
   gulp.watch('src/assets/scss/**/*', gulp.series('css:dev', reload))
-
-  gulp.watch('src/**/*.{njk,html,md,json}',
-    gulp.series('generate', reload)
-  )
+  gulp.watch('src/assets/js/**/*', gulp.series('js', reload))
+  gulp.watch('src/**/*.{njk,html,md,json}', gulp.series('generate', reload))
 })
 
 // Serve
@@ -73,10 +70,12 @@ gulp.task('serve', gulp.parallel(
 // Build
 gulp.task('build:dev', gulp.series(
   'generate',
-  'css:dev'
+  'css:dev',
+  'js'
 ))
 
 gulp.task('build:prod', gulp.series(
   'generate',
-  'css:prod'
+  'css:prod',
+  'js'
 ))
