@@ -8,6 +8,7 @@ const server = browserSync.create()
 const purgecss = require('gulp-purgecss')
 const babel = require("gulp-babel");
 const uglify = require('gulp-uglify');
+const autoprefixer = require('gulp-autoprefixer');
 
 // Reload Callback
 function reload(done) {
@@ -23,6 +24,10 @@ gulp.task('css:dev', function() {
   return gulp.src('src/assets/scss/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
     .pipe(csso({ restructure: true, debug: true }))
 	  .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('_site/assets/css'));
@@ -32,6 +37,10 @@ gulp.task('css:prod', function() {
   return gulp.src('src/assets/scss/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
 	  .pipe(purgecss({ content: ['_site/**/*.html'] }))
     .pipe(csso({ restructure: true, debug: false }))
 	  .pipe(sourcemaps.write(''))
