@@ -25,15 +25,9 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
         recentTweets.push(t);
       }
     }
-
+	
     var json = JSON.stringify(recentTweets, null, 2);
-    fs.writeFile('src/_data/tweets.json', json, function(err) {
-      if(err) {
-        console.log(err);
-      } else {
-        console.log("Tweets data saved.");
-      }
-    });
+	  return json;
 
   }
 });
