@@ -18,116 +18,6 @@
     }
 }
 
-.navigation {
-    &-input,
-    &-btn {
-        display: none;
-    }
-    &-wrapper {
-        position: relative;
-        top: 0;
-        bottom: 0;
-    }
-    &-site {
-        margin: 1.5rem 0;
-        font-family: $headingFont;
-
-        /* Todo: Modifizieren */
-        a {
-            position: relative;
-            margin: .25em 0;
-            padding: .25em 0;
-
-            &::after {
-                @extend %gradient-border;
-                transform: scaleX(0);
-                transform-origin: left;
-                transition: transform .2s ease-in-out;
-            }
-            &:hover::after,
-            &:focus::after,
-            &:active::after {
-                transform: scaleX(1);
-            }
-        }
-    }
-    &-footer {
-        position: fixed;
-        bottom: 2rem;
-        font-size: .85em;
-    
-        a { 
-            text-decoration: underline;
-
-            &:hover,
-            &:focus {
-                color: lighten($linkColor, 40%);
-            }
-            &:active {
-                color: $linkColor;
-            }
-        }
-    }
-}
-
-@include max-bp-laptop {
-    .navigation {
-        &-wrapper {
-            display: flex;
-            position: fixed;
-            left: 0;
-            right: 0;
-            z-index: 998;
-            background: #111;
-            transform: translateX(101vw);
-            transition: transform cubic-bezier(0.500, 0.000, 0.500, 1.000) .3s;
-        }
-        &-site {
-            color: #fff;
-    
-            display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            justify-content: center;
-            align-content: stretch;
-            padding: 0 3rem 0 2rem;
-        }
-        &-footer {
-            position: absolute;
-            color: #aaa;
-    
-            ul { padding: 0 3rem 1rem 2rem; }
-        }
-        &-btn {
-            position: fixed;
-            top: 2rem;
-            right: 2rem;
-            z-index: 999;
-            display: inline-block;
-            width: 2rem;
-            height: 2rem;
-            background-image: url("/assets/images/navigation-icon.svg");
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            color: #111;
-            cursor: pointer;
-        }
-    }
-
-    // Navigation open
-    input#navigation-input[type=checkbox]:checked {
-        & ~ .navigation-wrapper {
-    		transform: translateX(0);
-    	}
-    	& ~ .navigation-btn {
-    		position: fixed;
-            color: #fff;
-            background-image: url("/assets/images/navigation-icon-close.svg");
-    	}
-    }
-}
-
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -142,8 +32,7 @@
     justify-content: flex-end;
     flex-direction: column;
     position: relative;
-    height: 90vh;
-    max-height: 500px;
+    height: 60vh;
     margin-bottom: 1.5rem;
     padding-bottom: 15vh;
     background: $baseColor;
@@ -151,6 +40,8 @@
     clip-path: polygon(0 0, 100% 0, 100% 85%, 30% 100%, 0 90%);
     
     @include bp-laptop {
+        height: 90vh;
+        max-height: 28rem;
         clip-path: polygon(0 0, 100% 0, 100% 85%, 10% 100%);
     }
     
