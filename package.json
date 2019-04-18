@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Source code for personal website of Dennis Hagemeier",
   "devDependencies": {
-    "@11ty/eleventy": "^0.8.1",
+    "@11ty/eleventy": "^0.8.2",
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
