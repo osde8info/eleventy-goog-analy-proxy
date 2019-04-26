@@ -9,13 +9,16 @@
 
     a {
         display: inline-block;
-		color: #fff;
+		@include var(color, text-tertiary);
     }
 
     @include bp-laptop {
         position: fixed;
-        a { color: $baseFontColor; }
+        a { @include var(color, text-primary); }
     }
+}
+.logo {
+    @include var(fill, text-primary);
 }
 
 /*--------------------------------------------------------------
@@ -33,10 +36,10 @@
     flex-direction: column;
     position: relative;
     height: 60vh;
+    @include var(color, text-quaternary);
     margin-bottom: 1.5rem;
     padding-bottom: 15vh;
-    background: $primaryColor;
-    background: linear-gradient(135deg, $secondaryColor 0%,$primaryColor 100%);
+    @extend %gradient-bg;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 30% 100%, 0 90%);
     
     @include bp-laptop {
@@ -53,12 +56,24 @@
             display: inline-block;
         }
     }
+    a {
+        @include var(color, text-quaternary);
+    }
 }
 
 /*--------------------------------------------------------------
 # Recommendations
 --------------------------------------------------------------*/
 .recommendations {
+    position: relative;
+    padding-top: 1rem;
+
+    &::before { 
+        @extend %gradient-border-top;
+        width: 120%;
+        margin-left: -10%;
+    }
+
 	&-list {
         margin: 0;
 		padding: 1rem 0;
@@ -66,6 +81,13 @@
 	}
     &-item {
         margin: .5rem 0;
+
+        a:hover {
+            .recommendations-title { 
+                transform: translateX(.5rem);
+                transition: transform ease-in-out .3s;
+            }
+        }
     }
     &-title {
         display: block;

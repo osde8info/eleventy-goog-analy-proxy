@@ -1,0 +1,31 @@
+<input type="checkbox" id="navigation-input" class="navigation-input">
+<label for="navigation-input" class="navigation-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 500 500"><path d="M470.3 142.3H29.7C13.4 142.3 0 128.9 0 112.5v-11.9c0-16.4 13.4-29.7 29.7-29.7h440.5c16.4 0 29.7 13.4 29.7 29.7v11.9c.1 16.4-13.3 29.8-29.6 29.8zM470.3 285.1H29.7C13.4 285.1 0 271.8 0 255.4v-11.9c0-16.4 13.4-29.7 29.7-29.7h440.5c16.4 0 29.7 13.4 29.7 29.7v11.9c.1 16.4-13.3 29.7-29.6 29.7zM470.3 428H29.7C13.4 428 0 414.6 0 398.3v-11.9c0-16.4 13.4-29.7 29.7-29.7h440.5c16.4 0 29.7 13.4 29.7 29.7v11.9c.1 16.3-13.3 29.7-29.6 29.7z"/></svg>
+</label>
+
+<input type="checkbox" id="theme-switch-input" class="theme-switch-input">
+<label for="theme-switch-input" class="theme-switch-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 500 500"><path d="M178.8 107.6c0-38.4 8.6-74.9 23.9-107.6C91.3 26.7 8.5 126.9 8.5 246.5 8.5 386.5 121.9 500 262 500c101.5 0 189.1-59.7 229.6-145.9-19 4.6-38.8 7-59.2 7-140.1 0-253.6-113.5-253.6-253.5z"/></svg>
+</label>
+
+<div class="navigation-wrapper">
+    <nav class="navigation-site">
+    	<ul>
+    		<li><a href="/">01 Home</a></li>
+    		<li><a href="/articles/">02 Articles</a></li>
+    		<li><a href="/about/">03 About</a></li>
+    		<li><a href="{{ metadata.social.linkedin.url }}" target="_blank" rel="noopener">04 LinkedIn</a></li>
+    		<li><a href="{{ metadata.social.twitter.url }}" target="_blank" rel="noopener">05 Twitter</a></li>
+    		<li><a href="{{ metadata.social.xing.url }}" target="_blank" rel="noopener">06 Xing</a></li>
+    		<li><a href="{{ metadata.social.instagram.url }}" target="_blank" rel="noopener">07 Instagram</a></li>
+    	</ul>
+    </nav>
+    <nav class="navigation-footer">
+        <ul>
+            <li><a href="">Imprint</a> | <a href="">Data Policy</a></li>
+            <li>Built with <a href="https://www.11ty.io/" target="_blank" rel="noopener">Eleventy</a></li>
+            <li>Hosted on <a href="https://www.netlify.com/" target="_blank" rel="noopener">Netlify</a></li>
+            <li>View source at <a href="{{ metadata.social.github.source }}" target="_blank" rel="noopener">Github</a></li>
+        </ul>
+    </nav>
+</div>

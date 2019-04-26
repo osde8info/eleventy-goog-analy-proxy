@@ -21,7 +21,7 @@ Navigation
             padding: .25em 0;
 
             &::after {
-                @extend %gradient-border;
+                @extend %gradient-border-bottom;
                 transform: scaleX(0);
                 transform-origin: left;
                 transition: transform .2s ease-in-out;
@@ -36,17 +36,19 @@ Navigation
     &-footer {
         position: fixed;
         bottom: 2rem;
+        @include var(color, text-secondary);
         font-size: .85em;
     
         a { 
+            @include var(color, text-primary);
             text-decoration: underline;
 
             &:hover,
             &:focus {
-                color: lighten($linkColor, 40%);
+                @include var(color, text-secondary);
             }
             &:active {
-                color: $linkColor;
+                @include var(color, text-primary);
             }
         }
     }
@@ -73,27 +75,25 @@ Navigation
             padding: 0 3rem 0 2rem;
             color: #fff;
 
-            a { font-size: 1.3em; }
+            a { 
+                color: #fff;
+                font-size: 1.3em;
+            }
         }
         &-footer {
             position: absolute;
             color: #aaa;
     
             ul { padding: 0 3rem 1rem 2rem; }
+            a { color: #fff; }
         }
         &-btn {
             position: fixed;
+            display: block;
             top: 2rem;
             right: 2rem;
             z-index: 999;
-            display: inline-block;
-            width: 2rem;
-            height: 2rem;
-            background-image: url("/assets/images/navigation-icon.svg");
-            background-position: left center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            color: #111;
+            @include var(fill, text-primary);
             cursor: pointer;
         }
     }
@@ -103,10 +103,30 @@ Navigation
         & ~ .navigation-wrapper {
     		transform: translateX(0);
     	}
-    	& ~ .navigation-btn {
-    		position: fixed;
-            color: #fff;
-            background-position: right center;
+        & ~ .navigation-btn,
+        & ~ .theme-switch-btn {
+            fill: #fff;
+            transition: fill ease .3s;
     	}
     }
+}
+
+/*--------------------------------------------------------------
+Theme Switch
+--------------------------------------------------------------*/
+.theme-switch {
+    &-input { display: none; }
+    &-btn {
+        display: none;
+        position: fixed;
+        top: 2rem;
+        right: 5rem;
+        z-index: 999;
+        @include var(fill, text-primary);
+        cursor: pointer;
+    }
+}
+
+@supports(--css: variables) {
+    .theme-switch-btn { display: block; }
 }

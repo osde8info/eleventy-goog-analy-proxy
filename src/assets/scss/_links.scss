@@ -5,17 +5,17 @@ a,
 a:hover,
 a:focus,
 a:active {
-	color: $linkColor;
+	@include var(color, text-primary);
 	text-decoration: none;
 }
 
 .content {
 	a {
         position: relative;
-        color: $linkColor;
+        @include var(color, text-primary);
         
         &::after {
-            @extend %gradient-border;
+            @extend %gradient-border-bottom;
             z-index: -1;
             transform: translateY(-.15em) scaleY(2.5);
             opacity: .7;

@@ -32,12 +32,8 @@ html {
 
 body {
 	@include var(background-color, background);
-	border-top: .5rem solid map-get($vars, text-primary);
-	border-top: .5rem solid --text-primary;
-	
-	// Hide Scrollbar
-	width: 100vw;
-	overflow-x: hidden;
+	border-top: .5rem solid map-get($vars, text-quaternary);
+	border-top: .5rem solid var(--text-quaternary);
 }
 
 @include bp-laptop {
@@ -59,21 +55,4 @@ body {
 	width: calc(100% - 2 * #{$sidepadding});
 	max-width: $maxContentWidth;
 	margin: 0 auto;
-}
-
-::-webkit-scrollbar {
-	background: transparent;
-	width: 7px;
-	height: 7px;
-
-	&-thumb {
-		background: $baseFontColor;
-
-		&:hover {
-			background: lighten($baseFontColor, 15%);
-		}
-		&:active {
-			background: $baseFontColor;
-		}
-	}
 }

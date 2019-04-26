@@ -7,7 +7,7 @@ input,
 select,
 optgroup,
 textarea {
-	color: $baseFontColor;
+	@include var(color, text-primary);
 	font-family: $mainFont;
 	font-size: 1rem;
 	font-weight: $baseFontWeight;

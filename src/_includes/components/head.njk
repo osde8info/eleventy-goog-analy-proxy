@@ -4,54 +4,21 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{{ seotitle }}</title>
-    <meta name="description" content="{{ seodescription }}"/>
-
-    <!-- Open Graph & Twitter Tags-->
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="{{ website }}" />
-    <meta property="og:title" content="{{ seotitle }}" />
-    <meta property="og:description" content="{{ seodescription }}" />
-    <meta property="og:url" content="{{ metadata.url }}" />
-    <meta property="og:site_name" content="{{ metadata.name }}" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="{{ seotitle }}" />
-    <meta name="twitter:description" content="{{ seodescription }}" />
     
+    {% include "components/metatags.njk" %}
+    {% include "components/favicons.njk" %}
+
     <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 
 <body>
-    
+
 <div class="site">
 
 <header class="site-header">
     <div class="logo">
-        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="73" viewBox="0 0 608.1 736.1" enable-background="new 0 0 608.1 736.1"><style type="text/css">.st0{fill:#111111;}</style><path class="st0" d="M608.1 274.8c-11-76.7-38.8-138.4-84.7-184.2-25.9-25.9-57.8-46.8-95.6-61.7-48.7-19-107.5-29-176.2-29h-252v738h245c69.7 0 131.5-13.9 184.2-39.8l12-6c52.8-28.9 93.6-70.7 122.5-123.5-9-31.9-13.9-68.7-13.9-108.6 0-52.8 11-100.6 31.9-141.4 6.9-16.9 16.9-30.9 26.8-43.8zm-179.2 233c-8 19.9-17.9 37.8-29.9 51.8-34.9 41.8-82.7 62.7-144.4 62.7-43.8 0-76.7-3-98.6-8v-488l18.9-3c24.9-5 45.8-7 62.7-7 49.8 0 89.6 8 120.5 23.9s53.8 42.8 69.7 79.7l1 2c14.9 36.8 21.9 84.7 21.9 145.4.1 55.9-7.9 102.7-21.8 140.5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="73" viewBox="0 0 608.1 736.1"><path d="M608.1 274.8c-11-76.7-38.8-138.4-84.7-184.2-25.9-25.9-57.8-46.8-95.6-61.7-48.7-19-107.5-29-176.2-29h-252v738h245c69.7 0 131.5-13.9 184.2-39.8l12-6c52.8-28.9 93.6-70.7 122.5-123.5-9-31.9-13.9-68.7-13.9-108.6 0-52.8 11-100.6 31.9-141.4 6.9-16.9 16.9-30.9 26.8-43.8zm-179.2 233c-8 19.9-17.9 37.8-29.9 51.8-34.9 41.8-82.7 62.7-144.4 62.7-43.8 0-76.7-3-98.6-8v-488l18.9-3c24.9-5 45.8-7 62.7-7 49.8 0 89.6 8 120.5 23.9s53.8 42.8 69.7 79.7l1 2c14.9 36.8 21.9 84.7 21.9 145.4.1 55.9-7.9 102.7-21.8 140.5z"/></svg>
     </div>
     
-    <input type="checkbox" id="navigation-input" class="navigation-input">
-    <label for="navigation-input" class="navigation-btn"></label>
-	
-    <div class="navigation-wrapper">
-        <nav class="navigation-site">
-	    	<ul>
-	    		<li><a href="{{ metadata.url }}/">01 Home</a></li>
-	    		<li><a href="{{ metadata.url }}/articles/">02 Articles</a></li>
-	    		<li><a href="{{ metadata.url }}/about">03 About</a></li>
-	    		<li><a href="{{ metadata.social.linkedin.url }}" target="_blank" rel="noopener">04 LinkedIn</a></li>
-	    		<li><a href="{{ metadata.social.twitter.url }}" target="_blank" rel="noopener">05 Twitter</a></li>
-	    		<li><a href="{{ metadata.social.xing.url }}" target="_blank" rel="noopener">06 Xing</a></li>
-	    		<li><a href="{{ metadata.social.instagram.url }}" target="_blank" rel="noopener">07 Instagram</a></li>
-	    	</ul>
-	    </nav>
-        <nav class="navigation-footer">
-            <ul>
-                <li><a href="">Imprint</a> | <a href="">Data Policy</a></li>
-                <li>Built with <a href="https://www.11ty.io/" target="_blank" rel="noopener">Eleventy</a></li>
-                <li>Hosted on <a href="https://www.netlify.com/" target="_blank" rel="noopener">Netlify</a></li>
-                <li>View source at <a href="{{ metadata.social.github.source }}" target="_blank" rel="noopener">Github</a></li>
-            </ul>
-        </nav>
-    </div>
+    {% include "components/navigation.njk" %}
 </header>
