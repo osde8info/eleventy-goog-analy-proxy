@@ -1,0 +1,19 @@
+{
+    "name": "Dennis Hagemeier",
+    "short_name": "Dennis Hagemeier",
+    "icons": [
+        {
+            "src": "/assets/images/favicons/android-chrome-192x192.png?v=476vOYArjy",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/favicons/android-chrome-512x512.png?v=476vOYArjy",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#111111",
+    "background_color": "#111111",
+    "display": "standalone"
+}

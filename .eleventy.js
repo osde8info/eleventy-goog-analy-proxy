@@ -25,6 +25,7 @@ module.exports = function(eleventyConfig) {
 
   // Don't process folders with static assets e.g. images
   eleventyConfig.addPassthroughCopy("src/assets/images");
+  eleventyConfig.addPassthroughCopy("src/assets/favicons");
   
   /* Markdown Plugins */
   let markdownIt = require("markdown-it");
