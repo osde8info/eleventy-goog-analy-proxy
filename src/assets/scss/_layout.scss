@@ -40,6 +40,8 @@
     margin-bottom: 1.5rem;
     padding-bottom: 15vh;
     @extend %gradient-bg;
+    background-size: 200% 200%;
+    animation: gradient-animation alternate 5s infinite;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 30% 100%, 0 90%);
     
     @include bp-laptop {
@@ -59,6 +61,11 @@
     a {
         @include var(color, text-quaternary);
     }
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0% 50% }
+    100% { background-position: 100% 50% }
 }
 
 /*--------------------------------------------------------------

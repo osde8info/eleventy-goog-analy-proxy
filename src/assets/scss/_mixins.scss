@@ -84,9 +84,9 @@ $vars-dark: (
 Presets
 */
 %gradient-bg {
-	background: map-get($vars, color-primary);
-	background: linear-gradient(135deg, map-get($vars, color-primary) 0%, map-get($vars, color-secondary) 100%);
-	background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+	background-color: map-get($vars, color-primary);
+	background-image: linear-gradient(135deg, map-get($vars, color-primary) 0%, map-get($vars, color-secondary) 100%);
+	background-image: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
 }
 
 %gradient-border-top {
