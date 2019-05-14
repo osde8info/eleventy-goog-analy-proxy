@@ -9,12 +9,18 @@ const purgecss = require('gulp-purgecss')
 const babel = require("gulp-babel");
 const uglify = require('gulp-uglify');
 const autoprefixer = require('gulp-autoprefixer');
+const del = require('del');
 
 // Reload Callback
 function reload(done) {
   server.reload()
   done()
 }
+
+// Clean
+gulp.task('clean', function(){
+  return del('_site/**/*', { force: true });
+})
 
 // Generate
 gulp.task('generate', shell.task('eleventy'))
@@ -78,12 +84,14 @@ gulp.task('serve', gulp.parallel(
 
 // Build
 gulp.task('build:dev', gulp.series(
+  'clean',
   'generate',
   'css:dev',
   'js'
 ))
 
 gulp.task('build:prod', gulp.series(
+  'clean',
   'generate',
   'css:prod',
   'js'
