@@ -77,6 +77,10 @@ $vars-dark: (
 	#{$property}: map-get($vars, $varName);
 	#{$property}: var(--#{$varName});
 }
+@mixin border($direction, $width, $style, $varName ) {
+	border-#{$direction}: $width $style map-get($vars, $varName);
+	border-#{$direction}: $width $style var(--#{$varName});
+}
 
 // Usage: @include var(background-color, primary);
 

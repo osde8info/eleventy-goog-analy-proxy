@@ -1,13 +1,21 @@
 ---
 layout: layouts/base.njk
-section: article
+section: archive
 ---
 
-<article>
-	<h1>{{ title }}</h1>
-	
-	<p>{{ layoutContent | safe }}</p>
+<header class="content-header">
     
+    <div class="container">
+
+	<h1>{{ title }}</h1>
+    {{ layoutContent | safe }}
+
+    </div>
+    
+</header>
+
+<div class="content container">
+
     {%- for article in collections.articles | reverse -%}
     
         <article>
@@ -18,10 +26,10 @@ section: article
                 {{ article.data.excerpt }}
             </div>
             
-            <a href="/{{ article.data.permalink | url }}">Artikel lesen</a>
+            <a href="/{{ article.data.permalink | url }}" class="readmore">Artikel lesen</a>
         
         </article>
     
     {%- endfor -%}
 
-</article>
+</div>

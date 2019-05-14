@@ -24,6 +24,38 @@
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+[data-current="archive"] article {
+    margin-bottom: 2.5rem;
+    padding-bottom: 3rem;
+    @include border(bottom, 1px, solid, text-secondary);
+
+    &:last-child {
+        border: 0;
+    }
+}
+a.readmore {
+    display: inline-block;
+    padding: .5em 2em;
+    @extend %gradient-bg;
+    background-size: 200% 100%;
+    background-position: 0% 50%;
+    @include var(color, text-quaternary);
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+    transition: background-position ease .3s;
+
+    &:hover,
+    &:active {
+        background-position: 100% 50%;
+    }
+    &:focus {
+        box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+    }
+
+    &::after {
+        display: none;
+    }
+}
+
 .excerpt {
     font-size: 1.3em;
     font-weight: 300;

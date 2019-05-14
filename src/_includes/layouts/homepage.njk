@@ -1,6 +1,6 @@
 ---
 layout: layouts/base.njk
-section: article
+section: homepage
 ---
 
 <article>
@@ -8,3 +8,14 @@ section: article
 	
 	<p>{{ layoutContent | safe }}</p>
 </article>
+
+<div class="twitter">
+{%- for item in tweets.entries -%}
+    
+    <div class="tweet">
+		<span class="tweet-text">{{ item.text }}</span>
+		<a href="{{ item.url }}">{{ item.date }}</a>
+	</div>
+    
+{%- endfor -%}
+</div>
