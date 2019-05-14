@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  publish = "_site"
+
+# Redirects
+[[redirects]]
+  from = "/*"
+  to = "https://d-hagemeier.de"
+  status = 302
+  force = true
