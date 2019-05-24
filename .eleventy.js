@@ -23,18 +23,16 @@ module.exports = function(eleventyConfig) {
     return DateTime.fromJSDate(dateObj).toFormat("yyyy-MM-dd");
   });
 
-  // Don't process folders with static assets e.g. images
-  eleventyConfig.addPassthroughCopy("src/assets/images");
   eleventyConfig.addPassthroughCopy("src/assets/favicons");
   
   /* Markdown Plugins */
   let markdownIt = require("markdown-it");
   let options = {
     html: true,
-	xhtmlOut: true,
+	  xhtmlOut: true,
     breaks: true,
     linkify: true,
-	typographer: true
+	  typographer: true
   };
   let opts = {
     permalink: true,
@@ -44,9 +42,7 @@ module.exports = function(eleventyConfig) {
 
   return {
     templateFormats: [ "md", "njk", "html" ],
-    
-	pathPrefix: "/",
-	
+	  pathPrefix: "/",
     markdownTemplateEngine: "liquid",
     htmlTemplateEngine: "njk",
     dataTemplateEngine: "njk",
