@@ -2,11 +2,23 @@
   "name": "d-hagemeier",
   "version": "1.0.0",
   "description": "Source code for personal website of Dennis Hagemeier",
+  "author": "Dennis Hagemeier <hello@d-hagemeier.de> (https://d-hagemeier.de/)",
+  "license": "MIT",
+  "repository": "git+https://github.com/dennishagemeier/d-hagemeier.git",
+  "bugs": {
+    "url": "https://github.com/dennishagemeier/d-hagemeier/issues"
+  },
+  "homepage": "https://github.com/dennishagemeier/d-hagemeier/",
+  "scripts": {
+    "serve": "gulp serve",
+    "build:dev": "gulp build:dev",
+    "build": "gulp build:prod"
+  },
   "devDependencies": {
     "@11ty/eleventy": "^0.8.3",
     "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.4",
-    "@babel/preset-env": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
     "browser-sync": "^2.26.5",
     "del": "^4.1.1",
     "dotenv": "^8.0.0",
@@ -16,28 +28,17 @@
     "gulp-babel": "^8.0.0",
     "gulp-cli": "^2.2.0",
     "gulp-csso": "^3.0.1",
+    "gulp-imagemin": "^5.0.3",
     "gulp-purgecss": "^1.2.0",
     "gulp-sass": "^4.0.2",
     "gulp-shell": "^0.7.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
-    "luxon": "^1.13.2",
+    "luxon": "^1.15.0",
     "markdown-it": "^8.4.2",
-    "markdown-it-anchor": "^5.0.2",
+    "markdown-it-anchor": "^5.1.0",
     "twitter": "^1.7.1"
   },
-  "scripts": {
-    "serve": "gulp serve",
-    "build:dev": "gulp build:dev",
-    "build": "gulp build:prod"
-  },
-  "author": "Dennis Hagemeier <hello@d-hagemeier.de> (https://d-hagemeier.de/)",
-  "license": "MIT",
-  "repository": "git+https://github.com/dennishagemeier/d-hagemeier.git",
-  "bugs": {
-    "url": "https://github.com/dennishagemeier/d-hagemeier/issues"
-  },
-  "homepage": "https://github.com/dennishagemeier/d-hagemeier/",
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "debug": "^4.1.1"

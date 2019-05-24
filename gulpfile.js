@@ -9,6 +9,7 @@ const purgecss = require('gulp-purgecss')
 const babel = require("gulp-babel");
 const uglify = require('gulp-uglify');
 const autoprefixer = require('gulp-autoprefixer');
+const imagemin = require('gulp-imagemin');
 const del = require('del');
 
 // Reload Callback
@@ -61,6 +62,13 @@ gulp.task('js', function () {
     .pipe(gulp.dest('_site/assets/js'));
 });
 
+// Images
+gulp.task('images', function () {
+  return gulp.src('src/assets/images/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('_site/assets/images'));
+});
+
 // BrowserSync Server
 gulp.task('browsersync', function(done) {
   server.init({
@@ -73,6 +81,7 @@ gulp.task('browsersync', function(done) {
 gulp.task('watch', function() {
   gulp.watch('src/assets/scss/**/*', gulp.series('css:dev', reload))
   gulp.watch('src/assets/js/**/*', gulp.series('js', reload))
+  gulp.watch('src/assets/images/**/*', gulp.series('images', reload))
   gulp.watch('src/**/*.{njk,html,md,json}', gulp.series('generate', reload))
 })
 
@@ -87,12 +96,14 @@ gulp.task('build:dev', gulp.series(
   'clean',
   'generate',
   'css:dev',
-  'js'
+  'js',
+  'images'
 ))
 
 gulp.task('build:prod', gulp.series(
   'clean',
   'generate',
   'css:prod',
-  'js'
+  'js',
+  'images'
 ))
