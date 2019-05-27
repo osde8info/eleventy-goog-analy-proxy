@@ -10,8 +10,9 @@ section: homepage
 </article>
 
 <div class="twitter">
-{%- for item in tweets.entries -%}
-    
+
+{%- for item in tweets -%}
+
     <div class="tweet">
 		<span class="tweet-text">{{ item.text }}</span>
 		<a href="{{ item.url }}">{{ item.date }}</a>

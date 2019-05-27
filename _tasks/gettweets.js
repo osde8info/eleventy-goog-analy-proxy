@@ -20,14 +20,16 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
         url: "https://twitter.com/dennisview/status/" + tweets[tweet].id_str,
         date:  tweets[tweet].created_at,
       };
-      // Not sharing direct mentions
       if(t.text.charAt(0) !== "@"){
         recentTweets.push(t);
       }
     }
-	
     var json = JSON.stringify(recentTweets, null, 2);
-	  return json;
+    
+    fs.writeFile('src/_data/tweets.json', json, (err) => {
+      if (err) throw err;
+      console.log('Tweets written to file');
+    });
 
   }
 });
