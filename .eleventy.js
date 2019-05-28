@@ -13,14 +13,17 @@ module.exports = function(eleventyConfig) {
     });
   });
 
-  // Date formatting (human readable)
+  // Date formatting
   eleventyConfig.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj).toFormat("dd LLL yyyy");
   });
 
-  // Date formatting (machine readable)
   eleventyConfig.addFilter("machineDate", dateObj => {
     return DateTime.fromJSDate(dateObj).toFormat("yyyy-MM-dd");
+  });
+
+  eleventyConfig.addFilter("tweetDate", dateObj => {
+    return DateTime.fromHTTP(dateObj).toFormat("yyyy-MM-dd");
   });
 
   eleventyConfig.addPassthroughCopy("src/assets/favicons");

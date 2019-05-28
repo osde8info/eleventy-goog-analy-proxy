@@ -15,7 +15,7 @@ section: homepage
 
     <div class="tweet">
 		<span class="tweet-text">{{ item.text }}</span>
-		<a href="{{ item.url }}">{{ item.date }}</a>
+		<a href="{{ item.url }}">{{ item.date | tweetDate }}</a>
 	</div>
     
 {%- endfor -%}
