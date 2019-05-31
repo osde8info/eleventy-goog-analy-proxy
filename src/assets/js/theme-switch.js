@@ -1,6 +1,6 @@
 /*
 * Based on https://dev.to/ananyaneogi/create-a-dark-light-mode-switch-with-css-variables-34l8
-* Modified with "prefers-color-scheme"
+* Added support for "prefers-color-scheme"
 */
 
 const toggleSwitch = document.getElementById("theme-switch-input");
