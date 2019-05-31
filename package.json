@@ -28,7 +28,7 @@
     "gulp-babel": "^8.0.0",
     "gulp-cli": "^2.2.0",
     "gulp-csso": "^3.0.1",
-    "gulp-imagemin": "^5.0.3",
+    "gulp-imagemin": "^6.0.0",
     "gulp-purgecss": "^1.2.0",
     "gulp-sass": "^4.0.2",
     "gulp-shell": "^0.7.0",
@@ -36,7 +36,7 @@
     "gulp-uglify": "^3.0.2",
     "luxon": "^1.15.0",
     "markdown-it": "^8.4.2",
-    "markdown-it-anchor": "^5.1.0",
+    "markdown-it-anchor": "^5.2.3",
     "require-dir": "^1.2.0",
     "twitter": "^1.7.1"
   },
