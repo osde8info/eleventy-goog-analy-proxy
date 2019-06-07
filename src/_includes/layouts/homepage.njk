@@ -1,22 +1,13 @@
 ---
 layout: layouts/base.njk
-section: homepage
+section: home
 ---
 
-<article>
+<div class="container">
+
 	<h1>{{ title }}</h1>
-	
-	<p>{{ layoutContent | safe }}</p>
-</article>
+	<div class="description">{{ layoutContent | safe }}</div>
 
-<div class="twitter">
-
-{%- for item in tweets -%}
-
-    <div class="tweet">
-		<span class="tweet-text">{{ item.text }}</span>
-		<a href="{{ item.url }}">{{ item.date | tweetDate }}</a>
-	</div>
-    
-{%- endfor -%}
 </div>
+
+{% include "components/tweets.njk" %}
