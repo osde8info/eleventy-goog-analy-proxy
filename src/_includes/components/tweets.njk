@@ -1,0 +1,42 @@
+<div class="twitter">
+
+{%- for item in tweets -%}
+
+    <div class="tweet">
+
+		{% if item.is_quote_status %}
+
+			<a href="{{ metadata.social.twitter.url }}/status/{{ item.id_str }}" class="tweet-date">{{ item.created_at }}</a>
+
+			<div class="tweet-status">{{ item.text | safe }}</div>
+
+			<img class="tweet-quote-img" src="{{ item.quoted_status.user.profile_image_url_https | url }}" />
+			<div class="tweet-quote-name">{{ item.quoted_status.user.screen_name | safe }}</div>
+			<div class="tweet-quote-text">{{ item.quoted_status.text | safe }}</div>
+
+		{% endif %}
+
+	</div>
+    
+{%- endfor -%}
+
+
+<!--
+		elseif item.retweeted
+
+			<a href="{{ metadata.social.twitter.url }}/status/{{ item.id_str }}">{{ item.created_at }}</a>
+
+			<div class="quote">
+				<img src="{{ item.retweeted_status.user.profile_image_url_https | url }}" />
+				<div class="quote-name">{{ item.retweeted_status.user.screen_name | safe }}</div>
+				<div class="quote-text">{{ item.retweeted_status.text | safe }}</div>
+			</div>
+
+		else
+
+			<a href="{{ metadata.social.twitter.url }}/status/{{ item.id_str }}">{{ item.created_at }}</a>
+			<div class="status">{{ item.text | safe }}</div>
+-->
+		
+
+</div>
