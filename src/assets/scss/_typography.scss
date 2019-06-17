@@ -161,8 +161,17 @@ img {
 
 embed,
 iframe,
-object {
+object,
+video {
 	max-width: 100%;
+}
+
+img,
+embed,
+iframe,
+object,
+video {
+	aspect-ratio: attr(width) / attr(height);
 }
 
 figure {
