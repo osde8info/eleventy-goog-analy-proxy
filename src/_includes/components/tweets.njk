@@ -5,14 +5,32 @@
     <div class="tweet">
 
 		{% if item.is_quote_status %}
-
+		
 			<a href="{{ metadata.social.twitter.url }}/status/{{ item.id_str }}" class="tweet-date">{{ item.created_at }}</a>
 
 			<div class="tweet-status">{{ item.text | safe }}</div>
 
-			<img class="tweet-quote-img" src="/assets/images/twitter/{{ item.quoted_status.user.screen_name | safe }}.jpg" />
-			<div class="tweet-quote-name">{{ item.quoted_status.user.screen_name | safe }}</div>
-			<div class="tweet-quote-text">{{ item.quoted_status.text | safe }}</div>
+			<img class="tweet-src-img" src="/assets/images/twitter/{{ item.quoted_status.user.screen_name | safe }}.jpg" />
+			<div class="tweet-src-name">{{ item.quoted_status.user.screen_name | safe }}</div>
+			<div class="tweet-src-text">{{ item.quoted_status.text | safe }}</div>
+
+		{% endif %}
+
+		{% if item.retweeted %}
+		
+			<a href="{{ metadata.social.twitter.url }}/status/{{ item.id_str }}" class="tweet-date">{{ item.created_at }}</a>
+
+			<img class="tweet-src-img" src="/assets/images/twitter/{{ item.retweeted_status.user.screen_name | safe }}.jpg" />
+			<div class="tweet-src-name">{{ item.retweeted_status.user.screen_name | safe }}</div>
+			<div class="tweet-src-text">{{ item.retweeted_status.text | safe }}</div>
+
+		{% endif %}
+
+		{% if not item.is_quote_status and not item.retweeted %}
+
+			<a href="{{ metadata.social.twitter.url }}/status/{{ item.id_str }}" class="tweet-date">{{ item.created_at }}</a>
+
+			<div class="tweet-status">{{ item.text | safe }}</div>
 
 		{% endif %}
 
