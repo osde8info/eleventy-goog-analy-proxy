@@ -13,6 +13,7 @@ const uglify = require('gulp-uglify');
 
 // Image Dependencies
 const imagemin = require('gulp-imagemin');
+const merge = require('merge-stream');
 
 // CSS
 gulp.task('css:dev', function() {
@@ -51,8 +52,13 @@ gulp.task('js', function () {
 });
 
 // Images
-gulp.task('images', function () {
-  return gulp.src('src/assets/images/*')
-    .pipe(imagemin())
-    .pipe(gulp.dest('_site/assets/images'));
+gulp.task('images', function (cb) {
+  var assets = gulp.src('src/assets/images/**/*')
+      .pipe(imagemin())
+      .pipe(gulp.dest('_site/assets/images'));
+  var cache = gulp.src('_cache/**/*')
+      .pipe(imagemin())
+      .pipe(gulp.dest('_site/assets/images/twitter'));
+  
+  return merge(assets, cache);
 });
