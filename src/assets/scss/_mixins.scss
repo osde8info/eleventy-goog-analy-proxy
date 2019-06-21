@@ -61,6 +61,8 @@ $vars: (
 	text-secondary: #666,
 	text-tertiary: #fff,
 	text-quaternary: #111,
+	opacity-2: darken(#fff, 2%),
+	opacity-10: darken(#fff, 10%),
 	background: #fff
 );
 $vars-dark: (
@@ -70,6 +72,8 @@ $vars-dark: (
 	text-secondary: #ddd,
 	text-tertiary: #111,
 	text-quaternary: #111,
+	opacity-2: lighten(#111, 5%),
+	opacity-10: lighten(#111, 15%),
 	background: #111
 );
 

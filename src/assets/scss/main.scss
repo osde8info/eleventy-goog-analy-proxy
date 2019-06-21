@@ -13,6 +13,9 @@
 // Link Styling
 @import '_links';
 
+// Grid
+@import '_grid';
+
 // General Layout
 @import '_layout';
 
@@ -21,3 +24,6 @@
 
 // Extras for specific elements
 @import '_extras';
+
+// PrismJS Theme
+@import '_prismtheme.scss';

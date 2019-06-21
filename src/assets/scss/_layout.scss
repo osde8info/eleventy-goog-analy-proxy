@@ -40,8 +40,12 @@ a.readmore {
     background-size: 200% 100%;
     background-position: 0% 50%;
     @include var(color, text-quaternary);
-    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
     transition: background-position ease .3s;
+    animation: button-animation ease 10s infinite;
+    
+    &::after {
+        display: none;
+    }
 
     &:hover,
     &:active {
@@ -50,10 +54,14 @@ a.readmore {
     &:focus {
         box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
     }
+}
 
-    &::after {
-        display: none;
-    }
+@keyframes button-animation {
+	0% {   clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%); }
+	25% {  clip-path: polygon(5% 5%, 100% 10%, 95% 90%, 0% 95%); }
+    50% {  clip-path: polygon(0% 10%, 100% 5%, 90% 95%, 5% 95%); }
+    75% {  clip-path: polygon(5% 5%, 95% 0%, 95% 92%, 10% 90%); }
+    100% {   clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%); }
 }
 
 .excerpt {
@@ -73,13 +81,13 @@ a.readmore {
     padding-bottom: 15vh;
     @extend %gradient-bg;
     background-size: 200% 200%;
-    animation: gradient-animation alternate 5s infinite;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 30% 100%, 0 90%);
     
     @include bp-laptop {
         height: 90vh;
         max-height: 28rem;
         clip-path: polygon(0 0, 100% 0, 100% 85%, 10% 100%);
+        animation: header-animation-desktop alternate 10s infinite;
     }
     
     .meta {
@@ -95,9 +103,40 @@ a.readmore {
     }
 }
 
-@keyframes gradient-animation {
-    0% { background-position: 0% 50% }
-    100% { background-position: 100% 50% }
+@keyframes header-animation-desktop {
+	0% {   clip-path: polygon(0 0, 100% 0, 100% 85%, 10% 100%); background-position: 0% 50%; }
+	25% {  clip-path: polygon(0 0, 100% 0, 100% 85%, 11% 98%); }
+	50% {  clip-path: polygon(0 0, 100% 0, 100% 85%, 8% 100%); }
+	75% {  clip-path: polygon(0 0, 100% 0, 100% 85%, 12% 96%); }
+	100% { clip-path: polygon(0 0, 100% 0, 100% 85%, 10% 100%); background-position: 100% 50%; }
+}
+
+/*--------------------------------------------------------------
+# Comments
+--------------------------------------------------------------*/
+.comments {
+    position: relative;
+    width: 120%;
+    margin-left: -10%;
+    padding: 1rem 10%;
+    @include var(background-color, opacity-2);
+    @include border(top, 2px, solid, opacity-10);
+    @include border(left, 2px, solid, opacity-10);
+    @include border(right, 2px, solid, opacity-10);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    .twitter-icon svg {
+        width: 4rem;
+        height: 4rem;
+        @include var(fill, text-primary);
+    }
+
+    h3 { padding: 0; }
+
+    &::after {
+        @extend %gradient-border-bottom;
+    }
 }
 
 /*--------------------------------------------------------------
@@ -107,12 +146,6 @@ a.readmore {
     position: relative;
     padding-top: 1rem;
 
-    &::before { 
-        @extend %gradient-border-top;
-        width: 120%;
-        margin-left: -10%;
-    }
-
 	&-list {
         margin: 0;
 		padding: 1rem 0;
@@ -120,20 +153,17 @@ a.readmore {
 	}
     &-item {
         margin: .5rem 0;
-
-        a:hover {
-            .recommendations-title { 
-                transform: translateX(.5rem);
-                transition: transform ease-in-out .3s;
-            }
-        }
     }
     &-title {
         display: block;
+        transition: transform ease-in-out .3s;
+
+        &:hover {
+            transform: translateX(.5rem);
+        }
     }
     &-date {
         display: block;
         color: #aaa;
-        font-size: .8em;
     }
 }

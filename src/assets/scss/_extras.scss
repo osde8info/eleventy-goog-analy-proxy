@@ -2,23 +2,14 @@
 # Tweets
 --------------------------------------------------------------*/
 .twitter {}
-.tweet {
-    // display: flex;
-    display: grid;
-    grid-template-columns: 1auto 1auto 1auto 1auto;
-    grid-template-rows: 1auto 1auto 1auto;
-    grid-template-areas: "date status status status" "date quote-img quote-name quote-name" "date quote-img quote-text quote-text";
 
-    &-date {
-        grid-area: date;
-        display: block;
-    }
-    &-status {
-        grid-area: status;
-    }
+.tweet {
+    
+    &-date {}
+    &-status {}
     &-src {
-        &-img { grid-area: quote-img; }
-        &-name { grid-area: quote-name; }
-        &-text { grid-area: quote-text; }
+        &-img {}
+        &-name {}
+        &-text {}
     }
 }
