@@ -1,5 +1,7 @@
 const { DateTime } = require("luxon");
 const dotenv = require("dotenv");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function(eleventyConfig) {
 
@@ -26,7 +28,12 @@ module.exports = function(eleventyConfig) {
     return DateTime.fromHTTP(dateObj).toFormat("yyyy-MM-dd");
   });
 
+  // Passthroughs
   eleventyConfig.addPassthroughCopy("src/assets/favicons");
+
+  // Plugins
+  eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(syntaxHighlight);
   
   /* Markdown Plugins */
   let markdownIt = require("markdown-it");
