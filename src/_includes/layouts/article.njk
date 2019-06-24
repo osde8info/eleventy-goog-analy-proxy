@@ -10,7 +10,7 @@ section: article
     <h1>{{ title }}</h1>
         
     <div class="meta">
-        <time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time>
+        <time datetime="{{ date | articleMachineDate }}">{{ date | articleHumanDate }}</time>
         |
         <div class="categories">
             {% for tag in tags %}

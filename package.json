@@ -35,7 +35,6 @@
     "gulp-shell": "^0.7.1",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
-    "luxon": "^1.16.0",
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.2.4",
     "merge-stream": "^2.0.0",
@@ -46,7 +45,8 @@
     "@11ty/eleventy-plugin-rss": "^1.0.6",
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
     "@babel/polyfill": "^7.4.4",
-    "debug": "^4.1.1"
+    "debug": "^4.1.1",
+    "moment": "^2.24.0"
   },
   "browserslist": "> 0.25%, not dead",
   "main": "index.js"

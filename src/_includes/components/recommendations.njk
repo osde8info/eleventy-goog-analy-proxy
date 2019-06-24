@@ -6,7 +6,7 @@
         {% if loop.index < 6 %}
 
         <li class="recommendations-item row">
-            <time class="recommendations-date col-1-4" datetime="{{ article.data.date | machineDate }}">{{ article.data.date | readableDate }}</time>
+            <time class="recommendations-date col-1-4" datetime="{{ article.data.date | articleMachineDate }}">{{ article.data.date | articleHumanDate }}</time>
             <div class="recommendations-title col-3-4"><a href="/{{ article.data.permalink | url }}">{{ article.data.title }}</a></span>
         </li>
 
