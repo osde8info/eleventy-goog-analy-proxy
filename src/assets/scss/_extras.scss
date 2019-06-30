@@ -4,10 +4,22 @@
 .twitter {}
 
 .tweet {
-    
+    position: relative;
+    margin-bottom: 1rem;
+
     &-date {}
-    &-status {}
+    &-status {
+        margin-bottom: .5rem;
+    }
     &-src {
+        padding: 1rem;
+        @include var(background-color, opacity-2);
+        @include border(top, 2px, solid, opacity-10);
+        @include border(bottom, 2px, solid, opacity-10);
+        @include border(left, 2px, solid, opacity-10);
+        @include border(right, 2px, solid, opacity-10);
+        border-radius: 5px;
+
         &-img {}
         &-name {}
         &-text {}

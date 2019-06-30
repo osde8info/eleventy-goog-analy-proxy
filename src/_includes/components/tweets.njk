@@ -12,9 +12,9 @@
 			
 				<div class="tweet-status row">{{ item.text | safe }}</div>
 
-				<div class="row">
+				<div class="row tweet-src">
 					<div class="col-1-4">
-						<img class="tweet-src-img" src="/assets/images/twitter/{{ item.quoted_status.user.screen_name | safe }}.jpg" alt="{{ item.quoted_status.user.screen_name | safe }} Twitter Profile Picture" loading="lazy" />
+						<img class="tweet-src-img" width="60" height="60" src="/assets/images/twitter/{{ item.quoted_status.user.screen_name | safe }}.jpg" alt="{{ item.quoted_status.user.screen_name | safe }} Twitter Profile Picture" loading="lazy" />
 					</div>
 					<div class="col-3-4">
 						<div class="tweet-src-name">{{ item.quoted_status.user.screen_name | safe }}</div>
@@ -30,10 +30,12 @@
 		
 			<a href="{{ metadata.social.twitter.url }}/status/{{ item.id_str }}" class="tweet-date col-1-3"><time datetime="{{ item.created_at | tweetMachineDate }}">{{ item.created_at | tweetHumanDate }}</time></a>
 
-			<div class="col-2-3">
+			<div class="col-2-3 tweet-src">
 
 				<div class="row">
-						<div class="col-1-4"><img class="tweet-src-img" src="/assets/images/twitter/{{ item.retweeted_status.user.screen_name | safe }}.jpg"  alt="{{ item.retweeted_status.user.screen_name | safe }} Twitter Profile Picture" loading="lazy" /></div>
+						<div class="col-1-4">
+							<img class="tweet-src-img" width="60" height="60" src="/assets/images/twitter/{{ item.retweeted_status.user.screen_name | safe }}.jpg"  alt="{{ item.retweeted_status.user.screen_name | safe }} Twitter Profile Picture" loading="lazy" />
+						</div>
 						<div class="col-3-4">
 							<div class="tweet-src-name">{{ item.retweeted_status.user.screen_name | safe }}</div>
 							<div class="tweet-src-text">{{ item.retweeted_status.text | safe }}</div>
