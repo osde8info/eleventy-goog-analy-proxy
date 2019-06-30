@@ -6,6 +6,9 @@ require('require-dir')('./_tasks')
 // Clean
 gulp.task('clean', function(){  return del('_site/**/*', { force: true }); })
 
+// Get external data
+gulp.task('get:authorimages', shell.task('node _tasks/getauthorimages.js'))
+
 // Generate
 gulp.task('generate', shell.task('eleventy'))
 
@@ -18,6 +21,7 @@ gulp.task('serve', gulp.parallel(
 // Build
 gulp.task('build:dev', gulp.series(
   'clean',
+  'get:authorimages',
   'generate',
   'css:dev',
   'js',
@@ -26,6 +30,7 @@ gulp.task('build:dev', gulp.series(
 
 gulp.task('build:prod', gulp.series(
   'clean',
+  'get:authorimages',
   'generate',
   'css:prod',
   'js',

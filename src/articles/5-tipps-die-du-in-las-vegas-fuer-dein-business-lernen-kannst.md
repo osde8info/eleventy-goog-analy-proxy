@@ -1,7 +1,7 @@
 --- 
 title: 5 Tipps, die du in Las Vegas für dein Business lernen kannst
 permalink: articles/5-tipps-die-du-in-las-vegas-fuer-dein-business-lernen-kannst/index.html
-date: 2019-02-20T19:30:00.000Z
+date: 2019-02-20T19:30:00-05:00
 tags: ["article","general","marketing"]
 excerpt: "Las Vegas: Die Stadt der Superlative. Die Stadt der ganz großen Shows. Die Stadt der Lichter und Leuchtreklamen. Aber auch die Stadt der __Sünde und der Sucht__. Sowohl positiv als auch negativ existieren in Las Vegas viele Extreme. Ein inspirierendes Umfeld, um einige wichtige Ratschläge für dein tägliches Business zu lernen."
 seoindex: true

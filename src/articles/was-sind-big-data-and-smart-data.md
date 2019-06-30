@@ -1,7 +1,7 @@
 --- 
 title: Was sind Big Data & Smart Data?
 permalink: articles/was-sind-big-data-and-smart-data/index.html
-date: 2019-02-03T05:31:00.000Z
+date: 2019-02-03T05:31:00-05:00
 tags: ["article","marketing"]
 excerpt: "Big Data und Smart Data. __Zwei Begriffe__, die seit einigen Jahren nicht mehr aus dem Marketing-Jargon wegzudenken sind. Doch was verbirgt sich hinter den Begriffen und wie kannst du und dein Unternehmen von den beiden Bereichen profitieren?"
 seoindex: true

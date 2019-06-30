@@ -1,5 +1,7 @@
-const { DateTime } = require("luxon");
 const dotenv = require("dotenv");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const moment = require('moment');
 
 module.exports = function(eleventyConfig) {
 
@@ -14,19 +16,28 @@ module.exports = function(eleventyConfig) {
   });
 
   // Date formatting
-  eleventyConfig.addFilter("readableDate", dateObj => {
-    return DateTime.fromJSDate(dateObj).toFormat("dd LLL yyyy");
+  eleventyConfig.addFilter("articleHumanDate", dateObj => {
+    return moment(dateObj, "YYYY-MM-DDTHH:mm:ssZZ").format('Do MMMM YYYY');
+  });
+  
+  eleventyConfig.addFilter("articleMachineDate", dateObj => {
+    return moment(dateObj, "YYYY-MM-DDTHH:mm:ssZZ").format('YYYY-MM-DDTHH:mm:ssZZ');
   });
 
-  eleventyConfig.addFilter("machineDate", dateObj => {
-    return DateTime.fromJSDate(dateObj).toFormat("yyyy-MM-dd");
+  eleventyConfig.addFilter("tweetMachineDate", dateObj => {
+    return moment(dateObj, "ddd MMM D HH:mm:ss ZZ YYYY").format('YYYY-MM-DDTHH:mm:ssZZ');
   });
 
-  eleventyConfig.addFilter("tweetDate", dateObj => {
-    return DateTime.fromHTTP(dateObj).toFormat("yyyy-MM-dd");
+  eleventyConfig.addFilter("tweetHumanDate", dateObj => {
+    return moment(dateObj, "ddd MMM D HH:mm:ss ZZ YYYY").format('Do MMMM YYYY');
   });
 
+  // Passthroughs
   eleventyConfig.addPassthroughCopy("src/assets/favicons");
+
+  // Plugins
+  eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(syntaxHighlight);
   
   /* Markdown Plugins */
   let markdownIt = require("markdown-it");
