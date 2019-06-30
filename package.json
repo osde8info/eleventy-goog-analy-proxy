@@ -48,6 +48,11 @@
     "debug": "^4.1.1",
     "moment": "^2.24.0"
   },
-  "browserslist": "> 0.25%, not dead",
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ],
   "main": "index.js"
 }

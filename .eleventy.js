@@ -39,7 +39,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(syntaxHighlight);
   
-  /* Markdown Plugins */
+  // Markdown Plugins
   let markdownIt = require("markdown-it");
   let options = {
     html: true,
