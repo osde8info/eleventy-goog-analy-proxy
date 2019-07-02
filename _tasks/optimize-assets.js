@@ -20,10 +20,7 @@ gulp.task('css:dev', function() {
   return gulp.src('src/assets/scss/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-    .pipe(autoprefixer({
-      browsers: ['last 2 versions'],
-      cascade: false
-    }))
+    .pipe(autoprefixer({ cascade: false }))
     .pipe(csso({ restructure: true, debug: true }))
 	  .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('_site/assets/css'));
