@@ -2,12 +2,7 @@
 # Forms
 --------------------------------------------------------------*/
 label {
-	position: relative;
-	top: .6rem;
-	left: .5rem;
-	padding: 0 .5rem;
-	background: #fff;
-	font-size: .8em;
+	
 }
 
 input[type="text"],
@@ -27,17 +22,5 @@ input[type="datetime-local"],
 input[type="color"],
 select,
 textarea {
-	width: 100%;
-	padding: .5em;
-	background: #fff;
-	color: lighten($baseFontColor, 15%);
-	border: 1px solid #ccc;
-	border-radius: 0;
 	
-	&:hover {}
-	&:focus {
-		color: $baseFontColor;
-		border: 1px solid $linkColor;
-		outline: 0;
-	}
 }

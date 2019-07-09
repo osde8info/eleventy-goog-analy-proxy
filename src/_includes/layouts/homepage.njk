@@ -3,11 +3,19 @@ layout: layouts/base.njk
 section: home
 ---
 
+<header class="content-header">
+    
+    <div class="container">
+
+    <h1>{{ title }}</h1>
+	<div class="meta description">{{ layoutContent | safe }}</div>
+
+	</div>
+
+</header>
+
 <div class="container">
 
-	<h1>{{ title }}</h1>
-	<div class="description">{{ layoutContent | safe }}</div>
-
 	{% include "components/tweets.njk" %}
-</div>
 
+</div>

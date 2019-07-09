@@ -33,36 +33,6 @@
         border: 0;
     }
 }
-a.readmore {
-    display: inline-block;
-    padding: .5em 2em;
-    @extend %gradient-bg;
-    background-size: 200% 100%;
-    background-position: 0% 50%;
-    @include var(color, text-quaternary);
-    transition: background-position ease .3s;
-    animation: button-animation ease 10s infinite;
-    
-    &::after {
-        display: none;
-    }
-
-    &:hover,
-    &:active {
-        background-position: 100% 50%;
-    }
-    &:focus {
-        box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
-    }
-}
-
-@keyframes button-animation {
-	0% {   clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%); }
-	25% {  clip-path: polygon(5% 5%, 100% 10%, 95% 90%, 0% 95%); }
-    50% {  clip-path: polygon(0% 10%, 100% 5%, 90% 95%, 5% 95%); }
-    75% {  clip-path: polygon(5% 5%, 95% 0%, 95% 92%, 10% 90%); }
-    100% {   clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%); }
-}
 
 .excerpt {
     font-size: 1.3em;
@@ -87,7 +57,6 @@ a.readmore {
         height: 90vh;
         max-height: 28rem;
         clip-path: polygon(0 0, 100% 0, 100% 85%, 10% 100%);
-        animation: header-animation-desktop alternate 10s infinite;
     }
     
     .meta {
@@ -101,14 +70,6 @@ a.readmore {
     a {
         @include var(color, text-quaternary);
     }
-}
-
-@keyframes header-animation-desktop {
-	0% {   clip-path: polygon(0 0, 100% 0, 100% 85%, 10% 100%); background-position: 0% 50%; }
-	25% {  clip-path: polygon(0 0, 100% 0, 100% 85%, 11% 98%); }
-	50% {  clip-path: polygon(0 0, 100% 0, 100% 85%, 8% 100%); }
-	75% {  clip-path: polygon(0 0, 100% 0, 100% 85%, 12% 96%); }
-	100% { clip-path: polygon(0 0, 100% 0, 100% 85%, 10% 100%); background-position: 100% 50%; }
 }
 
 /*--------------------------------------------------------------

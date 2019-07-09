@@ -1,13 +1,55 @@
 /*--------------------------------------------------------------
+# Homepage
+--------------------------------------------------------------*/
+[data-current="home"] {
+
+    .content-header {
+        height: 95vh;
+
+        @include bp-laptop {
+            height: 80vh;
+            max-height: none;
+        }
+    }
+    h1 { font-size: 2.7em; }
+    .meta {
+        font-family: $mainFont;
+        font-size: 1.3em;
+        font-weight: 300;
+
+        a { 
+            position: relative;
+            z-index: 2;
+
+            &::after {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                content: '';
+                background: #000;
+                width: 100%;
+                height: .1em;
+                z-index: -1;
+                transform: translateY(0);
+                transition: transform .2s ease-in-out;
+            }
+            &:hover::after,
+            &:focus::after,
+            &:active::after {
+                transform: translateY(.1em);
+            }
+        }
+    }
+
+}
+
+/*--------------------------------------------------------------
 # Tweets
 --------------------------------------------------------------*/
-.twitter {}
-
 .tweet {
     position: relative;
     margin-bottom: 1rem;
 
-    &-date {}
     &-status {
         margin-bottom: .5rem;
     }
@@ -19,9 +61,5 @@
         @include border(left, 2px, solid, opacity-10);
         @include border(right, 2px, solid, opacity-10);
         border-radius: 5px;
-
-        &-img {}
-        &-name {}
-        &-text {}
     }
 }

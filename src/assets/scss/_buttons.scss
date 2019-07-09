@@ -5,20 +5,27 @@
 button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
-	padding: .4em .75em;
-	background: $linkColor;
-	color: #fff;
+input[type="submit"],
+a.readmore {
+	display: inline-block;
+    padding: .75em 1.5em;
+    @extend %gradient-bg;
+    background-size: 200% 100%;
+    background-position: 0% 50%;
+    @include var(color, text-quaternary);
 	line-height: 1;
-	font-family: $headingFont;
 	text-decoration: none;
-	border: 1px solid darken($linkColor, 5%);
+	border: 0;
 	border-radius: 0;
 	
-	&:hover {
-		background: lighten($linkColor, 10%);
+	&::after {
+        display: none;
 	}
-	&:focus {
-		background: darken($linkColor, 3%);
-	}
+	&:hover,
+    &:active {
+        background-position: 100% 50%;
+    }
+    &:focus {
+        box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+    }
 }

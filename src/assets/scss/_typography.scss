@@ -166,14 +166,6 @@ video {
 	max-width: 100%;
 }
 
-img,
-embed,
-iframe,
-object,
-video {
-	aspect-ratio: attr(width) / attr(height);
-}
-
 figure {
 	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
 }
