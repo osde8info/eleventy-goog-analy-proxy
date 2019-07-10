@@ -27,7 +27,7 @@
 [data-current="archive"] article {
     margin-bottom: 2.5rem;
     padding-bottom: 3rem;
-    @include border(bottom, 1px, solid, text-secondary);
+    @include border(bottom, 1px, solid,opacity-10);
 
     &:last-child {
         border: 0;
@@ -78,7 +78,7 @@
 .comments {
     position: relative;
     width: 120%;
-    margin-left: -10%;
+    margin: 2.5rem 0 1.5rem -10%;
     padding: 1rem 10%;
     @include var(background-color, opacity-2);
     @include border(top, 2px, solid, opacity-10);

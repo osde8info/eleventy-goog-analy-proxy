@@ -116,3 +116,23 @@ Presets
 	height: 4px;
 	@extend %gradient-bg;
 }
+
+%gradient-border-left {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 4px;
+	height: 100%;
+	@extend %gradient-bg;
+}
+
+%gradient-border-right {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 4px;
+	height: 100%;
+	@extend %gradient-bg;
+}
