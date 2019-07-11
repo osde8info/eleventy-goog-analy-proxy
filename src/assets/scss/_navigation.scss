@@ -107,7 +107,11 @@ Navigation
         & ~ .theme-switch-btn {
             fill: #fff;
             transition: fill ease .3s;
-    	}
+        }
+        & ~ .language-switch,
+        & ~ .language-switch a {
+            color: #fff;
+        }
     }
 }
 
@@ -129,4 +133,26 @@ Theme Switch
 
 @supports(--css: variables) {
     .theme-switch-btn { display: block; }
+}
+
+/*--------------------------------------------------------------
+Language Switch
+--------------------------------------------------------------*/
+.language-switch {
+    position: fixed;
+    z-index: 999;
+    top: 2.5rem;
+    right: 8rem;
+    font-weight: 700;
+
+    @include bp-tablet {
+        top: 2.35rem;
+    }
+    @include bp-laptop {
+        top: 2.2rem;
+    }
+
+    a {
+        @include var(color, text-primary);
+    }
 }
