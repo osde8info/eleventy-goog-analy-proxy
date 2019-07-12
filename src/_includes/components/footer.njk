@@ -1,5 +1,17 @@
 </div> <!-- .site -->
 
+<script>
+if ("serviceWorker" in navigator) {
+  if (navigator.serviceWorker.controller) {
+    console.log("Active service worker found, no need to register");
+  } else {
+    navigator.serviceWorker
+      .register("/sw.js", { scope: "./" })
+      .then(function (reg) { console.log("Service worker has been registered for scope: " + reg.scope); });
+  }
+}
+</script>
+
 <script src="/assets/js/theme-switch.js" async defer></script>
 <script src="/assets/js/instantclick-1.2.2.js" type="module" async defer></script>
 
