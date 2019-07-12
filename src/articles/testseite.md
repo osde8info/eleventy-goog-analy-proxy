@@ -4,9 +4,15 @@ permalink: articles/testseite/index.html
 date: 2019-04-04T14:14:00-05:00
 tags: ["marketing","code"]
 excerpt: "Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte. Abgeschieden wohnen sie in Buchstabhausen an der Küste des Semantik, eines großen Sprachozeans. Ein kleines Bächlein namens Duden fließt durch ihren Ort und versorgt sie mit den nötigen Regelialien."
+
+language: de
+translation_en: articles/testpage/index.html
+translation_de: articles/testseite/index.html
+
 seoindex: true
-seotitle: Dies ist ein SEO Title-Tag für die Testseite
-seodescription: Dies ist eine SEO-Description für die Testseite
+seotitle: "Dies ist ein SEO Title-Tag für die Testseite"
+seodescription: "Dies ist eine SEO-Description für die Testseite"
+
 ---
 
 ## Paragraphen

@@ -9,7 +9,21 @@
 </label>
 
 <div class="language-switch">
-    <a href="">EN</a> / <a href="">DE</a>
+
+    {% if translation_en %}
+        <a href="{{ translation_en }}">EN</a>
+    {% else %}
+        <a href="/en">EN</a>
+    {% endif %}
+    
+    <span> / </span>
+    
+    {% if translation_de %}
+        <a href="{{ translation_de }}">DE</a>
+    {% else %}
+        <a href="/de">DE</a>
+    {% endif %}
+
 </div>
 
 <div class="navigation-wrapper">

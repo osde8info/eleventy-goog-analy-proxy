@@ -2,12 +2,15 @@
 <title>{{ seotitle }}</title>
 <meta name="description" content="{{ seodescription }}"/>
 
+{% if seoindex %}<meta name="robots" content="index, follow">{% else %}<meta name="robots" content="noindex">{% endif %}
+{% if translation_en %}<link rel="alternate" hreflang="en" href="{{ metadata.url }}/{{ translation_de }}"/>{% endif %}
+{% if translation_de %}<link rel="alternate" hreflang="de" href="{{ metadata.url }}/{{ translation_en }}"/>{% endif %}
+
 <!-- Open Graph & Twitter Tags -->
-<meta property="og:locale" content="en_US" />
-<meta property="og:type" content="{{ website }}" />
+{% if excerpt %}<meta property="og:type" content="article" />{% else %}<meta property="og:type" content="website" />{% endif %}
 <meta property="og:title" content="{{ seotitle }}" />
 <meta property="og:description" content="{{ seodescription }}" />
-<meta property="og:url" content="{{ metadata.url }}" />
+<meta property="og:url" content="{{ metadata.url }}/{{ permalink }}" />
 <meta property="og:site_name" content="{{ metadata.name }}" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="{{ seotitle }}" />
