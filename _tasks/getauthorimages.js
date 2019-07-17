@@ -1,6 +1,8 @@
 var fs = require('fs');
 var axios = require('axios');
 var Twitter = require('twitter');
+var RateLimiter = require('limiter').RateLimiter;
+var limiter = new RateLimiter(100000, 'day');
 
 require('dotenv').config()
 
@@ -15,6 +17,11 @@ var client = new Twitter({
 });
 var params = {user_id: '550124146', count: 20};
 
+limiter.removeTokens(1, function(err, remainingRequests) {
+  if (remainingRequests < 1) {
+    console.log("Request Limit reached: 100.000 / 24h");
+  } else {
+
 client.get('statuses/user_timeline', params, function(error, tweets, response) {
     if (!error) {
 
@@ -23,12 +30,12 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
         var quote = tweets[tweet].is_quote_status;
         var retweeted = tweets[tweet].retweeted;
 
-        if (quote === true) {
+        if (quote == true) {
 
           let imglinks = tweets[tweet].quoted_status.user.profile_image_url_https;
           let imglinkl = imglinks.replace("_normal", "");
           let twitterhandle = tweets[tweet].quoted_status.user.screen_name;
-		  let handlestring = twitterhandle.toLowerCase();
+		      let handlestring = twitterhandle.toLowerCase();
           let path = "_cache/" + handlestring + ".jpg";
 
           axios({
@@ -42,12 +49,12 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
           });
 
         }
-        if (retweeted === true) {
+        if (retweeted == true) {
 
           let imglinks = tweets[tweet].retweeted_status.user.profile_image_url_https;
           let imglinkl = imglinks.replace("_normal", "");
           let twitterhandle = tweets[tweet].retweeted_status.user.screen_name;
-		  let handlestring = twitterhandle.toLowerCase();
+		      let handlestring = twitterhandle.toLowerCase();
           let path = "_cache/" + handlestring + ".jpg";
 
           axios({
@@ -65,4 +72,7 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
       };
       
     }
+});
+
+}
 });
