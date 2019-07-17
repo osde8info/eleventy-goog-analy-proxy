@@ -13,7 +13,7 @@ var client = new Twitter({
   access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 });
-var params = {user_id: '550124146', count: 10};
+var params = {user_id: '550124146', count: 20};
 
 client.get('statuses/user_timeline', params, function(error, tweets, response) {
     if (!error) {
@@ -28,7 +28,8 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
           let imglinks = tweets[tweet].quoted_status.user.profile_image_url_https;
           let imglinkl = imglinks.replace("_normal", "");
           let twitterhandle = tweets[tweet].quoted_status.user.screen_name;
-          let path = "_cache/" + twitterhandle + ".jpg";
+		  let handlestring = twitterhandle.toLowerCase();
+          let path = "_cache/" + handlestring + ".jpg";
 
           axios({
             method: 'get',
@@ -46,7 +47,8 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
           let imglinks = tweets[tweet].retweeted_status.user.profile_image_url_https;
           let imglinkl = imglinks.replace("_normal", "");
           let twitterhandle = tweets[tweet].retweeted_status.user.screen_name;
-          let path = "_cache/" + twitterhandle + ".jpg";
+		  let handlestring = twitterhandle.toLowerCase();
+          let path = "_cache/" + handlestring + ".jpg";
 
           axios({
             method: 'get',
