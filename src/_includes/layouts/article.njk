@@ -10,7 +10,7 @@ section: article
     <h1>{{ title }}</h1>
         
     <div class="meta">
-        <time datetime="{{ date | articleMachineDate }}">{{ date | articleHumanDate }}</time>
+        <time datetime="{{ date | articleMachineDate }}">{% if language %}{% if 'en' in language %}{{ date | articleHumanDate }}{% endif %}{% if 'de' in language %}{{ date | articleHumanDateDE }}{% endif %}{% endif %}</time>
         |
         <div class="categories">
             {% for tag in tags %}

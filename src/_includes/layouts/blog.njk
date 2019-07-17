@@ -16,7 +16,14 @@ section: archive
 
 <div class="content container">
 
-    {%- for article in collections.articles | reverse -%}
+    {% if 'en' in language %}
+        {% set articles = collections.articles_en %}
+    {% endif %}
+    {% if 'de' in language %}
+        {% set articles = collections.articles_de %}
+    {% endif %}
+
+    {%- for article in articles | reverse -%}
     
         <article>
             
