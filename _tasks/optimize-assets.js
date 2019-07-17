@@ -1,5 +1,8 @@
 const gulp = require('gulp');
 
+// HTML Dependencies
+const htmlmin = require('gulp-htmlmin');
+
 // CSS Dependencies
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
@@ -14,6 +17,13 @@ const uglify = require('gulp-uglify');
 // Image Dependencies
 const imagemin = require('gulp-imagemin');
 const merge = require('merge-stream');
+
+// HTML
+gulp.task('html:prod', () => {
+  return gulp.src('_site/**/*.html')
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest('_site'));
+});
 
 // CSS
 gulp.task('css:dev', function() {

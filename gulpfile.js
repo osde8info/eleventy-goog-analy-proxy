@@ -43,6 +43,7 @@ gulp.task('build:prod', gulp.series(
   'structure',
   'get:authorimages',
   'generate',
+  'html:prod',
   'css:prod',
   'js',
   'images'
