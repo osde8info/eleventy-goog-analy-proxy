@@ -14,11 +14,11 @@
     
     {% include "components/metatags.njk" %}
 
-    <link rel="preload" href="/assets/css/main.css" as="style" />
+    <link rel="preload" href="/assets/css/main.css?ver={{ settings.id }}" as="style" />
     <link rel="preload" href="/assets/fonts/playfairdisplay-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/playfairdisplay-regular.woff2" as="font" type="font/woff2" crossorigin>
 
-    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/main.css?ver={{ settings.id }}">
 
     {% include "components/favicons.njk" %}
 </head>

@@ -1,4 +1,7 @@
-const CACHE = "v1";
+---
+permalink: sw.js
+---
+const CACHE = "{{ settings.id }}";
 const offlineFallbackPage = "/offline/index.html";
 
 // Install stage sets up the offline page in the cache and opens a new cache
