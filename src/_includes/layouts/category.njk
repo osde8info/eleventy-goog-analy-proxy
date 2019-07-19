@@ -1,10 +1,42 @@
 ---
 layout: layouts/base.njk
-section: article
+section: archive
 ---
 
-<article>
-	<h1>{{ title }}</h1>
-	
-	<p>{{ layoutContent | safe }}</p>
-</article>
+<header class="content-header">
+    
+    <div class="container">
+
+	<h1>{{ title | addHash }}</h1>
+    {{ layoutContent | safe }}
+
+    </div>
+    
+</header>
+
+<div class="content container">
+
+    {% if 'en' in language %}
+        {% set articles = collections.code %}
+    {% endif %}
+    {% if 'de' in language %}
+        {% set articles = collections.code %}
+    {% endif %}
+
+    {%- for article in articles | reverse -%}
+    
+        <article>
+            
+            <h2>{{ article.data.title }}</h2>
+            
+            <div class="excerpt">
+                {{ article.data.excerpt }}
+            </div>
+            
+            <a href="{{ metadata.url }}{{ article.data.permalink | url }}" class="readmore">Artikel lesen</a>
+        
+        </article>
+    
+    {%- endfor -%}
+
+</div>

@@ -1,10 +1,20 @@
 ---
 layout: layouts/base.njk
-section: article
+section: page
 ---
 
-<article>
-	<h1>{{ title }}</h1>
-	
-	<p>{{ layoutContent | safe }}</p>
-</article>
+<header class="content-header">
+    
+    <div class="container">
+
+    <h1>{{ title }}</h1>
+
+    </div>
+    
+</header>
+
+<div class="content container">
+
+    {{ layoutContent | safe }}
+
+</div>
