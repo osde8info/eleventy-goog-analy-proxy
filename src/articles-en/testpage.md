@@ -1,6 +1,6 @@
 ---
 title: This is a test page
-permalink: /en/articles/testseite/index.html
+permalink: /en/articles/testpage/index.html
 date: 2019-04-04T14:14:00-05:00
 tags: ["marketing","code"]
 excerpt: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim."

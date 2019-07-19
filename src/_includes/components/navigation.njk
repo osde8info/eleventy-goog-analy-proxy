@@ -11,27 +11,29 @@
 <div class="language-switch">
 
     {% if translation_en %}
-        <a href="{{ translation_en }}">EN</a>
+        <a href="{{ metadata.url }}{{ translation_en }}">EN</a>
     {% else %}
-        <a href="/en">EN</a>
+        <a href="{{ metadata.url }}{{ metadata.url }}/en">EN</a>
     {% endif %}
     
     <span> / </span>
     
     {% if translation_de %}
-        <a href="{{ translation_de }}">DE</a>
+        <a href="{{ metadata.url }}{{ translation_de }}">DE</a>
     {% else %}
-        <a href="/de">DE</a>
+        <a href="{{ metadata.url }}{{ metadata.url }}/de">DE</a>
     {% endif %}
 
 </div>
 
+
+
 <div class="navigation-wrapper">
     <nav class="navigation-site">
     	<ul>
-    		<li><a href="/">01 Home</a></li>
-    		<li><a href="/articles/">02 Articles</a></li>
-    		<li><a href="/about/">03 About</a></li>
+    		<li><a href="{% if language %}{% if 'en' in language %}{{ metadata.url }}/en/{% endif %}{% if 'de' in language %}{{ metadata.url }}/de/{% endif %}{% endif %}">01 Home</a></li>
+    		<li><a href="{% if language %}{% if 'en' in language %}{{ metadata.url }}/en/articles/{% endif %}{% if 'de' in language %}{{ metadata.url }}/de/articles/{% endif %}{% endif %}">02 Articles</a></li>
+    		<li><a href="{% if language %}{% if 'en' in language %}{{ metadata.url }}/en/about/{% endif %}{% if 'de' in language %}{{ metadata.url }}/de/about/{% endif %}{% endif %}">03 About</a></li>
     		<li><a href="{{ metadata.social.linkedin.url }}" target="_blank" rel="noopener">04 LinkedIn</a></li>
     		<li><a href="{{ metadata.social.twitter.url }}" target="_blank" rel="noopener">05 Twitter</a></li>
     		<li><a href="{{ metadata.social.xing.url }}" target="_blank" rel="noopener">06 Xing</a></li>

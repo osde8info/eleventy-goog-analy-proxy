@@ -33,7 +33,7 @@ section: archive
                 {{ article.data.excerpt }}
             </div>
             
-            <a href="/{{ article.data.permalink | url }}" class="readmore">Artikel lesen</a>
+            <a href="{{ metadata.url }}{{ article.data.permalink | url }}" class="readmore">Artikel lesen</a>
         
         </article>
     
