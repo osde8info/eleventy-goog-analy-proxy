@@ -23,13 +23,8 @@
 				<div class="tweet-status row">{{ item.text | tweetRemoveLink }}</div>
 
 				<div class="row tweet-src">
-					<div class="col-1-4">
-						<img class="tweet-src-img" width="60" height="60" src="/assets/images/twitter/{{ item.quoted_status.user.screen_name | lower }}.jpg" alt="Twitter Profile Picture of {{ item.quoted_status.user.screen_name | safe }}" loading="lazy" />
-					</div>
-					<div class="col-3-4">
-						<div class="tweet-src-name">{{ item.quoted_status.user.screen_name | safe }}</div>
-						<div class="tweet-src-text">{{ item.quoted_status.text | tweetRemoveLink }}</div>
-					</div>
+					<div class="tweet-src-name">{{ item.quoted_status.user.screen_name | safe }}</div>
+					<div class="tweet-src-text">{{ item.quoted_status.text | tweetRemoveLink }}</div>
 				</div>
 
 			</div>
@@ -47,13 +42,8 @@
 			<div class="col-2-3 tweet-src">
 
 				<div class="row">
-						<div class="col-1-4">
-							<img class="tweet-src-img" width="60" height="60" src="/assets/images/twitter/{{ item.retweeted_status.user.screen_name | lower }}.jpg"  alt="Twitter Profile Picture of {{ item.retweeted_status.user.screen_name | safe }}" loading="lazy" />
-						</div>
-						<div class="col-3-4">
-							<div class="tweet-src-name">{{ item.retweeted_status.user.screen_name | safe }}</div>
-							<div class="tweet-src-text">{{ item.retweeted_status.text | tweetRemoveLink }}</div>
-						</div>
+					<div class="tweet-src-name">{{ item.retweeted_status.user.screen_name | safe }}</div>
+					<div class="tweet-src-text">{{ item.retweeted_status.text | tweetRemoveLink }}</div>
 				</div>
 
 			</div>

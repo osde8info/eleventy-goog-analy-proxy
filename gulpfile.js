@@ -13,9 +13,6 @@ gulp.task('structure', function () {
     .pipe(gulp.dest('./_cache'))
 });
 
-// Get external data
-gulp.task('get:authorimages', shell.task('node _tasks/getauthorimages.js'))
-
 // Generate
 gulp.task('generate', shell.task('eleventy'))
 
@@ -30,7 +27,6 @@ gulp.task('build:dev', gulp.series(
   'clean:build',
   'clean:cache',
   'structure',
-  'get:authorimages',
   'generate',
   'css:dev',
   'js',
@@ -41,7 +37,6 @@ gulp.task('build:prod', gulp.series(
   'clean:build',
   'clean:cache',
   'structure',
-  'get:authorimages',
   'generate',
   'html:prod',
   'css:prod',
