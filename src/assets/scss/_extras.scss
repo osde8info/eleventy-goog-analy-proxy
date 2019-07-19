@@ -49,6 +49,12 @@
 .tweet {
     position: relative;
     margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    @include border(bottom, 1px, solid,opacity-10);
+
+    &:last-child {
+        border: 0;
+    }
 
     &-date {
         display: inline-block;
