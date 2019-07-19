@@ -27,6 +27,12 @@ module.exports = function(eleventyConfig) {
     return result;
   });
 
+  // Add hash to category titles
+  eleventyConfig.addFilter("addHash", obj => {
+    var result = "#" + obj;
+    return result;
+  });
+
   // Date formatting
   eleventyConfig.addFilter("articleHumanDate", dateObj => { return moment(dateObj, "YYYY-MM-DDTHH:mm:ssZZ").format('Do MMMM YYYY'); });
   eleventyConfig.addFilter("articleMachineDate", dateObj => { return moment(dateObj, "YYYY-MM-DDTHH:mm:ssZZ").format('YYYY-MM-DDTHH:mm:ssZZ'); });
