@@ -19,6 +19,11 @@
 }
 .logo {
     @include var(fill, text-primary);
+
+    svg {
+        width: 3.9rem;
+        height: 4.4rem;
+    }
 }
 
 /*--------------------------------------------------------------
