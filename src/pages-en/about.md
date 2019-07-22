@@ -9,11 +9,13 @@ translation_en: /en/about/index.html
 translation_de: /de/about/index.html
 
 seoindex: true
-seotitle: "Dies ist ein SEO Title-Tag für die Testseite"
-seodescription: "Dies ist eine SEO-Description für die Testseite"
+seotitle: "Who is Dennis Hagemeier?"
+seodescription: "The days of blind actionism in marketing are over. Time for data-based, automated marketing."
 --- 
-Mein Name ist Dennis Hagemeier, und ich verhelfe Unternehmen zu mehr Kontakten im Web. Dazu nutze ich die gesamte Palette des Online Marketings, insbesondere im Bereich Inbound Marketing. Ob A/B-Tests, segmentbasierte Mailings oder Cross-Audience-Pushnotifications – ich liebe die technischen Spielereien, die zu mehr Conversions führen.
+My name is Dennis Hagemeier, and I help companies make more contacts on the web. I use the entire range of online marketing, especially in the area of inbound marketing. Whether A/B tests, segment-based mailings or cross-audience push notifications - I love the technical gimmicks that lead to more conversions.
 
-Wichtig ist mir dabei gleichzeitig auch die Messbarkeit jeglicher Maßnahmen. Die Zeiten blinden Aktionismus sind im Marketing vorbei. Die Zeit von Web Controlling und Tag Management ist angebrochen – auch und gerade für Offline-Kampagnen.
+Particularly in focus: the measurability of all measures. The days of blind actionism in marketing are over. The time of web controlling and tag management has dawned.
 
-Aktuell arbeite ich als Inbound Marketing Manager bei einer der führenden Online-Marketing-Agenturen Deutschlands, der MSO Digital.
+At the same time, this website is also my playground for web design and web development.
+
+Click through and discover my new [articles](/en/articles/index.html)!

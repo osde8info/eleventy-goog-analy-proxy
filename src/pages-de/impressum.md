@@ -9,8 +9,8 @@ translation_en: /de/impressum/index.html
 translation_de: /de/impressum/index.html
 
 seoindex: true
-seotitle: "Dies ist ein SEO Title-Tag für die Testseite"
-seodescription: "Dies ist eine SEO-Description für die Testseite"
+seotitle: "Impressum"
+seodescription: "Erfahre mehr darüber, wer diese Website betreibt."
 --- 
 ## Angaben gemäß § 5 TMG
 
