@@ -1,6 +1,6 @@
 require('dotenv').config()
 const environment = process.env.ENVIRONMENT;
-if (environment == "dev") { var path = "http://localhost:3000"; } else { var path = "https://d-hagemeier.com"; };
+if (environment == "dev") { var path = "http://localhost:3000"; } else { var path = "https://www.d-hagemeier.com"; };
 
 module.exports = {
   "title": "Dennis Hagemeier | Marketing, Code & Design",
