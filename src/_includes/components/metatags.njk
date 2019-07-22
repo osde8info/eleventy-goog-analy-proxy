@@ -3,8 +3,10 @@
 <meta name="description" content="{{ seodescription }}"/>
 
 {% if seoindex %}<meta name="robots" content="index, follow">{% else %}<meta name="robots" content="noindex">{% endif %}
-{% if translation_en %}<link rel="alternate" hreflang="en" href="{{ metadata.url }}/{{ translation_de }}"/>{% endif %}
-{% if translation_de %}<link rel="alternate" hreflang="de" href="{{ metadata.url }}/{{ translation_en }}"/>{% endif %}
+{% if translation_en %}<link rel="alternate" hreflang="en" href="{{ metadata.url }}{{ translation_de }}"/>{% endif %}
+{% if translation_de %}<link rel="alternate" hreflang="de" href="{{ metadata.url }}{{ translation_en }}"/>{% endif %}
+
+<link rel="canonical" href="{{ metadata.url }}{{ permalink }}">
 
 <!-- Open Graph & Twitter Tags -->
 {% if excerpt %}<meta property="og:type" content="article" />{% else %}<meta property="og:type" content="website" />{% endif %}
@@ -12,9 +14,18 @@
 <meta property="og:description" content="{{ seodescription }}" />
 <meta property="og:url" content="{{ metadata.url }}/{{ permalink }}" />
 <meta property="og:site_name" content="{{ metadata.name }}" />
+<meta property="og:image" content="">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="{{ seotitle }}" />
 <meta name="twitter:description" content="{{ seodescription }}" />
+<meta name="twitter:site" content="@{{ metadata.social.twitter.name }}">
+
+<!-- Social Media Connections -->
+<link href="{{ metadata.social.twitter.url }}" rel="me">
+<link href="{{ metadata.social.instagram.url }}" rel="me">
+<link href="{{ metadata.social.github.url }}" rel="me">
+<link href="{{ metadata.social.linkedin.url }}" rel="me">
+<link href="{{ metadata.social.xing.url }}" rel="me">
 
 <!-- Webmention Support -->
 <link rel="webmention" href="https://webmention.io/d-hagemeier.de/webmention" />
