@@ -2,9 +2,23 @@
   command = "yarn build"
   publish = "_site"
 
-# Redirects
+# Netlify subdomain
 [[redirects]]
-  from = "/*"
-  to = "https://d-hagemeier.de"
+    from = "https://d-hagemeier.netlify.com/*"
+    to = "https://d-hagemeier.com/:splat"
+    status = 301
+    force = true
+
+# Language redirects
+[[redirects]]
+  from = "/"
+  to = "https://d-hagemeier.com/de/"
+  status = 302
+  force = true
+  conditions = {Language = ["de,de-at,de-de,de-li,de-lu,de-ch"]}
+
+[[redirects]]
+  from = "/"
+  to = "https://d-hagemeier.com/en/"
   status = 302
   force = true
