@@ -56,3 +56,34 @@ body {
 	max-width: $maxContentWidth;
 	margin: 0 auto;
 }
+
+details {
+	summary {
+		position: relative;
+		cursor: pointer;
+		list-style: none;
+		margin-bottom: 1rem;
+		padding-left: 2rem;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: .75rem;
+			left: 0;
+			width: 0; 
+  			height: 0; 
+  			border-top: .5rem solid transparent;
+  			border-bottom: .5rem solid transparent;
+  			border-left: .5rem solid map-get($vars, color-primary);
+		}
+	}
+	summary::-webkit-details-marker {
+		display: none;
+	}
+
+	&[open] {
+		summary::before {
+			transform: rotate(90deg);
+		}
+	}
+}

@@ -42,7 +42,12 @@
     </nav>
     <nav class="navigation-footer">
         <ul>
-            <li><a href="">Imprint</a> | <a href="">Data Policy</a></li>
+            {% if language %}
+                {% if 'en' in language %}<li><a href="{{ metadata.url }}/de/impressum/index.html">Imprint</a> | <a href="{{ metadata.url }}/de/datenschutz/index.html">Data Policy</a></li>{% endif %}
+                {% if 'de' in language %}<li><a href="{{ metadata.url }}/de/impressum/index.html">Impressum</a> | <a href="{{ metadata.url }}/de/datenschutz/index.html">Datenschutz</a></li>{% endif %}
+            {% else %}
+            <li><a href="{{ metadata.url }}/de/impressum/index.html">Imprint</a> | <a href="{{ metadata.url }}/de/datenschutz/index.html">Data Policy</a></li>
+            {% endif %}
             <li>Built with <a href="https://www.11ty.io/" target="_blank" rel="noopener">Eleventy</a></li>
             <li>Hosted on <a href="https://www.netlify.com/" target="_blank" rel="noopener">Netlify</a></li>
             <li>View source at <a href="{{ metadata.social.github.source }}" target="_blank" rel="noopener">Github</a></li>
