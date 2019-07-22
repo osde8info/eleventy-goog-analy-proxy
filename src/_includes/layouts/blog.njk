@@ -27,13 +27,13 @@ section: archive
     
         <article>
             
-            <h2>{{ article.data.title }}</h2>
+            <a href="{{ metadata.url }}{{ article.data.permalink | url }}"><h2>{{ article.data.title }}</h2></a>
             
             <div class="excerpt">
                 {{ article.data.excerpt }}
             </div>
             
-            <a href="{{ metadata.url }}{{ article.data.permalink | url }}" class="readmore">Artikel lesen</a>
+            <a href="{{ metadata.url }}{{ article.data.permalink | url }}" class="readmore">{% if language %}{% if 'en' in language %}Read article{% endif %}{% if 'de' in language %}Artikel lesen{% endif %}{% endif %}</a>
         
         </article>
     
