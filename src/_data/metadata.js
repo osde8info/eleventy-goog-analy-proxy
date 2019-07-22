@@ -1,9 +1,13 @@
-{
-  "title": "Personal website d-hagemeier.de",
-  "url": "http://localhost:3000",
+require('dotenv').config()
+const environment = process.env.ENVIRONMENT;
+if (environment == "dev") { var path = "http://localhost:3000"; } else { var path = "https://d-hagemeier.com"; };
+
+module.exports = {
+  "title": "Dennis Hagemeier | Marketing, Code & Design",
+  "url": path,
   "type": "website",
   "name": "Dennis Hagemeier",
-  "email": "hello@d-hagemeier.de",
+  "email": "hello@d-hagemeier.com",
   "social": {
     "linkedin": {
       "name": "Dennis Hagemeier",
@@ -27,4 +31,4 @@
       "source": "https://github.com/dennishagemeier/d-hagemeier"
     }
   }
-}
+};
