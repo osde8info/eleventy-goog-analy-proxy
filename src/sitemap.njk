@@ -9,7 +9,7 @@ eleventyExcludeFromCollections: true
 
   <url>
     <loc>{{ item.url | url | absoluteUrl(metadata.url) }}</loc>
-    <lastmod>{{ item.date | tweetMachineDate }}</lastmod>
+    <lastmod>{{ item.date | sitemapDate }}</lastmod>
     {% if item.data.translation_en %}<xhtml:link rel="alternate" hreflang="en" href="{{ item.data.translation_en | url | absoluteUrl(metadata.url) }}" />{% endif %}
     {% if item.data.translation_de %}<xhtml:link rel="alternate" hreflang="de" href="{{ item.data.translation_de | url | absoluteUrl(metadata.url) }}" />{% endif %}
   </url>
