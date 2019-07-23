@@ -12,6 +12,8 @@ translation_de: /de/articles/testseite/index.html
 seoindex: true
 seotitle: "Dies ist ein SEO Title-Tag für die Testseite"
 seodescription: "Dies ist eine SEO-Description für die Testseite"
+
+eleventyExcludeFromCollections: true
 ---
 
 ## Paragraphen
