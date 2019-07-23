@@ -14,7 +14,7 @@ a:active {
 .comments {
 	a {
         position: relative;
-        z-index: 2;
+        z-index: 0;
         @include var(color, text-primary);
         
         &::after {
