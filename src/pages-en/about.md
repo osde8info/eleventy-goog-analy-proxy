@@ -2,7 +2,7 @@
 layout: layouts/page.njk
 
 title: About
-permalink: /de/about/index.html
+permalink: /en/about/index.html
 
 language: en
 translation_en: /en/about/index.html
