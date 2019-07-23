@@ -35,3 +35,11 @@
   to = "https://www.d-hagemeier.com/en/"
   status = 302
   force = true
+
+# HTTP Header
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Link = "</assets/css/main.css>; rel=preload; as=style"
