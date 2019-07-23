@@ -26,29 +26,35 @@
 
 </div>
 
-
-
 <div class="navigation-wrapper">
     <nav class="navigation-site">
     	<ul>
-    		<li><a href="{% if language %}{% if 'en' in language %}{{ metadata.url }}/en/index.html{% endif %}{% if 'de' in language %}{{ metadata.url }}/de/index.html{% endif %}{% endif %}">01 Home</a></li>
-    		<li><a href="{% if language %}{% if 'en' in language %}{{ metadata.url }}/en/articles/index.html{% endif %}{% if 'de' in language %}{{ metadata.url }}/de/articles/index.html{% endif %}{% endif %}">02 Articles</a></li>
-    		<li><a href="{% if language %}{% if 'en' in language %}{{ metadata.url }}/en/about/index.html{% endif %}{% if 'de' in language %}{{ metadata.url }}/de/about/index.html{% endif %}{% endif %}">03 About</a></li>
-    		<li><a href="{{ metadata.social.twitter.url }}" target="_blank" rel="noopener">04 Twitter</a></li>
+            {% if 'de' in language %}
+                <li><a href="{{ metadata.url }}/de/index.html">01 Home</a></li>
+    		    <li><a href="{{ metadata.url }}/de/articles/index.html">02 Articles</a></li>
+    		    <li><a href="{{ metadata.url }}/de/about/index.html">03 About</a></li>
+            {% else %}
+                <li><a href="{{ metadata.url }}/en/index.html">01 Home</a></li>
+    		    <li><a href="{{ metadata.url }}/en/articles/index.html">02 Articles</a></li>
+    		    <li><a href="{{ metadata.url }}/en/about/index.html">03 About</a></li>
+            {% endif %}
+     		<li><a href="{{ metadata.social.twitter.url }}" target="_blank" rel="noopener">04 Twitter</a></li>
     		<li><a href="{{ metadata.social.instagram.url }}" target="_blank" rel="noopener">05 Instagram</a></li>
     	</ul>
     </nav>
     <nav class="navigation-footer">
         <ul>
-            {% if language %}
-                {% if 'en' in language %}<li><a href="{{ metadata.url }}/de/impressum/index.html">Imprint</a> | <a href="{{ metadata.url }}/de/datenschutz/index.html">Data Policy</a></li>{% endif %}
-                {% if 'de' in language %}<li><a href="{{ metadata.url }}/de/impressum/index.html">Impressum</a> | <a href="{{ metadata.url }}/de/datenschutz/index.html">Datenschutz</a></li>{% endif %}
+            {% if 'de' in language %}
+                <li><a href="{{ metadata.url }}/de/impressum/index.html">Impressum</a> | <a href="{{ metadata.url }}/de/datenschutz/index.html">Datenschutz</a></li>
+                <li>Erstellt mit <a href="https://www.11ty.io/" target="_blank" rel="noopener">Eleventy</a></li>
+                <li>Gehostet bei <a href="https://www.netlify.com/" target="_blank" rel="noopener">Netlify</a></li>
+                <li>Quellcode auf <a href="{{ metadata.social.github.source }}" target="_blank" rel="noopener">Github</a></li>
             {% else %}
-            <li><a href="{{ metadata.url }}/de/impressum/index.html">Imprint</a> | <a href="{{ metadata.url }}/de/datenschutz/index.html">Data Policy</a></li>
+                <li><a href="{{ metadata.url }}/de/impressum/index.html">Imprint</a> | <a href="{{ metadata.url }}/de/datenschutz/index.html">Data Policy</a></li>
+                <li>Built with <a href="https://www.11ty.io/" target="_blank" rel="noopener">Eleventy</a></li>
+                <li>Hosted on <a href="https://www.netlify.com/" target="_blank" rel="noopener">Netlify</a></li>
+                <li>View source at <a href="{{ metadata.social.github.source }}" target="_blank" rel="noopener">Github</a></li>
             {% endif %}
-            <li>Built with <a href="https://www.11ty.io/" target="_blank" rel="noopener">Eleventy</a></li>
-            <li>Hosted on <a href="https://www.netlify.com/" target="_blank" rel="noopener">Netlify</a></li>
-            <li>View source at <a href="{{ metadata.social.github.source }}" target="_blank" rel="noopener">Github</a></li>
         </ul>
     </nav>
 </div>
