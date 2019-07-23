@@ -9,6 +9,19 @@
     status = 301
     force = true
 
+# Old domain redirects
+[[redirects]]
+    from = "https://d-hagemeier.de/*"
+    to = "https://www.d-hagemeier.com/"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "https://www.d-hagemeier.de/*"
+    to = "https://www.d-hagemeier.com/"
+    status = 301
+    force = true
+
 # Language redirects
 [[redirects]]
   from = "/"
