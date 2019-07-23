@@ -8,11 +8,11 @@
         {% if language %}
 	        {% if 'en' in language %}
                 <h3>What's your opinion on the article?</h3>
-                <div>Discuss with the community and me <a href="http://twitter.com/intent/tweet?text={{ title }}&url={{ metadata.url }}/{{ permalink }}&via={{ metadata.social.twitter.name }}" target="_blank" rel="noreferrer noopener">via Twitter</a>!</div>
+                <div>Discuss with the community and me <a href="http://twitter.com/intent/tweet?text={{ title }}&url={{ metadata.url }}{{ permalink }}&via={{ metadata.social.twitter.name }}" target="_blank" rel="noreferrer noopener">via Twitter</a>!</div>
             {% endif %}
 	        {% if 'de' in language %}
                 <h3>Was ist deine Meinung zum Artikel?</h3>
-                <div>Diskutiere mit der Community und mir <a href="http://twitter.com/intent/tweet?text={{ title }}&url={{ metadata.url }}/{{ permalink }}&via={{ metadata.social.twitter.name }}" target="_blank" rel="noreferrer noopener">via Twitter</a>!</div>
+                <div>Diskutiere mit der Community und mir <a href="http://twitter.com/intent/tweet?text={{ title }}&url={{ metadata.url }}{{ permalink }}&via={{ metadata.social.twitter.name }}" target="_blank" rel="noreferrer noopener">via Twitter</a>!</div>
             {% endif %}
         {% endif %}
     </div>
