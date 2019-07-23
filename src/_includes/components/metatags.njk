@@ -30,3 +30,10 @@
 <!-- Webmention Support -->
 <link rel="webmention" href="https://webmention.io/d-hagemeier.de/webmention" />
 <link rel="pingback" href="https://webmention.io/d-hagemeier.de/xmlrpc" />
+
+<!-- Feed -->
+{% if 'de' in language %}
+<link type="application/atom+xml" rel="alternate" href="{{ metadata.url }}/de/feed.xml" title="{{ metadata.title }}">
+{% else %}
+<link type="application/atom+xml" rel="alternate" href="{{ metadata.url }}/en/feed.xml" title="{{ metadata.title }}">
+{% endif %}

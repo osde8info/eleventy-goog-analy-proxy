@@ -46,11 +46,13 @@
         <ul>
             {% if 'de' in language %}
                 <li><a href="{{ metadata.url }}/de/impressum/index.html">Impressum</a> | <a href="{{ metadata.url }}/de/datenschutz/index.html">Datenschutz</a></li>
+                <li>Abonniere den <a href="{{ metadata.url }}/de/feed.xml">Feed</a></li>
                 <li>Erstellt mit <a href="https://www.11ty.io/" target="_blank" rel="noopener">Eleventy</a></li>
                 <li>Gehostet bei <a href="https://www.netlify.com/" target="_blank" rel="noopener">Netlify</a></li>
                 <li>Quellcode auf <a href="{{ metadata.social.github.source }}" target="_blank" rel="noopener">Github</a></li>
             {% else %}
                 <li><a href="{{ metadata.url }}/de/impressum/index.html">Imprint</a> | <a href="{{ metadata.url }}/de/datenschutz/index.html">Data Policy</a></li>
+                <li>Subscribe to the <a href="{{ metadata.url }}/en/feed.xml">feed</a></li>
                 <li>Built with <a href="https://www.11ty.io/" target="_blank" rel="noopener">Eleventy</a></li>
                 <li>Hosted on <a href="https://www.netlify.com/" target="_blank" rel="noopener">Netlify</a></li>
                 <li>View source at <a href="{{ metadata.social.github.source }}" target="_blank" rel="noopener">Github</a></li>
