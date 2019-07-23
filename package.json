@@ -47,6 +47,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
     "@babel/polyfill": "^7.4.4",
     "debug": "^4.1.1",
+    "eleventy-plugin-nesting-toc": "^1.1.0",
     "limiter": "^1.1.4",
     "moment": "^2.24.0"
   },

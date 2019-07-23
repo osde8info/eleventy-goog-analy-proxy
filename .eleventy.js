@@ -2,6 +2,7 @@ const dotenv = require("dotenv");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const moment = require('moment');
+const pluginTOC = require('eleventy-plugin-nesting-toc');
 
 module.exports = function(eleventyConfig) {
 
@@ -27,9 +28,13 @@ module.exports = function(eleventyConfig) {
     return result;
   });
 
-  // Add hash to category titles
+  // Add/remove hash
   eleventyConfig.addFilter("addHash", obj => {
     var result = "#" + obj;
+    return result;
+  });
+  eleventyConfig.addFilter("removeHash", obj => {
+    var result = obj.replace(/# /g, "");
     return result;
   });
 
@@ -45,13 +50,24 @@ module.exports = function(eleventyConfig) {
   // Passthroughs
   eleventyConfig.addPassthroughCopy("src/assets/favicons");
   eleventyConfig.addPassthroughCopy("src/assets/fonts");
+  eleventyConfig.addPassthroughCopy("src/robots.txt");
 
   // Plugins
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(syntaxHighlight);
+
+  const tocopts = {
+    tags: ['h2', 'h3', 'h4'],
+    wrapper: 'nav',
+    wrapperClass: 'toc-nav',
+    headingText: 'Navigation',
+    headingTag: 'h2'
+  }
+  eleventyConfig.addPlugin(pluginTOC, tocopts);
   
   // Markdown Plugins
   let markdownIt = require("markdown-it");
+  let markdownItAnchor = require('markdown-it-anchor');
   let options = {
     html: true,
 	  xhtmlOut: true,
@@ -59,16 +75,30 @@ module.exports = function(eleventyConfig) {
     linkify: true,
 	  typographer: true
   };
-  let opts = {
+  let anchoroptions = {
     permalink: true,
-    permalinkClass: "direct-link",
-    permalinkSymbol: "#"
+    permalinkSymbol: '#',
+    permalinkClass: 'heading-anchor',
+    permalinkBefore: true,
+    level: 2,
+    slugify: s =>
+        encodeURIComponent(
+            'h-' +
+                String(s)
+                    .trim()
+                    .toLowerCase()
+                    .replace(/[.,\/#!$%\^&\*;:{}=_`~()]/g, '')
+                    .replace(/\s+/g, '-')
+        )
   };
+
+  // Markdown Parsing
+  eleventyConfig.setLibrary( 'md', markdownIt(options).use(markdownItAnchor, anchoroptions));
 
   return {
     templateFormats: [ "md", "njk", "html" ],
 	  pathPrefix: "/",
-    markdownTemplateEngine: "liquid",
+    markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
     dataTemplateEngine: "njk",
     passthroughFileCopy: true,

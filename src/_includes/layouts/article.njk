@@ -24,17 +24,21 @@ section: article
     
 </header>
 
-<div class="content container">
+<article class="content container">
 
     <div class="excerpt">
         {{ excerpt | safe }}
     </div>
 
+    <aside class="toc">
+        {{ content | toc | removeHash | safe }}
+    </aside>
+
     {{ layoutContent | safe }}
 
     {% include "components/comments.njk" %}
 
-</div>
+</article>
 
 <div class="recommendations container">
 
