@@ -14,16 +14,17 @@ seodescription: "Erfahre mehr darüber, wer diese Website betreibt."
 --- 
 ## Angaben gemäß § 5 TMG
 
-Dennis Hagemeier<br />
-St. Antoniort 50<br />
-49610 Quakenbrück<br />
-E-Mail: hello@d-hagemeier.com<br />
+Dennis Hagemeier
+St. Antoniort 50
+49610 Quakenbrück
+Deutschland
+E-Mail: hello@d-hagemeier.com
 Telefon: Auf Anfrage
 
 ## Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
 
-Dennis Hagemeier<br />
-St. Antoniort 50<br />
+Dennis Hagemeier
+St. Antoniort 50
 49610 Quakenbrück
 
 ## Haftungsausschluss (Disclaimer)

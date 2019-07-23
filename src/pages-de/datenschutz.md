@@ -21,14 +21,13 @@ Mit der nachfolgenden Datenschutzerklärung informieren wir Sie insbesondere üb
 <details>
 <summary><h3>I. Informationen über uns als Verantwortliche</h3></summary>
 Verantwortlicher Anbieter dieses Internetauftritts im datenschutzrechtlichen Sinne ist:
-<br /><br />
-Dennis Hagemeier<br />
-St. Antoniort 50<br />
-49610 Quakenbrück<br />
-Deutschland
 
-Telefon: Auf Anfrage<br />
+Dennis Hagemeier
+St. Antoniort 50
+49610 Quakenbrück
+Deutschland
 E-Mail: hello@d-hagemeier.com
+Telefon: Auf Anfrage
 </details>
 
 <details>
