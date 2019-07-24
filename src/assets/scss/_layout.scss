@@ -79,7 +79,7 @@
 
 .toc {
     position: relative;
-    width: 120%;
+    width: calc(120% - 4px);
     margin: 2.5rem 0 1.5rem -10%;
     padding: 1rem 10% 0 10%;
     @include var(background-color, opacity-2);
@@ -110,7 +110,7 @@
 --------------------------------------------------------------*/
 .comments {
     position: relative;
-    width: 120%;
+    width: calc(120% - 4px);
     margin: 2.5rem 0 1.5rem -10%;
     padding: 1rem 10%;
     @include var(background-color, opacity-2);
