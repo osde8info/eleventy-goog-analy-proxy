@@ -79,8 +79,8 @@
 
 .toc {
     position: relative;
-    width: calc(120% - 4px);
-    margin: 2.5rem 0 1.5rem -10%;
+    width: 100%;
+    margin: 2.5rem 0 1.5rem 0;
     padding: 1rem 10% 0 10%;
     @include var(background-color, opacity-2);
     @include border(top, 2px, solid, opacity-10);
@@ -89,6 +89,11 @@
     @include border(bottom, 2px, solid, opacity-10);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+
+    @include bp-laptop {
+        width: calc(120% - 4px);
+        margin: 2.5rem 0 1.5rem -10%;
+    }
 
     ol {
         margin: 0 0 1.5em 0;
@@ -110,8 +115,8 @@
 --------------------------------------------------------------*/
 .comments {
     position: relative;
-    width: calc(120% - 4px);
-    margin: 2.5rem 0 1.5rem -10%;
+    width: 100%;
+    margin: 2.5rem 0 1.5rem 0;
     padding: 1rem 10%;
     @include var(background-color, opacity-2);
     @include border(top, 2px, solid, opacity-10);
@@ -119,6 +124,11 @@
     @include border(right, 2px, solid, opacity-10);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+
+    @include bp-laptop {
+        width: calc(120% - 4px);
+        margin: 2.5rem 0 1.5rem -10%;
+    }
 
     .twitter-icon svg {
         width: 4rem;
