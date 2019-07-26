@@ -90,3 +90,28 @@
         border-radius: 5px;
     }
 }
+
+/*--------------------------------------------------------------
+# Skip to content
+--------------------------------------------------------------*/
+.skip-main {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+	
+    &:focus,
+    &:active {
+        top: 90px;
+        width: auto;
+        min-width: 200px;
+        height: auto;
+        overflow: auto;
+        clip: auto;
+        text-decoration: underline;
+    }
+}
