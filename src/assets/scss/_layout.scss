@@ -65,11 +65,14 @@
     }
     
     .meta {
-        font-family: $headingFont;
         
         time,
         .categories {
             display: inline-block;
+        }
+        span {
+            margin-left: .2em;
+            margin-right: .4em;
         }
     }
     a {
