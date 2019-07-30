@@ -87,8 +87,7 @@
     @include border(left, 2px, solid, opacity-10);
     @include border(right, 2px, solid, opacity-10);
     @include border(bottom, 2px, solid, opacity-10);
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-radius: 5px;
 
     @include bp-laptop {
         width: calc(120% - 4px);
