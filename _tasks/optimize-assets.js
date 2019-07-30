@@ -5,10 +5,10 @@ const htmlmin = require('gulp-htmlmin');
 
 // CSS Dependencies
 const sass = require('gulp-sass');
-const sourcemaps = require('gulp-sourcemaps');
-const csso = require('gulp-csso');
-const purgecss = require('gulp-purgecss');
-const autoprefixer = require('gulp-autoprefixer');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const uncss = require('postcss-uncss');
+const cssnano = require('cssnano');
 
 // JS Dependencies
 const babel = require('gulp-babel');
@@ -28,22 +28,24 @@ gulp.task('html:prod', () => {
 // CSS
 gulp.task('css:dev', function() {
   return gulp.src('src/assets/scss/*.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-    .pipe(autoprefixer({ cascade: false }))
-    .pipe(csso({ restructure: true, debug: true }))
-	  .pipe(sourcemaps.write(''))
+    .pipe(sass({ outputStyle: 'nested' }).on('error', sass.logError))
+	  .pipe(postcss([
+      autoprefixer() 
+    ]))
     .pipe(gulp.dest('_site/assets/css'));
 })
 
 gulp.task('css:prod', function() {
   return gulp.src('src/assets/scss/*.scss')
-    .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-    .pipe(autoprefixer({ cascade: false }))
-	  .pipe(purgecss({ content: ['_site/**/*.html'] }))
-    .pipe(csso({ restructure: true, debug: false }))
-	  .pipe(sourcemaps.write(''))
+	  .pipe(postcss([
+      autoprefixer(),
+      uncss({ 
+        html: ['_site/**/*.html'],
+        ignore: [':root', '[data-theme="dark"]']
+      }),
+      cssnano()
+    ]))
     .pipe(gulp.dest('_site/assets/css'));
 })
 
