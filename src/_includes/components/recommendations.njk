@@ -12,7 +12,9 @@
 
         <li class="recommendations-item">
             <a href="{{ metadata.url }}{{ article.data.permalink | url }}" class="row">
-                <time class="recommendations-date col-1-3" datetime="{{ article.data.date | articleMachineDate }}">{% if language %}{% if 'en' in language %}{{ article.data.date | articleHumanDate }}{% endif %}{% if 'de' in language %}{{ article.data.date | articleHumanDateDE }}{% endif %}{% endif %}</time>
+                <time class="recommendations-date col-1-3" datetime="{{ article.data.date | date("YYYY-MM-DDTHH:mm:ssZZ", "YYYY-MM-DDTHH:mm:ssZZ") }}">
+                    {{ article.data.date | date("YYYY-MM-DDTHH:mm:ssZZ", "Do MMMM YYYY", language) }}
+                </time>
                 <div class="recommendations-title col-2-3">{{ article.data.title }}</div>
             </a>
         </li>

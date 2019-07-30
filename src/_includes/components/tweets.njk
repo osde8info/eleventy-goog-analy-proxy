@@ -14,7 +14,9 @@
 		
 			<div class="col-1-3">
 				<a class="tweet-date" href="{{ metadata.social.twitter.url }}/status/{{ item.id_str }}" title="{% if 'de' in language %}Tweet ansehen{% else %}Show tweet{% endif %}" target="_blank" rel="noopener">
-					<time datetime="{{ item.created_at | tweetMachineDate }}">{% if language %}{% if 'en' in language %}{{ item.created_at | tweetHumanDate }}{% endif %}{% if 'de' in language %}{{ item.created_at | tweetHumanDateDE }}{% endif %}{% endif %}</time>
+					<time datetime="{{ item.created_at | date("ddd MMM D HH:mm:ss ZZ YYYY", "YYYY-MM-DDTHH:mm:ssZZ") }}">
+						{{ item.created_at | date("ddd MMM D HH:mm:ss ZZ YYYY", "Do MMMM YYYY", language) }}
+					</time>
 				</a>
 			</div>
 
@@ -35,7 +37,9 @@
 		
 			<div class="col-1-3">
 				<a class="tweet-date" href="{{ metadata.social.twitter.url }}/status/{{ item.id_str }}" title="{% if 'de' in language %}Tweet ansehen{% else %}Show tweet{% endif %}" target="_blank" rel="noopener">
-					<time datetime="{{ item.created_at | tweetMachineDate }}">{% if language %}{% if 'en' in language %}{{ item.created_at | tweetHumanDate }}{% endif %}{% if 'de' in language %}{{ item.created_at | tweetHumanDateDE }}{% endif %}{% endif %}</time>
+					<time datetime="{{ item.created_at | date("ddd MMM D HH:mm:ss ZZ YYYY", "YYYY-MM-DDTHH:mm:ssZZ") }}">
+						{{ item.created_at | date("ddd MMM D HH:mm:ss ZZ YYYY", "Do MMMM YYYY", language) }}
+					</time>
 				</a>
 			</div>
 
@@ -54,7 +58,9 @@
 
 			<div class="col-1-3">
 				<a class="tweet-date" href="{{ metadata.social.twitter.url }}/status/{{ item.id_str }}" title="{% if 'de' in language %}Tweet ansehen{% else %}Show tweet{% endif %}" target="_blank" rel="noopener">
-					<time datetime="{{ item.created_at | tweetMachineDate }}">{% if language %}{% if 'en' in language %}{{ item.created_at | tweetHumanDate }}{% endif %}{% if 'de' in language %}{{ item.created_at | tweetHumanDateDE }}{% endif %}{% endif %}</time>
+					<time datetime="{{ item.created_at | date("ddd MMM D HH:mm:ss ZZ YYYY", "YYYY-MM-DDTHH:mm:ssZZ") }}">
+						{{ item.created_at | date("ddd MMM D HH:mm:ss ZZ YYYY", "Do MMMM YYYY", language) }}
+					</time>
 				</a>
 			</div>
 

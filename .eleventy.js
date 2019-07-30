@@ -39,15 +39,9 @@ module.exports = function(eleventyConfig) {
   });
 
   // Date formatting
-  eleventyConfig.addFilter("articleHumanDate", dateObj => { return moment(dateObj, "YYYY-MM-DDTHH:mm:ssZZ").format('Do MMMM YYYY'); });
-  eleventyConfig.addFilter("articleMachineDate", dateObj => { return moment(dateObj, "YYYY-MM-DDTHH:mm:ssZZ").format('YYYY-MM-DDTHH:mm:ssZZ'); });
-  eleventyConfig.addFilter("tweetHumanDate", dateObj => { return moment(dateObj, "ddd MMM D HH:mm:ss ZZ YYYY").format('Do MMMM YYYY'); });
-  eleventyConfig.addFilter("tweetMachineDate", dateObj => { return moment(dateObj, "ddd MMM D HH:mm:ss ZZ YYYY").format('YYYY-MM-DDTHH:mm:ssZZ'); });
-
-  eleventyConfig.addFilter("articleHumanDateDE", dateObj => { return moment(dateObj, "YYYY-MM-DDTHH:mm:ssZZ").locale('de').format('Do MMMM YYYY'); });
-  eleventyConfig.addFilter("tweetHumanDateDE", dateObj => { return moment(dateObj, "ddd MMM D HH:mm:ss ZZ YYYY").locale('de').format('Do MMMM YYYY'); });
-
-  eleventyConfig.addFilter("sitemapDate", dateObj => { return moment(dateObj, "ddd MMM D HH:mm:ss ZZ YYYY").format('YYYY-MM-DDTHH:mm:ssZ'); });
+  eleventyConfig.addFilter("date", function(dateObj, fromformat , toformat, language = "en") { 
+    return moment(dateObj, fromformat).locale(language).format(toformat);
+  });
 
   // Passthroughs
   eleventyConfig.addPassthroughCopy("src/assets/favicons");
