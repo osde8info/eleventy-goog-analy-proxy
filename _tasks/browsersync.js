@@ -11,7 +11,8 @@ function reload(done) {
 // BrowserSync Server
 gulp.task('browsersync', function(done) {
   server.init({
-    server: { baseDir: '_site' }
+    server: { baseDir: '_site' },
+    startPath: "/en"
   })
   done()
 })
