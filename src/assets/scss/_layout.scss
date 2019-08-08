@@ -57,6 +57,11 @@
     @extend %gradient-bg;
     background-size: 200% 200%;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 30% 100%, 0 90%);
+
+    // Intro Animation
+    opacity: 0;
+    transform: translateY(-2rem);
+    transition: opacity 1.2s ease, transform 1.2s ease;
     
     @include bp-laptop {
         height: 90vh;
@@ -79,6 +84,20 @@
         @include var(color, text-quaternary);
     }
 }
+
+.content {
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+.loaded {
+    .content-header,
+    .content {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 .toc {
     position: relative;

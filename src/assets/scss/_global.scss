@@ -31,9 +31,19 @@ html {
 }
 
 body {
+	position: relative;
 	@include var(background-color, background);
-	border-top: .5rem solid map-get($vars, text-quaternary);
-	border-top: .5rem solid var(--text-quaternary);
+	padding-top: .5rem;
+
+	&::before {
+		content: '';
+		position: fixed;
+		z-index: 999;
+		top: 0;
+		width: 100%;
+		height: .5rem;
+		@include var(background, text-quaternary);
+	}
 }
 
 @include bp-laptop {
