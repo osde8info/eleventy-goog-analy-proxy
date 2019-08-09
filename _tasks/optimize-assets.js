@@ -42,7 +42,12 @@ gulp.task('css:prod', function() {
       autoprefixer(),
       uncss({ 
         html: ['_site/**/*.html'],
-        ignore: [':root', '[data-theme="dark"]']
+        ignore: [
+          ':root',
+          '[data-theme="dark"]',
+          '.loaded .content-header',
+          '.loaded .content'
+        ]
       }),
       cssnano()
     ]))
