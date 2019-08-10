@@ -5,8 +5,8 @@ title: Moin, ich bin Dennis!
 permalink: /de/index.html
 
 language: de
-translation_en: /en/index.html
-translation_de: /de/index.html
+translation_en: /en/
+translation_de: /de/
 
 seoindex: true
 seotitle: "Dennis Hagemeier | Marketing, Code & Design"

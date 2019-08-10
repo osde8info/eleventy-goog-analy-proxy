@@ -6,8 +6,8 @@ tags: ["marketing","code"]
 excerpt: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim."
 
 language: en
-translation_en: /en/articles/testpage/index.html
-translation_de: /de/articles/testseite/index.html
+translation_en: /en/articles/testpage/
+translation_de: /de/articles/testseite/
 
 seoindex: true
 seotitle: "Dies ist ein SEO Title-Tag für die Testseite"

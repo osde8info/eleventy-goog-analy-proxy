@@ -5,8 +5,8 @@ title: Impressum
 permalink: /de/impressum/index.html
 
 language: de
-translation_en: /de/impressum/index.html
-translation_de: /de/impressum/index.html
+translation_en: /de/impressum/
+translation_de: /de/impressum/
 
 seoindex: true
 seotitle: "Impressum"

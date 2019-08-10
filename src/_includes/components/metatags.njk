@@ -1,3 +1,5 @@
+{%- set absolutePageUrl -%}{{ page.url | url | absoluteUrl(metadata.url) }}{%- endset -%}
+
 <!-- General Meta Tags-->
 <title>{{ seotitle }}</title>
 <meta name="description" content="{{ seodescription }}"/>
@@ -6,7 +8,7 @@
 {% if translation_en %}<link rel="alternate" hreflang="en" href="{{ metadata.url }}{{ translation_de }}"/>{% endif %}
 {% if translation_de %}<link rel="alternate" hreflang="de" href="{{ metadata.url }}{{ translation_en }}"/>{% endif %}
 
-<link rel="canonical" href="{{ metadata.url }}{{ permalink }}">
+<link rel="canonical" href="{{ absolutePageUrl }}">
 
 <!-- Open Graph & Twitter Tags -->
 {% if excerpt %}<meta property="og:type" content="article" />{% else %}<meta property="og:type" content="website" />{% endif %}

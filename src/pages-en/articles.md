@@ -5,8 +5,8 @@ title: Articles
 permalink: /en/articles/index.html
 
 language: en
-translation_en: /en/articles/index.html
-translation_de: /de/articles/index.html
+translation_en: /en/articles/
+translation_de: /de/articles/
 
 seoindex: true
 seotitle: "Articles"

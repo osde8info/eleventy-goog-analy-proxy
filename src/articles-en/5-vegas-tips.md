@@ -6,8 +6,8 @@ tags: ["marketing"]
 excerpt: "Las Vegas: The city of superlatives. The city of big shows. The city of lights and neon signs. But also, the city of sin and addiction. There are many extremes in Las Vegas, both positive and negative. An inspiring environment to learn some important advice for your daily business."
 
 language: en
-translation_en: /en/articles/5-vegas-tips/index.html
-translation_de: /de/articles/5-vegas-tipps/index.html
+translation_en: /en/articles/5-vegas-tips/
+translation_de: /de/articles/5-vegas-tipps/
 
 seoindex: true
 seotitle: "5 Tips You Can Learn in Las Vegas for Your Business"

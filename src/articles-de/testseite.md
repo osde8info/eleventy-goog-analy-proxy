@@ -6,8 +6,8 @@ tags: ["marketing","code"]
 excerpt: "Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte. Abgeschieden wohnen sie in Buchstabhausen an der Küste des Semantik, eines großen Sprachozeans. Ein kleines Bächlein namens Duden fließt durch ihren Ort und versorgt sie mit den nötigen Regelialien."
 
 language: de
-translation_en: /en/articles/testpage/index.html
-translation_de: /de/articles/testseite/index.html
+translation_en: /en/articles/testpage/
+translation_de: /de/articles/testseite/
 
 seoindex: true
 seotitle: "Dies ist ein SEO Title-Tag für die Testseite"

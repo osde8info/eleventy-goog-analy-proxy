@@ -5,8 +5,8 @@ title: About
 permalink: /en/about/index.html
 
 language: en
-translation_en: /en/about/index.html
-translation_de: /de/about/index.html
+translation_en: /en/about/
+translation_de: /de/about/
 
 seoindex: true
 seotitle: "Who is Dennis Hagemeier?"

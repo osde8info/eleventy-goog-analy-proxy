@@ -5,8 +5,8 @@ title: Datenschutz
 permalink: /de/datenschutz/index.html
 
 language: de
-translation_en: /de/datenschutz/index.html
-translation_de: /de/datenschutz/index.html
+translation_en: /de/datenschutz/
+translation_de: /de/datenschutz/
 
 seoindex: true
 seotitle: "Datenschutz"
