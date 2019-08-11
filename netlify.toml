@@ -36,6 +36,17 @@
   status = 302
   force = true
 
+# 404
+[[redirects]]
+  from = "de/*"
+  to = "https://www.d-hagemeier.com/de/404"
+  status = 404
+
+[[redirects]]
+  from = "/*"
+  to = "https://www.d-hagemeier.com/en/404"
+  status = 404
+
 # HTTP Header
 [[headers]]
   for = "/*"
