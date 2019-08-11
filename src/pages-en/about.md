@@ -18,4 +18,4 @@ Particularly in focus: the measurability of all measures. The days of blind acti
 
 At the same time, this website is also my playground for web design and web development.
 
-Click through and discover my new [articles](/en/articles/index.html)!
+Click through and discover my new [articles](/en/articles/)!

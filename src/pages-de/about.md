@@ -18,4 +18,4 @@ Besonders im Fokus: Die Messbarkeit jeglicher Maßnahmen. Die Zeiten blinden Akt
 
 Gleichzeitig ist diese Website auch meine Spielwiese für Webdesign und -development.
 
-Klick dich durch und entdecke beispielsweise meine neuen [Artikel](/de/articles/index.html)!
+Klick dich durch und entdecke beispielsweise meine neuen [Artikel](/de/articles/)!
