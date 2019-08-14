@@ -64,6 +64,8 @@ module.exports = function(eleventyConfig) {
   // Markdown Plugins
   let markdownIt = require("markdown-it");
   let markdownItAnchor = require('markdown-it-anchor');
+  let emoji = require('markdown-it-emoji')
+
   let options = {
     html: true,
 	  xhtmlOut: true,
@@ -89,7 +91,12 @@ module.exports = function(eleventyConfig) {
   };
 
   // Markdown Parsing
-  eleventyConfig.setLibrary( 'md', markdownIt(options).use(markdownItAnchor, anchoroptions));
+  eleventyConfig.setLibrary( 
+    'md', 
+    markdownIt(options)
+      .use(markdownItAnchor, anchoroptions)
+      .use(emoji)
+  );
 
   return {
     templateFormats: [ "md", "njk", "html" ],

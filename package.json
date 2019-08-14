@@ -39,6 +39,7 @@
     "gulp-uglify": "^3.0.2",
     "markdown-it": "^9.1.0",
     "markdown-it-anchor": "^5.2.4",
+    "markdown-it-emoji": "^1.4.0",
     "merge-stream": "^2.0.0",
     "postcss-uncss": "^0.17.0",
     "require-dir": "^1.2.0",
