@@ -123,6 +123,23 @@
 
         li::before { display: none; }
         a::after { display: none; }
+
+        a { 
+            display: block;
+            transition: transform ease-in-out .3s;
+
+            &:hover {
+                transform: translateX(.5rem);
+            }
+        }
+
+        ol { 
+            margin: .5rem 0 0 1.5rem;
+            padding: 0;
+            list-style: circle;
+            font-size: .9em;
+        }
+        ol li { padding: 0; }
     }
 }
 

@@ -1,5 +1,5 @@
 ---
-title: 5 Tipps, die du in Las Vegas für dein Business lernen kannst
+title: "5 Tipps, die du in Las Vegas für dein Business lernen kannst"
 permalink: /de/articles/5-vegas-tipps/index.html
 date: 2016-02-15T14:14:00-05:00
 tags: ["marketing"]
