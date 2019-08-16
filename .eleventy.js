@@ -70,7 +70,7 @@ module.exports = function(eleventyConfig) {
     html: true,
 	  xhtmlOut: true,
     breaks: true,
-    linkify: true,
+    linkify: false,
 	  typographer: true
   };
   let anchoroptions = {
