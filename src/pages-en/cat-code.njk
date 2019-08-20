@@ -1,0 +1,32 @@
+--- 
+layout: layouts/base.njk
+section: archive
+
+title: "Category: Code"
+permalink: /en/articles/code/index.html
+
+language: en
+translation_en: /en/articles/code/
+translation_de: /de/articles/code/
+
+seoindex: true
+seotitle: "Category: Code"
+seodescription: "Article Archive for the Code Category."
+--- 
+<header class="content-header">
+    
+    <div class="container">
+
+	<h1>{{ title }}</h1>
+    <div class="meta description">{{ seodescription }}</div>
+
+    </div>
+    
+</header>
+
+<div class="content container">
+
+    {%- set postlist = collections.code -%}
+    {% include "components/postlist.njk" %}
+
+</div>

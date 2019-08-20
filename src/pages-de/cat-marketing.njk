@@ -1,0 +1,32 @@
+--- 
+layout: layouts/base.njk
+section: archive
+
+title: "Kategorie: Marketing"
+permalink: /de/articles/marketing/index.html
+
+language: de
+translation_en: /en/articles/marketing/
+translation_de: /de/articles/marketing/
+
+seoindex: true
+seotitle: "Kategorie: Marketing"
+seodescription: "Artikelarchiv für die Kategorie Marketing."
+--- 
+<header class="content-header">
+    
+    <div class="container">
+
+	<h1>{{ title }}</h1>
+    <div class="meta description">{{ seodescription }}</div>
+
+    </div>
+    
+</header>
+
+<div class="content container">
+
+    {%- set postlist = collections.marketing -%}
+    {% include "components/postlist.njk" %}
+
+</div>

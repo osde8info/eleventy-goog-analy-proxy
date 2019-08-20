@@ -1,0 +1,17 @@
+{%- for article in postlist | reverse -%}
+{% if language in article.data.language %}
+
+    <article>
+        
+        <a href="{{ metadata.url }}{{ article.data.permalink | url }}"><h2>{{ article.data.title }}</h2></a>
+        
+        <div class="excerpt">
+            {{ article.data.excerpt }}
+        </div>
+        
+        <a href="{{ metadata.url }}{{ article.data.permalink | url }}" class="readmore">{% if language %}{% if 'en' in language %}Read article{% endif %}{% if 'de' in language %}Artikel lesen{% endif %}{% endif %}</a>
+    
+    </article>
+
+{% endif %}
+{%- endfor -%}

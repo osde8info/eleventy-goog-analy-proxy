@@ -1,0 +1,32 @@
+--- 
+layout: layouts/base.njk
+section: archive
+
+title: Articles
+permalink: /en/articles/index.html
+
+language: en
+translation_en: /en/articles/
+translation_de: /de/articles/
+
+seoindex: true
+seotitle: "Articles"
+seodescription: "Learn more about marketing, code and design."
+--- 
+<header class="content-header">
+    
+    <div class="container">
+
+	<h1>{{ title }}</h1>
+    <div class="meta description">{{ seodescription }}</div>
+
+    </div>
+    
+</header>
+
+<div class="content container">
+
+    {%- set postlist = collections.articles_en -%}
+    {% include "components/postlist.njk" %}
+
+</div>

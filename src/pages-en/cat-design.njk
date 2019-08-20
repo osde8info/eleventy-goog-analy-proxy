@@ -1,0 +1,32 @@
+--- 
+layout: layouts/base.njk
+section: archive
+
+title: "Category: Design"
+permalink: /en/articles/design/index.html
+
+language: en
+translation_en: /en/articles/design/
+translation_de: /de/articles/design/
+
+seoindex: true
+seotitle: "Category: Design"
+seodescription: "Article Archive for the Design Category."
+--- 
+<header class="content-header">
+    
+    <div class="container">
+
+	<h1>{{ title }}</h1>
+    <div class="meta description">{{ seodescription }}</div>
+
+    </div>
+    
+</header>
+
+<div class="content container">
+
+    {%- set postlist = collections.design -%}
+    {% include "components/postlist.njk" %}
+
+</div>

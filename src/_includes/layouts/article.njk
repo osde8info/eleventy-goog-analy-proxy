@@ -14,7 +14,7 @@ section: article
         <span>|</span>
         <div class="categories">
             {% for tag in tags %}
-                #{{ tag }}
+                <a href="{{ metadata.url }}/{{ language }}/articles/{{ tag | slug }}">#{{ tag }}</a>
             {% endfor %}
         </div>
     
