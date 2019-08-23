@@ -95,6 +95,13 @@ Navigation
             z-index: 999;
             @include var(fill, text-primary);
             cursor: pointer;
+
+            .icon-menu-close { display: none; }
+
+            svg {
+                width: 1.8rem;
+                height: 1.8rem;
+            }
         }
     }
 
@@ -107,6 +114,9 @@ Navigation
         & ~ .theme-switch-btn {
             fill: #fff;
             transition: fill ease .3s;
+
+            .icon-menu-open { display: none; }
+            .icon-menu-close { display: block; }
         }
         & ~ .language-switch,
         & ~ .language-switch a {
@@ -129,11 +139,18 @@ Theme Switch
         @include var(fill, text-primary);
         cursor: pointer;
 
-        &:hover,
-        &:active {
-            opacity: .7;
+        svg {
+            width: 1.8rem;
+            height: 1.8rem;
         }
     }
+}
+
+.icon-sun { display: none; }
+
+[data-theme="dark"] {
+    .icon-moon { display: none; }
+    .icon-sun { display: block; }
 }
 
 @supports(--css: variables) {
@@ -146,16 +163,9 @@ Language Switch
 .language-switch {
     position: fixed;
     z-index: 999;
-    top: 2.5rem;
+    top: 2.2rem;
     right: 8rem;
     font-weight: 700;
-
-    @include bp-tablet {
-        top: 2.35rem;
-    }
-    @include bp-laptop {
-        top: 2.2rem;
-    }
 
     a {
         @include var(color, text-primary);
