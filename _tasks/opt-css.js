@@ -26,7 +26,9 @@ gulp.task('css:prod', function() {
           ':root',
           '[data-theme="dark"]',
           '.loaded .content-header',
-          '.loaded .content'
+          '.loaded .content',
+          '[data-theme="dark"] .icon-sun',
+          '[data-theme="dark"] .icon-moon'
         ]
       }),
       cssnano()
