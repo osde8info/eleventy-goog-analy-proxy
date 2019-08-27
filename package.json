@@ -44,7 +44,7 @@
     "postcss-uncss": "^0.17.0",
     "require-dir": "^1.2.0",
     "twitter": "^1.7.1",
-    "uncss": "^0.17.0"
+    "uncss": "^0.17.1"
   },
   "dependencies": {
     "@11ty/eleventy-plugin-rss": "^1.0.6",
