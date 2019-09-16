@@ -63,31 +63,37 @@ A dolphin tank in the desert? (...)
 Eleventy does not specify in which directory these Markdown files are located. At the same time I use Nunjucks to create the templates. If you open a Nunjucks file for the first time, the code looks like HTML. Finally there is nothing magical about it – Nunjucks is just an extension for functions and variables.
 
 The basic layout for each content type is very simple:
-<pre class="language-html"><code>&lbrace;% include "components/head.njk" %}
+{% raw %}
+```html
+{% include "components/head.njk" %}
 
-&lt;main id=&quot;main&quot; class=&quot;site-content&quot;&gt;
-&#x9;&lbrace;&lbrace; layoutContent | safe }}
-&lt;/main&gt;
+<main id="main" class="site-content">
+    {{ layoutContent | safe }}
+</main>
 
-&lbrace;% include "components/footer.njk" %}
-</code></pre>
+{% include "components/footer.njk" %}
+```
+{% endraw %}
 
 With `include` I load additional components, in this case the `head` and `footer` area. The `head` contains nothing else than the `doctype`, meta tags or the link of the stylesheet (similar to `header.php` in WordPress). The cool thing about Nunjucks: By using variables from the head of the markdown file, all HTML generated afterwards can be adapted dynamically. For example, the `<html>` tag looks like this:
 
-<pre class="language-html"><code>&lt;html
-    &lbrace;% if section %} data-current=&quot;&lbrace;&lbrace; section }}&quot;&lbrace;% endif %}
-    &lbrace;% if language %}
-        &lbrace;% if &apos;en&apos; in language %}lang=&quot;en&quot;&lbrace;% endif %}
-        &lbrace;% if &apos;de&apos; in language %}lang=&quot;de&quot;&lbrace;% endif %}
-    &lbrace;% endif %}
-&gt;
-</code></pre>
+{% raw %}
+```html
+<html
+    {% if section %} data-current="{{ section }}"{% endif %}
+    {% if language %}
+        {% if "en" in language %}lang="en"{% endif %}
+        {% if "de" in language %}lang="de"{% endif %}
+    {% endif %}
+>
+```
+{% endraw %}
+
 For this example, this would result in nothing more than:
 
 ```html
 <html data-current="article" lang="en">
 ```
-
 
 By the way, I took only one article from the old version of my website and copied it manually. If I already had a larger amount of articles in WordPress, I would have used the <a href="https://www.npmjs.com/package/wordpress-export-to-markdown" rel="noopener">Wordpress Export to Markdown</a> to generate markdown files from the WP export file.
 

@@ -63,31 +63,37 @@ Ein Delfinbecken in der Wüste? (...)
 In welchem Verzeichnis diese Markdown-Dateien liegen, gibt Eleventy nicht vor. Parallel dazu nutze ich Nunjucks zur Erstellung der Templates. Öffnet man zum ersten Mal eine Nunjucks-Datei, wirkt der Code wie HTML. Letztlich ist dahinter auch nichts Magisches – Nunjucks ist lediglich eine Erweiterung für Funktionen und Variablen.
 
 Das Grundlayout für jeden Inhaltstyp ist bei mir sehr simpel gestrickt:
-<pre class="language-html"><code>&lbrace;% include "components/head.njk" %}
+{% raw %}
+```html
+{% include "components/head.njk" %}
 
-&lt;main id=&quot;main&quot; class=&quot;site-content&quot;&gt;
-&#x9;&lbrace;&lbrace; layoutContent | safe }}
-&lt;/main&gt;
+<main id="main" class="site-content">
+    {{ layoutContent | safe }}
+</main>
 
-&lbrace;% include "components/footer.njk" %}
-</code></pre>
+{% include "components/footer.njk" %}
+```
+{% endraw %}
 
 Per `include` lade ich zusätzliche Komponenten, in diesem Fall den `head`- und `footer`-Bereich. Im `head` verbirgt sich nichts anderes, als der `doctype`, Angaben für Meta-Tags oder die Verlinkung des Stylesheets (ähnlich zur `header.php` in WordPress). Das Schöne an Nunjucks: Durch die Verwendung der Variablen aus dem Kopf der Markdown-Datei lässt sich sämtliches, hinterher generiertes HTML dynamisch anpassen. Damit sieht z.B. das `<html>`-Tag wie folgt aus:
 
-<pre class="language-html"><code>&lt;html
-    &lbrace;% if section %} data-current=&quot;&lbrace;&lbrace; section }}&quot;&lbrace;% endif %}
-    &lbrace;% if language %}
-        &lbrace;% if &apos;en&apos; in language %}lang=&quot;en&quot;&lbrace;% endif %}
-        &lbrace;% if &apos;de&apos; in language %}lang=&quot;de&quot;&lbrace;% endif %}
-    &lbrace;% endif %}
-&gt;
-</code></pre>
+{% raw %}
+```html
+<html
+    {% if section %} data-current="{{ section }}"{% endif %}
+    {% if language %}
+        {% if "en" in language %}lang="en"{% endif %}
+        {% if "de" in language %}lang="de"{% endif %}
+    {% endif %}
+>
+```
+{% endraw %}
 
 In diesem Artikel wird daraus hinterher nichts anderes als:
 
-``````html
+```html
 <html data-current="article" lang="de">
-``````
+```
 
 Ich habe übrigens lediglich einen einzigen Artikel aus der alten Version meiner Website übernommen und diesen händisch kopiert. Bestände schon ein größeres Artikel-Archiv in WordPress, hätte ich zum Beispiel den <a href="https://www.npmjs.com/package/wordpress-export-to-markdown" rel="noopener">Wordpress Export to Markdown</a> verwendet, um aus der WP-Export-Datei Markdown-Dateien zu generieren.
 
