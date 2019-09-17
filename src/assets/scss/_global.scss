@@ -4,6 +4,7 @@
 html {
 	box-sizing: border-box;
 	font-size: $baseFontSize / 20 * 100%;
+	scroll-behavior: smooth;
 	
 	@include bp-tablet {
 		font-size: $baseFontSize / 18 * 100%;
