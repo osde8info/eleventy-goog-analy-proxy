@@ -91,7 +91,8 @@
     transform: translateY(2rem);
     transition: opacity 1.2s ease, transform 1.2s ease;
 }
-.loaded {
+.loaded,
+.nojs {
     .content-header,
     .content {
         opacity: 1;

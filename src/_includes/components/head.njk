@@ -5,6 +5,7 @@
         {% if 'en' in language %}lang="en"{% endif %}
         {% if 'de' in language %}lang="de"{% endif %}
     {% endif %}
+    class="nojs"
 >
 
 <head>
@@ -16,6 +17,11 @@
 
     <link rel="preload" href="/assets/fonts/playfairdisplay-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/playfairdisplay-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+    <script>
+        var html = document.getElementsByTagName("html")[0];
+        html.classList.remove("nojs");
+    </script>
 
     <link rel="stylesheet" href="/assets/css/main.css">
 
