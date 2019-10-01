@@ -105,7 +105,10 @@ var {
 	@include var(background-color, opacity-10);
 	font-size: .9em;
 	font-family: Consolas, Monaco, 'Andale Mono', monospace;
+	border-radius: .15em;
+	word-break: break-word;
 }
+
 pre code {
 	padding: 0;
 	background-color: transparent;
