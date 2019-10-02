@@ -39,7 +39,7 @@ module.exports = function(eleventyConfig) {
   });
   // Custom slug
   eleventyConfig.addFilter("pslug", obj => {
-    var result = obj.trim().toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=_`~()]/g, '').replace(/\s+/g, '-');
+    var result = obj.trim().toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=_'`~()]/g, '').replace(/\s+/g, '-');
     return result;
   });
 
