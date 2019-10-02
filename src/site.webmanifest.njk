@@ -1,6 +1,12 @@
+---
+permalink: /site.webmanifest
+eleventyExcludeFromCollections: true
+---
 {
-    "name": "Dennis Hagemeier",
-    "short_name": "Dennis Hagemeier",
+    "name": "{{ metadata.name }}",
+    "short_name": "{{ metadata.name }}",
+    "description": "{{ metadata.description }}",
+    "start_url": "/",
     "icons": [
         {
             "src": "/assets/favicons/android-chrome-192x192.png",
@@ -15,5 +21,6 @@
     ],
     "theme_color": "#111111",
     "background_color": "#111111",
-    "display": "standalone"
+    "display": "standalone",
+    "orientation": "any"
 }

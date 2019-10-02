@@ -4,6 +4,7 @@ if (environment == "dev") { var path = "http://localhost:3000"; } else { var pat
 
 module.exports = {
   "title": "Dennis Hagemeier | Marketing, Code & Design",
+  "description": "Blog about Marketing, Code & Design",
   "url": path,
   "type": "website",
   "name": "Dennis Hagemeier",
