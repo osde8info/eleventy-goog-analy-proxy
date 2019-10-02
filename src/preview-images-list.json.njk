@@ -8,7 +8,7 @@ eleventyExcludeFromCollections: true
     "date" : "{{ item.date | date("ddd MMM D HH:mm:ss ZZ YYYY", "YYYY-MM-DDTHH:mm:ssZ") }}",
     "title" : "{{ item.data.title }}",
     "path" : "/_site{% if 'en' in item.data.language %}{{ item.data.translation_en | url }}{% endif %}{% if 'de' in item.data.language %}{{ item.data.translation_de | url }}{% endif %}",
-    "url" : "/_site{% if 'en' in item.data.language %}{{ item.data.translation_en | url }}{% endif %}{% if 'de' in item.data.language %}{{ item.data.translation_de | url }}{% endif %}preview.html"
+    "url" : "{{metadata.url}}/_site{% if 'en' in item.data.language %}{{ item.data.translation_en | url }}{% endif %}{% if 'de' in item.data.language %}{{ item.data.translation_de | url }}{% endif %}{{ item.data.title | slug}}-preview.html"
   }{% if not loop.last %},{%- endif -%}
 {%- endfor -%}
 ]
