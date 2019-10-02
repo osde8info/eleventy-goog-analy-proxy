@@ -37,6 +37,11 @@ module.exports = function(eleventyConfig) {
     var result = obj.replace(/# /g, "");
     return result;
   });
+  // Custom slug
+  eleventyConfig.addFilter("pslug", obj => {
+    var result = obj.trim().toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=_`~()]/g, '').replace(/\s+/g, '-');
+    return result;
+  });
 
   // Date formatting
   eleventyConfig.addFilter("date", function(dateObj, fromformat , toformat, language = "en") { 
