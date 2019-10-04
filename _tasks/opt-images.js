@@ -28,12 +28,12 @@ gulp.task('images', function (cb) {
   var assets = gulp.src('src/assets/images/**/*')
       .pipe(imagemin())
       .pipe(gulp.dest('_site/assets/images'));
-  var cache = gulp.src('_cache/**/*')
-      .pipe(imagemin())
-      .pipe(gulp.dest('_site/assets/images/twitter'));
   var icons = gulp.src('src/assets/icons/*.svg')
       .pipe(svgSprite(svgSpriteConfig))
       .pipe(gulp.dest('_site/assets'));
+  var cache = gulp.src('_site/assets/preview-images/*.png', {base: './'})
+      .pipe(imagemin())
+      .pipe(gulp.dest('./'));
   
   return merge(assets, cache, icons);
 });

@@ -16,7 +16,7 @@
 <meta property="og:description" content="{{ seodescription }}" />
 <meta property="og:url" content="{{ absolutePageUrl }}" />
 <meta property="og:site_name" content="{{ metadata.name }}" />
-<meta property="og:image" content="">
+<meta property="og:image" content="/assets/preview-images/{{ title | pslug }}-{{ language | url }}-preview.png">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="{{ seotitle }}" />
 <meta name="twitter:description" content="{{ seodescription }}" />
@@ -34,8 +34,4 @@
 <link rel="pingback" href="https://webmention.io/www.d-hagemeier.com/xmlrpc" />
 
 <!-- Feed -->
-{% if 'de' in language %}
-<link type="application/atom+xml" rel="alternate" href="{{ metadata.url }}/de/feed.xml" title="{{ metadata.title }}">
-{% else %}
-<link type="application/atom+xml" rel="alternate" href="{{ metadata.url }}/en/feed.xml" title="{{ metadata.title }}">
-{% endif %}
+<link type="application/atom+xml" rel="alternate" href="{{ metadata.url }}/{{ language }}/feed.xml" title="{{ metadata.title }}">

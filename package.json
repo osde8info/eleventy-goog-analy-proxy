@@ -48,7 +48,7 @@
     "merge-stream": "^2.0.0",
     "moment": "^2.24.0",
     "postcss-uncss": "^0.17.0",
-    "require-dir": "^1.2.0",
+    "puppeteer": "^1.20.0",
     "twitter": "^1.7.1",
     "uncss": "^0.17.2"
   },
