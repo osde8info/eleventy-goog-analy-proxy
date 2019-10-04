@@ -31,9 +31,6 @@ gulp.task('images', function (cb) {
   var icons = gulp.src('src/assets/icons/*.svg')
       .pipe(svgSprite(svgSpriteConfig))
       .pipe(gulp.dest('_site/assets'));
-  var cache = gulp.src('_site/assets/preview-images/*.png', {base: './'})
-      .pipe(imagemin())
-      .pipe(gulp.dest('./'));
   
-  return merge(assets, cache, icons);
+  return merge(assets, icons);
 });

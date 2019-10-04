@@ -9,7 +9,7 @@ async function getscreen(filename) {
     console.log("Getting " + filename);
     let localurl = "file://" + dist + filename + ".html";
     await page.setViewport({ width: 1200, height: 628 });
-    await page.goto(localurl, { waitUntil: 'domcontentloaded' });
+    await page.goto(localurl, { waitUntil: 'networkidle2' });
     await page.screenshot({ 
       path: dist + filename + ".png",
       type: 'png'
