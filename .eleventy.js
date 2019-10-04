@@ -101,7 +101,7 @@ module.exports = function(eleventyConfig) {
                 String(s)
                     .trim()
                     .toLowerCase()
-                    .replace(/[.,\/#!$%\^&\*;:{}=_`~()]/g, '')
+                    .replace(/[.,\/#!$%\^&\*;:{}=_'`~()]/g, '')
                     .replace(/\s+/g, '-')
         )
   };
