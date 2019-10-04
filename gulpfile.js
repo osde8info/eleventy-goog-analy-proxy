@@ -25,8 +25,8 @@ gulp.task('serve', gulp.parallel(
 
 // Build
 gulp.task('build:dev', gulp.series(
-  'clean:build',
-  'clean:cache',
+//  'clean:build',
+//  'clean:cache',
   'generate',
   'css:dev',
   'js',
@@ -35,8 +35,8 @@ gulp.task('build:dev', gulp.series(
 ))
 
 gulp.task('build:prod', gulp.series(
-  'clean:build',
-  'clean:cache',
+//  'clean:build',
+//  'clean:cache',
   'generate',
   'html:prod',
   'css:prod',
