@@ -6,14 +6,14 @@ const dist = __dirname + "/../_site/assets/preview-images/";
 
 async function getscreen(filename, url) {
   try {
-    console.log("Getting " + filename);
+    console.log("Getting: " + url);
     await page.setViewport({ width: 1200, height: 628 });
     await page.goto(url, { waitUntil: 'networkidle2' });
     await page.screenshot({ 
       path: dist + filename + ".png",
       type: 'png'
     });
-    console.log("Finished " + dist + filename + ".png");
+    console.log("Finished: " + dist + filename + ".png");
   }
   catch (err) {
     console.log('err :', err);
