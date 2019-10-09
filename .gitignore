@@ -1,5 +1,6 @@
 node_modules
 .env
+.vscode
 _site
 _dist
 git.txt
