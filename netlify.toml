@@ -48,4 +48,4 @@
   [headers.values]
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
-    Link = "</assets/css/main.css>; rel=preload; as=style,</assets/js/animate.js>; rel=preload; as=script"
+    Link = "</assets/css/main.css>; rel=preload; as=style,</assets/js/animate.js>; rel=preload; as=script,</assets/fonts/playfairdisplay-bold.woff2>; rel=preload; as=font crossorigin,</assets/fonts/playfairdisplay-regular.woff2>; rel=preload; as=font crossorigin"
