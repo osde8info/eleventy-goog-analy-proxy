@@ -1,3 +1,5 @@
+/*
+
 const fetch = require('node-fetch')
 require('dotenv').config()
 
@@ -17,3 +19,5 @@ module.exports = async function() {
         return null
     }
 }
+
+*/
