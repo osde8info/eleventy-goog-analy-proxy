@@ -90,19 +90,25 @@ module.exports = function(eleventyConfig) {
   
   // Shortcode Icons
   eleventyConfig.addShortcode("icon", function(iconName, useInline) {
-        const spriteUrl = '/assets/icons/icons.sprite.svg'
-        const iconId = `#icon-${iconName}`
-        const href = useInline ? iconId : spriteUrl + iconId
+    const spriteUrl = '/assets/icons/icons.sprite.svg'
+    const iconId = `#icon-${iconName}`
+    const href = useInline ? iconId : spriteUrl + iconId
 
-        return `<svg class="icon icon-${iconName}" role="img" aria-hidden="true" width="24" height="24">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="${href}"></use>
-                </svg>`
+    return `<svg class="icon icon-${iconName}" role="img" aria-hidden="true" width="24" height="24">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="${href}"></use>
+            </svg>`
+  });
+
+  // Shortcode Images
+  eleventyConfig.addShortcode("image", function(url, alt) {
+    return `<img src="${url}" alt="${alt}" />`
   });
 
   // Passthroughs
   eleventyConfig.addPassthroughCopy("src/assets/favicons");
   eleventyConfig.addPassthroughCopy("src/assets/fonts");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
+  eleventyConfig.addPassthroughCopy("src/assets/media");
 
   // Plugins
   eleventyConfig.addPlugin(pluginRss);

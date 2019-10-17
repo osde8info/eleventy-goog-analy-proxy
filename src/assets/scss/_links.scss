@@ -32,3 +32,7 @@ a:active {
         }
     }
 }
+
+.img-link {
+    &::after { display: none; }
+}
