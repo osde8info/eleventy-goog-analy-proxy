@@ -16,14 +16,14 @@
 <meta property="og:description" content="{{ seodescription }}" />
 <meta property="og:url" content="{{ absolutePageUrl }}" />
 <meta property="og:site_name" content="{{ metadata.name }}" />
-<meta property="og:image" content="/assets/preview-images/{{ title | pslug }}-{{ language | url }}-preview.png">
+<meta property="og:image" content="{{ metadata.url }}/assets/preview-images/{{ title | pslug }}-{{ language | url }}-preview.png">
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="{{ seotitle }}" />
 <meta name="twitter:description" content="{{ seodescription }}" />
 <meta name="twitter:site" content="@{{ metadata.social.twitter.name }}">
 <meta name="twitter:creator" content="@{{ metadata.social.twitter.name }}">
-<meta name="twitter:image" content="/assets/preview-images/{{ title | pslug }}-{{ language | url }}-preview.png">
+<meta name="twitter:image" content="{{ metadata.url }}/assets/preview-images/{{ title | pslug }}-{{ language | url }}-preview.png">
 
 <!-- Social Media Connections -->
 <link href="{{ metadata.social.twitter.url }}" rel="me">
