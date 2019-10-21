@@ -9,6 +9,15 @@ module.exports = {
   "type": "website",
   "name": "Dennis Hagemeier",
   "email": "hello@d-hagemeier.com",
+  "address": {
+    "street": "Droste-Hülshoff-Str. 21",
+    "postcode": "49632",
+    "city": "Essen (Oldb.)",
+    "country": {
+      "de": "Deutschland",
+      "en": "Germany"
+    }
+  },
   "social": {
     "linkedin": {
       "name": "Dennis Hagemeier",

@@ -1,0 +1,13 @@
+---
+permalink: /humans.txt
+eleventyExcludeFromCollections: true
+---
+Title: {{ metadata.name }}
+Site: {{ metadata.url }}
+Twitter: @{{ metadata.social.twitter.name }} | {{ metadata.social.twitter.url }}
+Github: {{ metadata.social.github.name }} | {{ metadata.social.github.url }}
+Instagram: {{ metadata.social.instagram.name }} | {{ metadata.social.instagram.url }}
+LinkedIn: {{ metadata.social.linkedin.name }} | {{ metadata.social.linkedin.url }}
+Xing: {{ metadata.social.xing.name }} | {{ metadata.social.xing.url }}
+Location: {{ metadata.address.street }}, {{ metadata.address.postcode }} {{ metadata.address.city }}, {{ metadata.address.country }}
+Last update: {{ settings.timestamp | date("ddd MMM D HH:mm:ss ZZ YYYY", "YYYY-MM-DDTHH:mm:ssZZ") }}

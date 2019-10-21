@@ -4,11 +4,12 @@
 <title>{{ seotitle }}</title>
 <meta name="description" content="{{ seodescription }}"/>
 
-{% if seoindex %}<meta name="robots" content="index, follow">{% else %}<meta name="robots" content="noindex">{% endif %}
-{% if translation_en %}<link rel="alternate" hreflang="en" href="{{ metadata.url }}{{ translation_de }}"/>{% endif %}
-{% if translation_de %}<link rel="alternate" hreflang="de" href="{{ metadata.url }}{{ translation_en }}"/>{% endif %}
+{% if seoindex %}<meta name="robots" content="index, follow" />{% else %}<meta name="robots" content="noindex" />{% endif %}
+{% if translation_en %}<link rel="alternate" hreflang="en" href="{{ metadata.url }}{{ translation_de }}" />{% endif %}
+{% if translation_de %}<link rel="alternate" hreflang="de" href="{{ metadata.url }}{{ translation_en }}" />{% endif %}
 
-<link rel="canonical" href="{{ absolutePageUrl }}">
+<link rel="canonical" href="{{ absolutePageUrl }}" />
+<link rel="author" href="humans.txt" />
 
 <!-- Open Graph & Twitter Tags -->
 {% if excerpt %}<meta property="og:type" content="article" />{% else %}<meta property="og:type" content="website" />{% endif %}
@@ -16,25 +17,33 @@
 <meta property="og:description" content="{{ seodescription }}" />
 <meta property="og:url" content="{{ absolutePageUrl }}" />
 <meta property="og:site_name" content="{{ metadata.name }}" />
-<meta property="og:image" content="{{ metadata.url }}/assets/preview-images/{{ title | pslug }}-{{ language | url }}-preview.png">
+{% if 'en' in language %}<meta property="og:locale" content="en_US">{% endif %}
+{% if 'de' in language %}<meta property="og:locale" content="de_DE">{% endif %}
+
+<meta property="og:image" content="{{ metadata.url }}/assets/preview-images/{{ title | pslug }}-{{ language | url }}-preview.png" />
+{% if 'en' in language %}<meta property="og:image:alt" content="Preview image for article {{ seotitle }}">{% endif %}
+{% if 'de' in language %}<meta property="og:image:alt" content="Vorschaubild zum Artikel {{ seotitle }}">{% endif %}
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="{{ seotitle }}" />
 <meta name="twitter:description" content="{{ seodescription }}" />
-<meta name="twitter:site" content="@{{ metadata.social.twitter.name }}">
-<meta name="twitter:creator" content="@{{ metadata.social.twitter.name }}">
-<meta name="twitter:image" content="{{ metadata.url }}/assets/preview-images/{{ title | pslug }}-{{ language | url }}-preview.png">
+<meta name="twitter:site" content="@{{ metadata.social.twitter.name }}" />
+<meta name="twitter:url" content="{{ absolutePageUrl }}}" />
+<meta name="twitter:creator" content="@{{ metadata.social.twitter.name }}" />
+<meta name="twitter:image" content="{{ metadata.url }}/assets/preview-images/{{ title | pslug }}-{{ language | url }}-preview.png" />
+{% if 'en' in language %}<meta property="twitter:image:alt" content="Preview image for article {{ seotitle }}">{% endif %}
+{% if 'de' in language %}<meta property="twitter:image:alt" content="Vorschaubild zum Artikel {{ seotitle }}">{% endif %}
 
 <!-- Social Media Connections -->
-<link href="{{ metadata.social.twitter.url }}" rel="me">
-<link href="{{ metadata.social.instagram.url }}" rel="me">
-<link href="{{ metadata.social.github.url }}" rel="me">
-<link href="{{ metadata.social.linkedin.url }}" rel="me">
-<link href="{{ metadata.social.xing.url }}" rel="me">
+<link href="{{ metadata.social.twitter.url }}" rel="me" />
+<link href="{{ metadata.social.instagram.url }}" rel="me" />
+<link href="{{ metadata.social.github.url }}" rel="me" />
+<link href="{{ metadata.social.linkedin.url }}" rel="me" />
+<link href="{{ metadata.social.xing.url }}" rel="me" />
 
 <!-- Webmention Support -->
 <link rel="webmention" href="https://webmention.io/www.d-hagemeier.com/webmention" />
 <link rel="pingback" href="https://webmention.io/www.d-hagemeier.com/xmlrpc" />
 
 <!-- Feed -->
-<link type="application/atom+xml" rel="alternate" href="{{ metadata.url }}/{{ language }}/feed.xml" title="{{ metadata.title }}">
+<link type="application/atom+xml" rel="alternate" href="{{ metadata.url }}/{{ language }}/feed.xml" title="{{ metadata.title }}" />
