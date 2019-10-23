@@ -13,7 +13,9 @@
     "serve": "gulp serve",
     "build:dev": "gulp build:dev",
     "build": "gulp build:prod",
-    "dev": "netlify dev"
+    "dev": "netlify dev",
+    "deploy:dev": "netlify deploy",
+    "deploy:prod": "netlify deploy --prod"
   },
   "browserslist": [
     "last 1 version",
