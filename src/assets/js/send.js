@@ -17,7 +17,7 @@ const sitedata = {
 }
 
 function senddata(data) {
-  return fetch('/.netlify/functions/send', {
+  return fetch('/.netlify/functions/send/send', {
     body: JSON.stringify(data),
     method: 'POST'
   }).then(response => {
