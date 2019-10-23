@@ -1,6 +1,7 @@
 [build]
   command = "yarn build"
   publish = "_site"
+  functions = "functions"
 
 # Netlify subdomain
 [[redirects]]

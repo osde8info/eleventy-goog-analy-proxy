@@ -12,7 +12,8 @@
   "scripts": {
     "serve": "gulp serve",
     "build:dev": "gulp build:dev",
-    "build": "gulp build:prod"
+    "build": "gulp build:prod",
+    "dev": "netlify dev"
   },
   "browserslist": [
     "last 1 version",
@@ -35,6 +36,7 @@
     "del": "^5.1.0",
     "dotenv": "^8.2.0",
     "eleventy-plugin-nesting-toc": "^1.1.0",
+    "firebase-admin": "^8.6.1",
     "fs": "0.0.1-security",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
@@ -59,5 +61,8 @@
     "puppeteer": "^1.20.0",
     "twitter": "^1.7.1",
     "uncss": "^0.17.2"
+  },
+  "devDependencies": {
+    "netlify-cli": "^2.19.0"
   }
 }

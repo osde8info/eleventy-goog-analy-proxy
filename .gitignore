@@ -1,8 +1,8 @@
-node_modules
 .env
+.netlify
 .vscode
-_site
-_dist
-git.txt
-_todo
+node_modules
 _cache
+_dist
+_site
+_todo
