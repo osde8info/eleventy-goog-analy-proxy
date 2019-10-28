@@ -65,6 +65,6 @@
     "uncss": "^0.17.2"
   },
   "devDependencies": {
-    "netlify-cli": "^2.19.0"
+    "netlify-cli": "^2.19.4"
   }
 }
