@@ -87,26 +87,18 @@ address {
 	margin: 0 0 1.5em;
 }
 
-pre {
-	background: #eee;
-	font-family: "Courier 10 Pitch", Courier, monospace;
-	line-height: 1.6;
-	margin-bottom: 1.6em;
-	max-width: 100%;
-	overflow: auto;
-	padding: 1.6em;
-}
-
 code,
 kbd,
 tt,
-var {
+var,
+pre {
 	padding: .15em .3em;
 	@include var(background-color, opacity-10);
 	font-size: .9em;
 	font-family: Consolas, Monaco, 'Andale Mono', monospace;
 	border-radius: .15em;
 	word-break: break-word;
+	overflow: auto;
 }
 
 pre code {
