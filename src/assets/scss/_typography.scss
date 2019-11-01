@@ -87,25 +87,6 @@ address {
 	margin: 0 0 1.5em;
 }
 
-code,
-kbd,
-tt,
-var,
-pre {
-	padding: .15em .3em;
-	@include var(background-color, opacity-10);
-	font-size: .9em;
-	font-family: Consolas, Monaco, 'Andale Mono', monospace;
-	border-radius: .15em;
-	word-break: break-word;
-	overflow: auto;
-}
-
-pre code {
-	padding: 0;
-	background-color: transparent;
-}
-
 abbr,
 acronym {
 	border-bottom: 1px dotted #666;
