@@ -2,6 +2,7 @@
 title: "Twitter Timeline in Eleventy einbinden"
 permalink: /de/articles/twitter-einbinden/index.html
 date: 2019-10-16T16:30:00-00:00
+dateModified: 2019-10-16T16:30:00-00:00
 tags: ["code"]
 excerpt: "Lerne, wie du eigene Tweets per API abrufen und dynamisch im Static Site Generator Eleventy darstellen kannst."
 

@@ -2,6 +2,7 @@
 title: 5 Tips You Can Learn in Las Vegas for Your Business
 permalink: /en/articles/5-vegas-tips/index.html
 date: 2016-02-15T14:14:00-05:00
+dateModified: 2016-02-15T14:14:00-05:00
 tags: ["marketing"]
 excerpt: "Las Vegas: The city of superlatives. The city of big shows. The city of lights and neon signs. But also, the city of sin and addiction. There are many extremes in Las Vegas, both positive and negative. An inspiring environment to learn some important advice for your daily business."
 

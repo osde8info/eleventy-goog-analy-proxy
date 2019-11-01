@@ -2,6 +2,7 @@
 title: "From WordPress to JAMStack"
 permalink: /en/articles/wordpress-to-jamstack/index.html
 date: 2019-08-20T17:30:00-00:00
+dateModified: 2019-08-20T17:30:00-00:00
 tags: ["code"]
 excerpt: "Away from WordPress, towards JAMStack with Eleventy and Netlify. Multilingualism, a domain move... August makes everything new."
 

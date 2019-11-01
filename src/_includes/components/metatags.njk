@@ -47,3 +47,41 @@
 
 <!-- Feed -->
 <link type="application/atom+xml" rel="alternate" href="{{ metadata.url }}/{{ language }}/feed.xml" title="{{ metadata.title }}" />
+
+{% if 'article' in section %}
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ absolutePageUrl }}"
+  },
+  "headline": "{{ seotitle }}",
+  "description": "{{ seodescription }}",
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ metadata.url }}/assets/preview-images/{{ title | pslug }}-{{ language | url }}-preview.png",
+    "width": 1200,
+    "height": 628
+  },
+  "author": {
+    "@type": "Person",
+    "name": "{{ metadata.name }}"
+  },  
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ metadata.name }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ metadata.url }}/assets/favicons/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    }
+  },
+  "datePublished": "{{ date | date("YYYY-MM-DDTHH:mm:ssZZ", "YYYY-MM-DDTHH:mm:ssZZ", "en") }}",
+  "dateModified": "{% if dateModified %}{{ dateModified | date("YYYY-MM-DDTHH:mm:ssZZ", "YYYY-MM-DDTHH:mm:ssZZ", "en") }}{% endif %}"
+}
+</script>
+{% endif %}

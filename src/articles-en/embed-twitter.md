@@ -2,6 +2,7 @@
 title: "Embed Twitter Timeline in Eleventy"
 permalink: /en/articles/embed-twitter/index.html
 date: 2019-10-16T16:30:00-00:00
+dateModified: 2019-10-16T16:30:00-00:00
 tags: ["code"]
 excerpt: "Learn to retrieve your own tweets via API and dynamically display them in the Static Site Generator Eleventy."
 
