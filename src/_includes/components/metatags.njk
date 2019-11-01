@@ -17,6 +17,8 @@
 <meta property="og:description" content="{{ seodescription }}" />
 <meta property="og:url" content="{{ absolutePageUrl }}" />
 <meta property="og:site_name" content="{{ metadata.name }}" />
+{% if date %}<meta property="article:published_time" content="{{ date | date("YYYY-MM-DDTHH:mm:ssZZ", "YYYY-MM-DDTHH:mm:ssZZ", "en") }}" />{% endif %}
+<meta property="article:author" content="{{ metadata.name }}" />
 {% if 'en' in language %}<meta property="og:locale" content="en_US">{% endif %}
 {% if 'de' in language %}<meta property="og:locale" content="de_DE">{% endif %}
 
