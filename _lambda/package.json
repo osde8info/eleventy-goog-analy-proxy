@@ -1,0 +1,11 @@
+{
+  "name": "d-hagemeier-functions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "send.js",
+  "author": "Dennis Hagemeier",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  }
+}
