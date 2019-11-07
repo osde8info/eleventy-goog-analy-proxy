@@ -2,7 +2,6 @@
 .netlify
 .vscode
 node_modules
-functions
 _cache
 _dist
 _site

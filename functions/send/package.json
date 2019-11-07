@@ -1,7 +1,6 @@
 {
-  "name": "d-hagemeier-functions",
+  "name": "send",
   "version": "1.0.0",
-  "description": "",
   "main": "send.js",
   "author": "Dennis Hagemeier",
   "license": "MIT",

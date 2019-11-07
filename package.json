@@ -14,7 +14,8 @@
     "serve:netlify": "netlify dev",
     "build:dev": "gulp build:dev",
     "build:lambda": "netlify-lambda build lambda",
-    "build:prod": "gulp build:prod && netlify-lambda build _lambda"
+    "build:prod": "gulp build:prod && netlify-lambda build _lambda",
+    "postinstall": "netlify-lambda install"
   },
   "browserslist": [
     "last 1 version",
