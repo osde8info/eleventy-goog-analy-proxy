@@ -14,7 +14,6 @@ const sitedata = {
   referrer: referrer,
   language: language
 }
-console.log(sitedata);
 
 function senddata(data) {
   return fetch('/.netlify/functions/send', {
