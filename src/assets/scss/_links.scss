@@ -17,22 +17,26 @@ a:active {
         z-index: 0;
         @include var(color, text-primary);
         
-        &::after {
+        &::before {
             @extend %gradient-border-bottom;
             z-index: -1;
             transform: translateY(-.15em) scaleY(2.5);
             opacity: .7;
             transition: transform .2s ease-in-out, opacity .2s ease-in-out;
         }
-        &:hover::after,
-        &:focus::after,
-        &:active::after {
+        &:hover::before,
+        &:focus::before,
+        &:active::before {
             transform: translateY(.25em) scaleY(1);
             opacity: 1;
         }
     }
+    a[target=_blank]::after {
+        content: "↗";
+    }
 }
 
 .img-link {
+    &::before,
     &::after { display: none; }
 }

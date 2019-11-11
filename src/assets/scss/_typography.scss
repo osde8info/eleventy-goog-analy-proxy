@@ -142,6 +142,17 @@ hr {
 			left: -2em;
 		}
 	}
+	ol {
+        margin: .5rem 0 0 1.5rem;
+        padding: 0;
+		font-size: .9em;
+		list-style: circle;
+		
+        li { 
+			padding: 0;
+			&::before { display: none; }
+		}
+	}
 }
 
 .content ul {

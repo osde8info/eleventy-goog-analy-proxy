@@ -119,10 +119,10 @@
     }
 
     ol {
-        margin: 0 0 1.5em 0;
+        margin: 0 0 1.5em 2em;
         padding: 0;
 
-        li::before { display: none; }
+        a::before,
         a::after { display: none; }
 
         a { 
@@ -133,20 +133,13 @@
                 transform: translateX(.5rem);
             }
         }
-
-        ol { 
-            margin: .5rem 0 0 1.5rem;
-            padding: 0;
-            list-style: circle;
-            font-size: .9em;
-        }
-        ol li { padding: 0; }
     }
 }
 
 .heading-anchor {
     margin-left: -.9em;
 
+    &::before,
     &::after { display: none; }
 }
 
