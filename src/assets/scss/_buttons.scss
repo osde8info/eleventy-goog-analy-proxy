@@ -17,7 +17,8 @@ a.readmore {
 	text-decoration: none;
 	border: 0;
 	border-radius: 0;
-	
+    
+    &::before,
 	&::after {
         display: none;
 	}
