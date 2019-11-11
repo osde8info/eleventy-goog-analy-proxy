@@ -1,0 +1,20 @@
+<div class="comments row">
+
+    <div class="col-1-5">
+        {% icon "alert" %}
+    </div>
+
+    <div class="col-4-5">
+        {% if language %}
+	        {% if 'en' in language %}
+                <h3>Attention: Older than two years</h3>
+                <div>This article is older than two years. It could be that the information is no longer up to date.</div>
+            {% endif %}
+	        {% if 'de' in language %}
+                <h3>Achtung: Älter als zwei Jahre</h3>
+                <div>Dieser Artikel ist älter als zwei Jahre. Es könnte sein, dass die Informationen nicht mehr aktuell sind.</div>
+            {% endif %}
+        {% endif %}
+    </div>
+        
+</div>

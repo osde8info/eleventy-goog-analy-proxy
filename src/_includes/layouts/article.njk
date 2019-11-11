@@ -30,6 +30,13 @@ section: article
         {{ excerpt | safe }}
     </div>
 
+    {%- set currentYear -%}{{ settings.timestamp | date("YYYY-MM-DDTHH:mm:ssZZ", "X") }}{%- endset -%}
+    {%- set articleYear -%}{{ date | date("YYYY-MM-DDTHH:mm:ssZZ", "X") }}{%- endset -%}
+    {%- set comparativeYear -%}{{ currentYear - articleYear }}{%- endset -%}
+    {% if comparativeYear > 63115200 %}
+        {% include "components/old-article.njk" %}
+    {% endif %}
+
     <aside class="toc">
         {{ content | toc | removeHash | safe }}
     </aside>
