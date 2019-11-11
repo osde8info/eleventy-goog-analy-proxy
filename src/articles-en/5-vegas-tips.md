@@ -14,7 +14,7 @@ seoindex: true
 seotitle: "5 Tips You Can Learn in Las Vegas for Your Business"
 seodescription: "Las Vegas: The city of superlatives. An inspiring environment to learn some important advice for your daily business."
 ---
-## 1. Think further than the competition
+## Think further than the competition
 
 A dolphin tank in the desert? A freefall tower at a height of 350 metres? A complete pirate show on your doorstep? Hotels in Vegas offer a variety of extraordinary attractions. And ideas for new, dizzying offers emerge every day.
 
@@ -22,7 +22,7 @@ The competition and density of offers is overwhelming. Tens of thousands of room
 
 Don't rest on your laurels; stay agile, keep up with the times and invest in new developments.
 
-## 2. Be able to stop
+## Be able to stop
 
 The current Coinstand is already above the budget. But there's more, after all, the machine has a seven-digit jackpot - it would be a laugh if you couldn't crack it, right?
 
@@ -31,7 +31,7 @@ A scenario like from a bad documentary - but for many hundreds of people everyda
 In our daily business, we regularly deal with similar scenarios and often separate ourselves too late from unprofitable products or unproductive business areas.
 That's why the same applies here as in Las Vegas: Fail fast, fail cheap.
 
-## 3. Awakening wishes
+## Awakening wishes
 
 Did visitors wish for a Venetian canal in the middle of the desert? Hardly. Nevertheless, the cameras of the tourists flash at any time of day or night and gondola rides on the artificial canals are sold every minute.
 
@@ -39,7 +39,7 @@ To arouse a need that does not actually yet exist - this is part of the supreme 
 
 Control over the market gives you the opportunity to sell and control your product. If the competition must be based on your requirements, you dominate the market.
 
-## 4. Show professionalism - every day
+## Show professionalism - every day
 
 "Oh, that's really cool!" Just a quick statement to give your counterpart a good feeling. And probably the nice waiter is not really interested in where you come from - he will have already met other guests from your country. Nevertheless, you smile because of a few simple words.
 
@@ -47,7 +47,7 @@ People pay you for a product or service. You are responsible for their well-bein
 
 Remember you are a professional, even on bad days. Personal matters must not interfere with your client's work.
 
-## 5. Exaggerate sometimes
+## Exaggerate sometimes
 
 "World famous", "World’s biggest", "World’s first" - which descriptions are used in Las Vegas for simple snack bars can only be called exaggerated. It is those who use big words who win.
 

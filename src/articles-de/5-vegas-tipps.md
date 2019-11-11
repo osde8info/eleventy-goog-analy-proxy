@@ -14,7 +14,7 @@ seoindex: true
 seotitle: "5 Tipps, die du in Las Vegas für dein Business lernen kannst"
 seodescription: "Las Vegas: Die Stadt der Superlative. Ein inspirierendes Umfeld, um einige wichtige Ratschläge für dein tägliches Business zu lernen."
 ---
-## 1. Weiterdenken als die Konkurrenz
+## Weiterdenken als die Konkurrenz
 
 Ein Delfinbecken in der Wüste? Ein Freefalltower in 350 Metern Höhe? Eine komplette Piratenshow vor der eigenen Haustür? Hotels in Vegas bieten eine Vielzahl an außergewöhnlichen Attraktionen. Und Ideen für neue, schwindelerregende Angebote entstehen jeden Tag.
 
@@ -22,7 +22,7 @@ Die Konkurrenz und Angebotsdichte ist überwältigend. Zigtausende von Zimmern, 
 
 Ruhe dich nicht auf vergangenen Erfolgen aus, sondern bleibe agil, lebe am Puls der Zeit und investiere in neue Entwicklungen.
 
-## 2. Aufhören können
+## Aufhören können
 
 Der aktuelle Coinstand liegt schon über dem eingesetzten Budget. Aber es geht mehr, schließlich zeigt der Automat einen siebenstelligen Jackpot – wäre doch gelacht, wenn man diesen nicht knacken könnte, richtig?
 
@@ -31,7 +31,7 @@ Ein Szenario wie aus einer schlechten Dokumentation – für viele hundert Mensc
 In unserem täglichen Business setzen wir uns regelmäßig mit ähnlichen Szenarien auseinander und trennen uns häufig zu spät von unrentablen Produkten oder unproduktiven Unternehmensbereichen.
 Deshalb gilt hier wie auch in Las Vegas: Fail Fast, Fail Cheap.
 
-## 3. Wünsche wecken
+## Wünsche wecken
 
 Haben sich Besucher einen venezianischen Kanal mitten in der Wüste gewünscht? Wohl kaum. Trotzdem blitzen die Kameras der Touristen zu jeder Tages- und Nachtzeit und es werden minütlich Gondelfahrten auf den künstlich angelegten Kanälen verkauft.
 
@@ -39,7 +39,7 @@ Einen Bedarf zu wecken, der faktisch noch nicht existiert – das gehört vor al
 
 Die Kontrolle über den Markt bietet dir die Möglichkeit, dein Produkt zu verkaufen und zu kontrollieren. Wenn die Konkurrenz sich nach deinen Voraussetzungen richten muss, beherrschst du Markt.
 
-## 4. Professionalität zeigen – an jedem Tag
+## Professionalität zeigen – an jedem Tag
 
 "Oh, that’s really cool!" Nur ein kurzes Statement, um deinem Gegenüber ein gutes Gefühl zu geben. Und wahrscheinlich interessiert sich der nette Kellner nicht wirklich dafür, woher du kommst – er wird schon andere Gäste aus deinem Land getroffen haben. Dennoch lächelst du wegen ein paar einfacher Worte.
 
@@ -47,7 +47,7 @@ Menschen bezahlen dich für ein Produkt oder eine Dienstleistung. Du bist dafür
 
 Rufe dir auch an schlechten Tagen in Erinnerung, dass du ein Profi bist. Persönliche Angelegenheiten dürfen nicht die Arbeit für deinen Kunden beeinträchtigen.
 
-## 5. Auch mal übertreiben
+## Auch mal übertreiben
 
 "World famous", "World's biggest", "World's first" – welche Beschreibungen in Las Vegas für einfache Imbissbuden genutzt werden, lässt sich nur als übertrieben betiteln. Die bodenständige deutsche Zurückhaltung findet hier keinen Anklang – hier gewinnt, wer große Worte nutzt.
 
