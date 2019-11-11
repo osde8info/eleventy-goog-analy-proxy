@@ -14,18 +14,19 @@ const sitedata = {
   referrer: referrer,
   language: language
 }
+console.log(sitedata);
 
 function senddata(data) {
   return fetch('/.netlify/functions/send', {
     body: JSON.stringify(data),
     method: 'POST'
   }).then(response => {
-    return response.json()
+    console.log(response)
   })
 }
 
 senddata(sitedata).then((response) => {
-  console.log('Success: ', response)
+  console.log('Response: ', response)
 }).catch((error) => {
   console.log('Error: ', error)
 })
