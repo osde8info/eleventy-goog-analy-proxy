@@ -24,7 +24,7 @@ exports.handler = async (event, context) => {
         cache: 'no-cache'
       })
       if (response.ok) {
-          console.log(response)
+          console.log(response.status + response.statusText)
       }
   } catch (err) {
       console.error("Error: " + err)
