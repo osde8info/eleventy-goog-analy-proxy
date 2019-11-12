@@ -34,6 +34,8 @@ pre {
 
 :not(pre) > code {
 	padding: .1em .25em;
+	white-space: normal;
+	word-break: break-all;
 	@include var(background-color, opacity-10);
 	@include var(color, text-primary);
 }
