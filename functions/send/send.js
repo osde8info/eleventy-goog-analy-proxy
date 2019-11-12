@@ -24,8 +24,7 @@ exports.handler = async (event, context) => {
         cache: 'no-cache'
       })
       if (response.ok) {
-          const feed = await response.json()
-          console.log(feed)
+          console.log(response)
       }
   } catch (err) {
       console.error("Error: " + err)
