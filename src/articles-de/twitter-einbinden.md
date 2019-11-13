@@ -1,8 +1,8 @@
 ---
-title: "Twitter Timeline in Eleventy einbinden"
+title: "Tweets von Twitter-API in 11ty importieren"
 permalink: /de/articles/twitter-einbinden/index.html
 date: 2019-10-16T16:30:00-00:00
-dateModified: 2019-10-16T16:30:00-00:00
+dateModified: 2019-11-13T14:47:00-00:00
 tags: ["code"]
 excerpt: "Lerne, wie du eigene Tweets per API abrufen und dynamisch im Static Site Generator Eleventy darstellen kannst."
 
@@ -11,7 +11,7 @@ translation_en: /en/articles/embed-twitter/
 translation_de: /de/articles/twitter-einbinden/
 
 seoindex: true
-seotitle: "Twitter Timeline in Eleventy einbinden"
+seotitle: "Tweets von Twitter-API in 11ty importieren"
 seodescription: "Eigene Tweets per API abrufen und dynamisch im Static Site Generator Eleventy darstellen."
 ---
 Twitter ist für mich eine wundervolle Plattform, um spannende Artikel zu entdecken, mich mit Menschen auszutauschen und Wissen weiterzugeben. Warum also nicht die eigene Website stets mit neuen Tweets auf der Startseite frisch halten?
