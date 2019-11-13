@@ -23,7 +23,7 @@ Möchte ich Google Analytics datenschutzkonform einsetzen, benötige ich die Zus
 
 Weiterer Nachteil: Immer mehr Menschen sind mit Erweiterungen wie Ghostery unterwegs, die Google Analytics direkt beim Seitenaufruf wegblocken. Spätestens mit der Weiterentwicklung der Browser (wie der Intelligent Tracking Prevention in WebKit) werden die Daten immer weniger zuverlässig.
 
-Alternativen zu Google Analytics gibt's einige: Direkte GA-Konkurrenten wie <a href="https://simpleanalytics.com/" target="_blank">Simple Analytics</a>, Plugins wie <a href="https://de.wordpress.org/plugins/statify/" target="_blank">Statify</a> oder Umstieg auf Server-Log-Analysetools, z.B. mit <a href="https://www.netlify.com/products/analytics/" target="_blank">Netlify Analytics</a>. Die meisten von denen kosten allerdings und beschränken mich auf die mit dem entsprechenden Tool gesammelten Daten. Ich bin großer Fan des Google Data Studios, damit ich gleichzeitig auch Daten der Search Console und von anderen Quellen auswerten kann.
+Alternativen zu Google Analytics gibt's einige: Direkte GA-Konkurrenten wie {% link "https://simpleanalytics.com/", "Simple Analytics", true %}, Plugins wie {% link "https://de.wordpress.org/plugins/statify/", "Statify", true %} oder Umstieg auf Server-Log-Analysetools, z.B. mit {% link "https://www.netlify.com/products/analytics/", "Netlify Analytics", true %}. Die meisten von denen kosten allerdings und beschränken mich auf die mit dem entsprechenden Tool gesammelten Daten. Ich bin großer Fan des Google Data Studios, damit ich gleichzeitig auch Daten der Search Console und von anderen Quellen auswerten kann.
 
 Sogar Experimente mit Firestore habe ich hinter mir. Mit eigenem Trackingpixel habe ich dort die Nutzerdaten hinterlegt – allerdings muss ich dann ALLES selber bauen. Vom einfachen Bot-Filter, über die Einsortierung der Quellen in Channels bis zur Schnittstelle mit dem Data Studio.
 
@@ -33,7 +33,7 @@ Ich will also Google Analytics – nur ohne Cookies und DSGVO-konform.
 
 Mit dem Standard-Trackingcode von Google ist kein cookiefreies Tracking möglich. Automatisch setzt das Skript mehrere Cookies für Nutzer-ID, Timestamp oder Absprungtracking.
 
-Also nutze ich die zweite Variante, um Daten zu Google Analytics zu importieren: Das Measurement Protocol. Dahinter versteckt sich nichts anderes als eine Schnittstelle zur Übermittlung von Rohdaten als HTTP-Request. Wer mit dem Measurement Protocol spielen möchte, der kann sich mit dem <a href="https://ga-dev-tools.appspot.com/hit-builder/" target="_blank">Hit Builder</a> austoben.
+Also nutze ich die zweite Variante, um Daten zu Google Analytics zu importieren: Das Measurement Protocol. Dahinter versteckt sich nichts anderes als eine Schnittstelle zur Übermittlung von Rohdaten als HTTP-Request. Wer mit dem Measurement Protocol spielen möchte, der kann sich mit dem {% link "https://ga-dev-tools.appspot.com/hit-builder/", "Hit Builder", true %} austoben.
 
 Die Lösung des cookiefreien Google Analytics-Skripts besteht also in einem POST-Request, in welchem ich einen Grundschatz an Nutzerdaten verpacke und diesen an das Measurement Protocol weitergebe. Ich habe mich für diese Daten entschieden:
 
@@ -84,7 +84,7 @@ Zuerst befülle ich meine Client-Side-Datei mit den Variablen, welche ich späte
 
 **User-ID**
 
-Google nutzt für die User-ID (später `cid`) einen <a href="https://wikipedia.org/wiki/Universally_Unique_Identifier" target="_blank">Universally Unique Identifier</a>. Der lässt sich mit folgender Funktion generieren und als Konstante abspeichern:
+Google nutzt für die User-ID (später `cid`) einen {% link "https://wikipedia.org/wiki/Universally_Unique_Identifier", "Universally Unique Identifier", true %}. Der lässt sich mit folgender Funktion generieren und als Konstante abspeichern:
 
 ```javascript
 function uuidv4() { return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, *c* => (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)); }
@@ -192,12 +192,12 @@ try {
 }
 ```
 
-**Achtung**: Um die `fetch-API` in NodeJS zu nutzen, benötige ich das entsprechende <a href="https://www.npmjs.com/package/node-fetch" target="_blank">Modul</a>!
+**Achtung**: Um die `fetch-API` in NodeJS zu nutzen, benötige ich das entsprechende {% link "https://www.npmjs.com/package/node-fetch", "Modul", true %}!
 
-Die vollständigen Varianten der <a href="https://github.com/dennishagemeier/d-hagemeier/blob/master/src/assets/js/send.js" target="_blank">Client-Side-</a> und <a href="https://github.com/dennishagemeier/d-hagemeier/blob/master/functions/send/send.js" target="_blank">Server-Side-Skripte</a> findet du in meinem Github-Repository.
+Die vollständigen Varianten der {% link "https://github.com/dennishagemeier/d-hagemeier/blob/master/src/assets/js/send.js", "Client-Side-", true %} und {% link "https://github.com/dennishagemeier/d-hagemeier/blob/master/functions/send/send.js", "Server-Side-Skripte", true %} findest du in meinem Github-Repository.
 
 ## Bonus: Data Studio-Vorlage
 
 Die Daten laufen mit diesen beiden Dateien schon sauber in Google Analytics ein und können dort wie gewohnt gefiltert und ausgewertet werden. Ich bin aber ein Fan vom Google Data Studio, also habe ich mir ein passendes Dashboard mit den übertragenen Daten und den Suchanfragen aus der Search Console gebastelt.
 
-Das Data Studio kannst du dir <a href="https://datastudio.google.com/s/nNr0l5Et0PM" target="_blank">hier</a> anschauen und kopieren. Einfach die Datenquellen tauschen und schon hast du einen guten Startpunkt für dein eigenes Data Studio.
+Das Data Studio kannst du dir {% link "https://datastudio.google.com/s/nNr0l5Et0PM", "hier", true %} anschauen und kopieren. Einfach die Datenquellen tauschen und schon hast du einen guten Startpunkt für dein eigenes Data Studio.

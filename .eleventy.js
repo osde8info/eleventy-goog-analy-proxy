@@ -104,6 +104,12 @@ module.exports = function(eleventyConfig) {
     return `<img src="${url}" alt="${alt}" />`
   });
 
+  // Shortcode Link
+  eleventyConfig.addShortcode("link", function(link, text, target) {
+    if (target == undefined) { return `<a href="${link}">${text}</a>` }
+    if (target !== undefined ) { return `<a href="${link}" target="_blank" rel="noopener">${text}</a>` }
+  });
+
   // Passthroughs
   eleventyConfig.addPassthroughCopy("src/assets/favicons");
   eleventyConfig.addPassthroughCopy("src/assets/fonts");

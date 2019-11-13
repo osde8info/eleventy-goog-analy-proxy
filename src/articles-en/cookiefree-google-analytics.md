@@ -23,7 +23,7 @@ If I want to use Google Analytics in compliance with data protection regulations
 
 Another disadvantage: More and more people are using extensions like Ghostery to block Google Analytics directly when they visit a page. At the latest with the further development of the browsers (like the Intelligent Tracking Prevention in WebKit) the data becomes less and less reliable.
 
-There are some alternatives to Google Analytics: Alternatives such as <a href="https://simpleanalytics.com/" target="_blank">Simple Analytics</a>, plugins such as <a href="https://de.wordpress.org/plugins/statify/" target="_blank">Statify</a> or switching to server log analysis tools, e.g. with <a href="https://www.netlify.com/products/analytics/" target="_blank">Netlify Analytics</a>. Most of them, however, cost money and limit me to the data collected with the corresponding tool. I'm a big fan of the Google Data Studio, so that I can also evaluate data from the Search Console and other sources at the same time.
+There are some alternatives to Google Analytics: Alternatives such as {% link "https://simpleanalytics.com/", "Simple Analytics", true %}, plugins such as {% link "https://de.wordpress.org/plugins/statify/", "Statify", true %} or switching to server log analysis tools, e.g. with {% link "https://www.netlify.com/products/analytics/", "Netlify Analytics", true %}. Most of them, however, cost money and limit me to the data collected with the corresponding tool. I'm a big fan of the Google Data Studio, so that I can also evaluate data from the Search Console and other sources at the same time.
 
 I've even done experiments with Firestore. With my own tracking pixel I have stored the user data there - but then I have to build EVERYTHING by myself. From the simple bot filter to the sorting of sources into channels to the interface with the Data Studio.
 
@@ -33,7 +33,7 @@ So I want Google Analytics - only without cookies and GDPR-compliant.
 
 With Google's standard tracking code, cookie-free tracking is not possible. The script automatically sets multiple cookies for user ID, timestamp or jump tracking.
 
-So I use the second variant to import data to Google Analytics: The Measurement Protocol. Behind it nothing else hides than an interface for the transmission of raw data as HTTP request. If you want to play with the Measurement Protocol, you can go with the <a href="https://ga-dev-tools.appspot.com/hit-builder/" target="_blank">Hit Builder</a>.
+So I use the second variant to import data to Google Analytics: The Measurement Protocol. Behind it nothing else hides than an interface for the transmission of raw data as HTTP request. If you want to play with the Measurement Protocol, you can go with the {% link "https://ga-dev-tools.appspot.com/hit-builder/", "Hit Builder", true %}.
 
 The solution of the cookie-free Google Analytics script therefore consists in a POST request in which we pack a basic set of user data and pass it on to the Measurement Protocol. I decided to use this data:
 
@@ -84,7 +84,7 @@ First, I fill my client side file with the variables that I want to transfer lat
 
 **User ID**
 
-Google uses for the User-ID (later `cid`) a <a href="https://wikipedia.org/wiki/Universally_Unique_Identifier" target="_blank">Universally Unique Identifier</a>. This can be generated with the following function and saved as a constant:
+Google uses for the User-ID (later `cid`) a {% link "https://wikipedia.org/wiki/Universally_Unique_Identifier", "Universally Unique Identifier", true %}. This can be generated with the following function and saved as a constant:
 
 ```javascript
 function uuidv4() { return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, *c* => (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)); }
@@ -192,12 +192,12 @@ try {
 }
 ```
 
-**Attention**: To use the `fetch-API` in NodeJS, I need the corresponding <a href="https://www.npmjs.com/package/node-fetch" target="_blank">module</a>!
+**Attention**: To use the `fetch-API` in NodeJS, I need the corresponding {% link "https://www.npmjs.com/package/node-fetch", "module", true %}</a>!
 
-The complete variants of the <a href="https://github.com/dennishagemeier/d-hagemeier/blob/master/src/assets/js/send.js" target="_blank">Client side</a> and <a href="https://github.com/dennishagemeier/d-hagemeier/blob/master/functions/send/send.js" target="_blank">Server side scripts</a> can be found in my Github-Repository.
+The complete variants of the {% link "https://github.com/dennishagemeier/d-hagemeier/blob/master/src/assets/js/send.js", "Client side", true %} and {% link "https://github.com/dennishagemeier/d-hagemeier/blob/master/functions/send/send.js", "Server side scripts", true %} can be found in my Github-Repository.
 
 ## Bonus: Data Studio Template
 
 With these two files, the data is already exported to Google Analytics and can be filtered and evaluated there as usual. But I'm a fan of Google Data Studio, so I created a dashboard with the transferred data and the search queries from the Search Console.
 
-You can view and copy the Data Studio <a href="https://datastudio.google.com/s/nNr0l5Et0PM" target="_blank">here</a>. Just swap the data sources and you have a good starting point for your own Data Studio.
+You can view and copy the Data Studio {% link "https://datastudio.google.com/s/nNr0l5Et0PM", "here", true %}. Just swap the data sources and you have a good starting point for your own Data Studio.
