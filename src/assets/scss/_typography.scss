@@ -205,6 +205,12 @@ video {
 figure {
 	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
 }
+figcaption {
+	@include var(color, text-secondary);
+	font-size: .8em;
+	font-style: italic;
+    text-align: center;
+}
 
 table {
 	margin: 0 0 1.5em;

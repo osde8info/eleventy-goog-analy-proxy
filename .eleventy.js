@@ -101,7 +101,10 @@ module.exports = function(eleventyConfig) {
 
   // Shortcode Images
   eleventyConfig.addShortcode("image", function(url, alt) {
-    return `<img src="${url}" alt="${alt}" />`
+    return `<figure role="group">
+              <img src="${url}" alt="${alt}">
+              <figcaption>${alt}</figcaption>
+            </figure>`
   });
 
   // Shortcode Link
