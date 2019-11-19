@@ -6,23 +6,27 @@ eleventyExcludeFromCollections: true
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>{{ metadata.title }}</title>
     <link href="{{ metadata.url }}/de/feed.xml" rel="self" type="application/atom+xml" />
-    <link href="{{ metadata.url }}" rel="alternate" type="text/html"/>
-    {% if collections.articles_de %}
-    <updated>{{ collections.articles_de | rssLastUpdatedDate }}</updated>
-    {% endif %}
-    <id>{{ metadata.url }}</id>
+    <link rel="alternative" hreflang="de" href="{{ metadata.url }}/de/feed.xml" />
+    {% if collections.articles_de %}<updated>{{ collections.articles_de | rssLastUpdatedDate }}</updated>{% endif %}
+    <id>{{ metadata.url }}/</id>
+    <icon>{{ metadata.url }}/assets/dh-logo-color-padding.png</icon>
+    <logo>{{ metadata.url }}/assets/dh-logo-color-padding.png</logo>
     <author>
         <name>{{ metadata.name }}</name>
         <email>{{ metadata.email }}</email>
     </author>
-    {%- for post in collections.articles_de | reverse -%}
+
+    {%- for post in collections.articles_de.slice(0, 10) | reverse -%}
     {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
         <entry>
             <title>{{ post.data.title }}</title>
             <link href="{{ absolutePostUrl }}"/>
             <updated>{{ post.date | rssDate }}</updated>
             <id>{{ absolutePostUrl }}</id>
-            <summary type="html"><![CDATA[<p>{{ post.data.excerpt | htmlToAbsoluteUrls(absolutePostUrl) }}</p><p>Weiterlesen: <a href="{{ absolutePostUrl }}" target="_blank" rel="noopener">{{ absolutePostUrl }}</a>.</p>]]></summary>
+            {% for tag in post.data.tags %}<category term="{{ tag }}" />{% endfor %}
+
+            <summary type="html"><![CDATA[&lt;p&gt;{{ post.data.excerpt | htmlToAbsoluteUrls(absolutePostUrl) }}&lt;/p&gt;&lt;p&gt;Read more: &lt;a href=&quot;{{ absolutePostUrl }}&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;{{ absolutePostUrl }}&lt;/a&gt;.&lt;/p&gt;]]></summary>
+            <content:encoded><![CDATA[&lt;p&gt;{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}&lt;/p&gt;&lt;p&gt;First published on: &lt;a href=&quot;{{ absolutePostUrl }}&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;{{ absolutePostUrl }}&lt;/a&gt;.&lt;/p&gt;]]></content:encoded>
         </entry>
     {%- endfor -%}
 </feed>
