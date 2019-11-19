@@ -25,9 +25,9 @@ const svgSpriteConfig = {
 
 // Images
 gulp.task('images', function (cb) {
-  var assets = gulp.src('src/assets/images/**/*')
+  var assets = gulp.src('src/assets/media/**/*')
       .pipe(imagemin())
-      .pipe(gulp.dest('_site/assets/images'));
+      .pipe(gulp.dest('_site/assets/media'));
   var icons = gulp.src('src/assets/icons/*.svg')
       .pipe(svgSprite(svgSpriteConfig))
       .pipe(gulp.dest('_site/assets'));
