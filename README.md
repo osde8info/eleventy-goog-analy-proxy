@@ -1,4 +1,4 @@
-# d-hagemeier.de
+# d-hagemeier.com
 
 Website of Dennis Hagemeier. Live at [https://www.d-hagemeier.com/](https://www.d-hagemeier.com/) and hosted on [Netlify](http://www.netlify.com)
 
