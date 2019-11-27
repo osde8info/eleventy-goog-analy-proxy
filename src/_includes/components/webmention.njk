@@ -1,27 +1,18 @@
 <article class="webmention {% if webmention|isOwnWebmention %}webmention--own{% endif %}" id="webmention-{{ webmention['wm-id'] }}">
-  <div class="webmention__meta">
-    {% if webmention.author %}
-      {% if webmention.author.photo %}
-      <img src="{{ webmention.author.photo }}" alt="{{ webmention.author.name }}" width="48" height="48" loading="lazy">
-      {% else %}
-      <img src="{{ '/img/avatar.svg' | url }}" alt="" width="48" height="48">
-      {% endif %}
-      <span>
-        <a class="h-card u-url" {% if webmention.url %}href="{{ webmention.url }}" {% endif %} target="_blank" rel="noopener noreferrer"><strong class="p-name">{{ webmention.author.name }}</strong></a>
-      </span>
-    {% else %}
-      <span>
-        <strong>Anonymous</strong>
-      </span>
-    {% endif %}
 
-    {% if webmention.published %}
-        <time class="postlist-date" datetime="{{ webmention.published }}">
-            {{ webmention.published | date("ddd MMM D HH:mm:ss ZZ YYYY", "YYYY-MM-DDTHH:mm:ssZZ") }}
-        </time>
-    {% endif %}
+  <div class="author-photo">
+    <img src="{{ webmention.author.photo }}" alt="{{ webmention.author.name }}" width="48" height="48" loading="lazy">
   </div>
-  <div>
-      {{ webmention.content.text }}
+
+  <div class="author-data">
+    <a class="h-card u-url" {% if webmention.url %}href="{{ webmention.url }}" {% endif %} target="_blank" rel="noopener noreferrer">
+      <strong class="p-name">{{ webmention.author.name }}</strong>
+    </a>
+    <time datetime="{{ webmention.published }}">• {{ webmention.published | date("YYYY-MM-DDTHH:mm:ssZZ", "Do MMMM YYYY • HH:mm", language) }}</time>
+
+    <div>
+        {{ webmention.content.text }}
+    </div>
   </div>
+
 </article>

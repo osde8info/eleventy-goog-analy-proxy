@@ -8,10 +8,14 @@
   {% set replies = mentions | webmentionsByType('in-reply-to')  %}
   {% set repliesSize = replies | size  %}
 
+<!--
+  Likes
+ -->
 {% if likesSize > 0 %}
-<div class="webmentions__facepile">
-  <h3{% if repostsSize > 11 or likesSize > 11 %} class="webmentions__facepile__squish" {% endif %}>{{ likesSize }}
-    Like{% if likesSize != 1 %}s{% endif %}</h3>
+<div class="webmentions__facepile likes row">
+  <h3 class="col-1-3">{{ likesSize }} Like{% if likesSize != 1 %}s{% endif %}</h3>
+
+  <div class="col-2-3">
 
     {% for webmention in likes %}
 
@@ -29,15 +33,23 @@
         </a>
       {% endif %}
     {% endfor %}
+  
+  </div>
+
 </div>
 {% else %}
   {% if 'en' in language %}<p>No likes yet.</p>{% endif %}
 	{% if 'de' in language %}<p>Keine Likes bisher.</p>{% endif %}
 {% endif %}
 
+<!--
+  Reposts
+ -->
 {% if repostsSize > 0 %}
-<div class="webmentions__facepile">
-  <h3{% if repostsSize > 11 or likesSize > 11 %} class="webmentions__facepile__squish" {% endif %}>{{ repostsSize }} Retweet{% if repostsSize != 1 %}s{% endif %}</h3>
+<div class="webmentions__facepile reposts row">
+  <h3 class="col-1-3">{{ repostsSize }} Retweet{% if repostsSize != 1 %}s{% endif %}</h3>
+
+  <div class="col-2-3">
 
     {% for webmention in reposts %}
       {% if webmention.url != "" %}
@@ -53,12 +65,18 @@
       </a>
       {% endif %}
     {% endfor %}
+
+  </div>
+
 </div>
 {% else %}
   {% if 'en' in language %}<p>No reposts yet.</p>{% endif %}
 	{% if 'de' in language %}<p>Keine Reposts bisher.</p>{% endif %}
 {% endif %}
 
+<!--
+  Replies
+ -->
 {% if repliesSize > 0 %}
 <div class="webmention-replies">
   <h3>{{ repliesSize }} {% if repliesSize == "1" %}Reply{% else %}Replies{% endif %}</h3>
