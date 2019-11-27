@@ -37,6 +37,12 @@
   status = 302
   force = true
 
+# Preview images
+[[redirects]]
+  from = "/preview/:path"
+  to = "https://preview.d-hagemeier.com/:path"
+  status = 302
+
 # 404
 [[redirects]]
   from = "*"

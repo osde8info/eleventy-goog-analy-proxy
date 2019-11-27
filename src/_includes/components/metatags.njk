@@ -22,7 +22,7 @@
 {% if 'en' in language %}<meta property="og:locale" content="en_US">{% endif %}
 {% if 'de' in language %}<meta property="og:locale" content="de_DE">{% endif %}
 
-<meta property="og:image" content="{{ metadata.url }}/assets/preview-images/{{ title | pslug }}-{{ language | url }}-preview.png" />
+<meta property="og:image" content="{{ metadata.url }}/preview/{{ title | pslug }}-{{ language | url }}-preview.png" />
 {% if 'en' in language %}<meta property="og:image:alt" content="Preview image for article {{ seotitle }}">{% endif %}
 {% if 'de' in language %}<meta property="og:image:alt" content="Vorschaubild zum Artikel {{ seotitle }}">{% endif %}
 
@@ -32,7 +32,7 @@
 <meta name="twitter:site" content="@{{ metadata.social.twitter.name }}" />
 <meta name="twitter:url" content="{{ absolutePageUrl }}}" />
 <meta name="twitter:creator" content="@{{ metadata.social.twitter.name }}" />
-<meta name="twitter:image" content="{{ metadata.url }}/assets/preview-images/{{ title | pslug }}-{{ language | url }}-preview.png" />
+<meta name="twitter:image" content="{{ metadata.url }}/preview/{{ title | pslug }}-{{ language | url }}-preview.png" />
 {% if 'en' in language %}<meta property="twitter:image:alt" content="Preview image for article {{ seotitle }}">{% endif %}
 {% if 'de' in language %}<meta property="twitter:image:alt" content="Vorschaubild zum Artikel {{ seotitle }}">{% endif %}
 
@@ -64,7 +64,7 @@
   "description": "{{ seodescription }}",
   "image": {
     "@type": "ImageObject",
-    "url": "{{ metadata.url }}/assets/preview-images/{{ title | pslug }}-{{ language | url }}-preview.png",
+    "url": "{{ metadata.url }}/preview/{{ title | pslug }}-{{ language | url }}-preview.png",
     "width": 1200,
     "height": 628
   },
