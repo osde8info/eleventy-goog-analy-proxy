@@ -17,7 +17,7 @@
 
     {% if webmention.published %}
         <time class="postlist-date" datetime="{{ webmention.published }}">
-            {{ webmention.published | readableDateFromISO }}
+            {{ webmention.published | date("ddd MMM D HH:mm:ss ZZ YYYY", "YYYY-MM-DDTHH:mm:ssZZ") }}
         </time>
     {% endif %}
   </div>
