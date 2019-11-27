@@ -14,9 +14,6 @@ gulp.task('clean:cache', function(){  return del('_cache/**/*', { force: true })
 // Generate
 gulp.task('generate', shell.task('eleventy'))
 
-// Preview Images
-gulp.task('previewimages', shell.task('node _tasks/preview-images.js'))
-
 // Serve
 gulp.task('serve', gulp.parallel(
   'browsersync',
@@ -30,7 +27,6 @@ gulp.task('build:dev', gulp.series(
   'generate',
   'css:dev',
   'js',
-  'previewimages',
   'images'
 ))
 
@@ -41,6 +37,5 @@ gulp.task('build:prod', gulp.series(
   'html:prod',
   'css:prod',
   'js',
-  'previewimages',
   'images'
 ))
