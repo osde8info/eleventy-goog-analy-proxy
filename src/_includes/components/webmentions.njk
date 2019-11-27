@@ -1,19 +1,73 @@
-{%- set webmentionUrl -%}{{ page.url | url | absoluteUrl(site.url) }}{%- endset -%}
-{% set mentions = webmentions.children | webmentionsByUrl(webmentionUrl) %}
+<div class="webmentions" id="webmentions">
 
-{% if mentions | length %}
+  {% set mentions = webmentions | getWebmentionsForUrl(metadata.url + webmentionUrl) %}
+  {% set reposts = mentions | webmentionsByType('repost-of') %}
+  {% set repostsSize = reposts | size %}
+  {% set likes = mentions | webmentionsByType('like-of') %}
+  {% set likesSize = likes | size %}
+  {% set replies = mentions | webmentionsByType('in-reply-to')  %}
+  {% set repliesSize = replies | size  %}
 
-    <div>
-	    {% for webmention in mentions %}
-		    <span class="webmentions__item">
-                {% include "components/webmentions.njk" %}
-            </span>
-	    {% endfor %}
-    </div>
+{% if likesSize > 0 %}
+<div class="webmentions__facepile">
+  <h3{% if repostsSize > 11 or likesSize > 11 %} class="webmentions__facepile__squish" {% endif %}>{{ likesSize }}
+    Like{% if likesSize != 1 %}s{% endif %}</h3>
 
+    {% for webmention in likes %}
+
+      {% if webmention.url != "" %}
+        <a class="h-card u-url link-u-exempt" href="{{ webmention.url }}" target="_blank" rel="noopener noreferrer">
+      {% endif %}
+
+      {% if webmention.author.photo %}
+      <img src="{{ webmention.author.photo }}" alt="{{ webmention.author.name }}" width="48" height="48" loading="lazy">
+      {% else %}
+      <img src="{{ '/img/avatar.svg' | url }}" alt="" width="48" height="48">
+      {% endif %}
+
+      {% if webmention.url != "" %}
+        </a>
+      {% endif %}
+    {% endfor %}
+</div>
 {% else %}
+  {% if 'en' in language %}<p>No likes yet.</p>{% endif %}
+	{% if 'de' in language %}<p>Keine Likes bisher.</p>{% endif %}
+{% endif %}
 
-    {% if 'en' in language %}<p>No mentions yet.</p>{% endif %}
-    {% if 'de' in language %}<p>Noch keine Erwähnungen.</p>{% endif %}
-	
+{% if repostsSize > 0 %}
+<div class="webmentions__facepile">
+  <h3{% if repostsSize > 11 or likesSize > 11 %} class="webmentions__facepile__squish" {% endif %}>{{ repostsSize }} Retweet{% if repostsSize != 1 %}s{% endif %}</h3>
+
+    {% for webmention in reposts %}
+      {% if webmention.url != "" %}
+      <a class="h-card u-url link-u-exempt" href="{{ webmention.url }}" target="_blank" rel="noopener noreferrer">
+      {% endif %}
+
+      {% if webmention.author.photo %}
+      <img src="{{ webmention.author.photo }}" alt="{{ webmention.author.name }}" width="48" height="48" loading="lazy">
+      {% else %}
+      <img src="{{ '/img/avatar.svg' | url }}" alt="" width="48" height="48">
+      {% endif %}
+      {% if webmention.url != "" %}
+      </a>
+      {% endif %}
+    {% endfor %}
+</div>
+{% else %}
+  {% if 'en' in language %}<p>No reposts yet.</p>{% endif %}
+	{% if 'de' in language %}<p>Keine Reposts bisher.</p>{% endif %}
+{% endif %}
+
+{% if repliesSize > 0 %}
+<div class="webmention-replies">
+  <h3>{{ repliesSize }} {% if repliesSize == "1" %}Reply{% else %}Replies{% endif %}</h3>
+
+  {% for webmention in replies %}
+    {% include 'webmention.njk' %}
+  {% endfor %}
+</div>
+{% else %}
+  {% if 'en' in language %}<p>No replies yet.</p>{% endif %}
+	{% if 'de' in language %}<p>Keine Antworten bisher.</p>{% endif %}
 {% endif %}

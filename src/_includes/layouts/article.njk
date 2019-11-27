@@ -43,18 +43,21 @@ section: article
 
     {{ layoutContent | safe }}
 
-    {% include "components/comments.njk" %}
-
 </article>
 
-<div class="recommendations container">
+<section class="container">
+    <div class="recommendations">
+        {% include "components/recommendations.njk" %}
+    </div>
+</section>
 
+<section class="container content">
     {% if language %}
-	    {% if 'en' in language %}<h2>Latest Articles</h2>{% endif %}
-	    {% if 'de' in language %}<h2>Letzte Artikel</h2>{% endif %}
+	    {% if 'en' in language %}<h2>Discussion</h2>{% endif %}
+	    {% if 'de' in language %}<h2>Diskussion</h2>{% endif %}
     {% endif %}
     
+    {% set webmentionUrl %}{{ page.url | url | absoluteUrl(site.url) }}{% endset %}
+    {% include 'components/webmentions.njk' %}
 
-    {% include "components/recommendations.njk" %}
-
-</div>
+</section>

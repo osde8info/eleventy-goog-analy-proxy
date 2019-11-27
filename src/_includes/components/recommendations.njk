@@ -1,3 +1,8 @@
+{% if language %}
+	{% if 'en' in language %}<h2>Latest Articles</h2>{% endif %}
+	{% if 'de' in language %}<h2>Letzte Artikel</h2>{% endif %}
+{% endif %}
+
 {% if 'en' in language %}
         {% set recommendations = collections.articles_en %}
 {% endif %}

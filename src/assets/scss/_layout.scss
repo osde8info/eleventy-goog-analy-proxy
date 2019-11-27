@@ -146,10 +146,10 @@
 /*--------------------------------------------------------------
 # Comments
 --------------------------------------------------------------*/
-.comments {
+.recommendations {
     position: relative;
     width: 100%;
-    margin: 2.5rem 0 1.5rem 0;
+    margin: 0 auto;
     padding: 1rem 10%;
     @include var(background-color, opacity-2);
     @include border(top, 2px, solid, opacity-10);
@@ -163,27 +163,7 @@
         margin: 2.5rem 0 1.5rem -10%;
     }
 
-    svg {
-        width: 4rem;
-        height: 4rem;
-        @include var(fill, text-primary);
-    }
-
-    h3 { padding: 0; }
-
-    &::after {
-        @extend %gradient-border-bottom;
-    }
-}
-
-/*--------------------------------------------------------------
-# Recommendations
---------------------------------------------------------------*/
-.recommendations {
-    position: relative;
-    padding-top: 1rem;
-
-	&-list {
+    &-list {
         margin: 0;
 		padding: 1rem 0;
 		list-style: none;
@@ -202,5 +182,9 @@
     &-date {
         display: block;
         color: #aaa;
+    }
+
+    &::after {
+        @extend %gradient-border-bottom;
     }
 }
