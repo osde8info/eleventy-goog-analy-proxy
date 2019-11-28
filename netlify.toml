@@ -41,13 +41,19 @@
 [[redirects]]
   from = "/preview/:path"
   to = "https://preview.d-hagemeier.com/:path"
-  status = 302
+  status = 200
 
 # 404
 [[redirects]]
   from = "*"
   to = "/404"
   status = 404
+
+# WP Login
+[[redirects]]
+  from = "/wp-login.php"
+  to = "/404"
+  status = 403
 
 # HTTP Header
 [[headers]]
