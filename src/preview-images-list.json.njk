@@ -5,9 +5,8 @@ eleventyExcludeFromCollections: true
 [
 {%- for item in collections.all | reverse -%}
   {
-    "date" : "{{ item.date | date("ddd MMM D HH:mm:ss ZZ YYYY", "YYYY-MM-DDTHH:mm:ssZ") }}",
-    "slug" : "{{ item.data.title | pslug }}",
-    "filename" : "{{ item.data.title | pslug }}-{{ item.data.language | url }}-preview"
+    "filename" : "{{ item.data.title | pslug }}-{{ item.data.language | url }}-preview",
+    "path" : "{{ metadata.url }}/assets/preview-images/{{ item.data.title | pslug }}-{{ item.data.language | url }}-preview.html"
   }{% if not loop.last %},{%- endif -%}
 {%- endfor -%}
 ]
