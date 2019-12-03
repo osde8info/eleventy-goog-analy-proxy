@@ -15,7 +15,7 @@ if (currentTheme) {
     }
 }
 
-if (prefersDarkMode) {
+if (prefersDarkMode && !currentTheme) {
     document.documentElement.setAttribute('data-theme', 'dark');
     localStorage.setItem('theme', 'dark');
     toggleSwitch.checked = true;
