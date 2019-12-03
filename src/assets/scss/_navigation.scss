@@ -1,6 +1,31 @@
 /*--------------------------------------------------------------
-Navigation
+# Navigation
 --------------------------------------------------------------*/
+.site-header {
+    position: absolute;
+    top: $sidepadding;
+    left: $sidepadding;
+    z-index: 1;
+
+    a {
+        display: inline-block;
+		@include var(color, text-tertiary);
+    }
+
+    @include bp-laptop {
+        position: fixed;
+        a { @include var(color, text-primary); }
+    }
+}
+.logo {
+    @include var(fill, text-primary);
+
+    svg {
+        width: 3.9rem;
+        height: 4.4rem;
+    }
+}
+
 .navigation {
     &-input,
     &-btn {

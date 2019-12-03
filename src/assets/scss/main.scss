@@ -13,9 +13,6 @@
 // Link Styling
 @import '_links';
 
-// Form Styling
-@import '_forms';
-
 // Button Styling
 @import '_buttons';
 
@@ -28,8 +25,14 @@
 //Navigation
 @import '_navigation';
 
-// Extras for specific elements
-@import '_extras';
+// Extras for Homepage
+@import '_home';
+
+// Comments & Webmentions
+@import '_comments.scss';
+
+// Screen reader only
+@import '_sronly';
 
 // PrismJS Theme
 @import '_prismtheme.scss';
