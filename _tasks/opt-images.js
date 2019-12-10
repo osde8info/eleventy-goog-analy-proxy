@@ -1,6 +1,7 @@
 const gulp = require('gulp');
-const imagemin = require('gulp-imagemin');
+const responsive = require('gulp-responsive');
 const merge = require('merge-stream');
+
 const svgSprite = require('gulp-svg-sprite');
 const svgSpriteConfig = {
     mode: {
@@ -23,14 +24,45 @@ const svgSpriteConfig = {
     }
 };
 
-// Images
-gulp.task('images', function (cb) {
-  var assets = gulp.src('src/assets/media/**/*')
-      .pipe(imagemin())
-      .pipe(gulp.dest('_site/assets/media'));
-  var icons = gulp.src('src/assets/icons/*.svg')
-      .pipe(svgSprite(svgSpriteConfig))
-      .pipe(gulp.dest('_site/assets'));
-  
-  return merge(assets, icons);
+// Icons
+gulp.task('icons', () => {
+  return gulp.src('src/assets/icons/*.svg')
+  .pipe(svgSprite(svgSpriteConfig))
+  .pipe(gulp.dest('_site/assets'))
+});
+
+// Media images
+gulp.task('images', () => {
+  return gulp.src('_site/assets/media/**/*.*', {base: './'})
+  .pipe(responsive({
+    '**/*.*': [
+      {
+        rename: { suffix: '-original' }
+      }, {
+        rename: { suffix: '-original' },
+        format: 'webp'
+      }, {
+        width: 320,
+        rename: { suffix: '-320' },
+        format: 'webp'
+      }, {
+        width: 480,
+        rename: { suffix: '-480' },
+        format: 'webp'
+      }, {
+        width: 768,
+        rename: { suffix: '-768' },
+        format: 'webp'
+      }
+    ]
+  }, {
+    quality: 70,
+    progressive: true,
+    withMetadata: false,
+    skipOnEnlargement: false,
+    errorOnEnlargement: false,
+    errorOnUnusedConfig: false,
+    errorOnUnusedImage: false
+  }))
+  .pipe(gulp.dest('./'));
 });

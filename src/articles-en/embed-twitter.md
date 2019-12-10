@@ -28,11 +28,11 @@ In order to access the Twitter API, you first need your personal access data. Ca
 
 In my case the whole thing looks like this:
 
-{% image "/assets/media/embed-twitter/twitter-developers.jpg", "Twitter Developer App Overview" %}
+{% image "/assets/media/embed-twitter/twitter-developers", "Twitter Developer App Overview" %}
 
 After clicking on the tab `Keys and tokens` you get your API-access data – you need all four, so save them!
 
-{% image "/assets/media/embed-twitter/twitter-developers-2.jpg", "Twitter Developer API Keys" %}
+{% image "/assets/media/embed-twitter/twitter-developers-2", "Twitter Developer API Keys" %}
 
 I use `dotenv` to prevent my API credentials from appearing publicly on Github. So I add four entries to my `.env` file:
 
@@ -243,7 +243,7 @@ The action is then "Make a web request". Enter the build hook URL just received 
 
 This is what the finished task looks like for me:
 
-{% image "/assets/media/embed-twitter/ifttt-settings.jpg", "IFTTT settings for automatic deployment in Netlify" %}
+{% image "/assets/media/embed-twitter/ifttt-settings", "IFTTT settings for automatic deployment in Netlify" %}
 
 That's it, have fun with your tweets!
 

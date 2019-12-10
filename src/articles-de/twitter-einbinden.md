@@ -28,11 +28,11 @@ Um auf die Twitter-API zugreifen zu können, benötigst du als erstes deine pers
 
 In meinem Fall sieht das Ganze so aus:
 
-![Twitter Developer App Überblick](/assets/media/embed-twitter/twitter-developers.jpg)
+{% image "/assets/media/embed-twitter/twitter-developers", "Twitter Developer App Überblick" %}
 
 Nach Klick auf den Tab `Keys and tokens` erhältst du deine API-Zugangsdaten – du brauchst alle vier, also schonmal zwischenspeichern!
 
-![Twitter Developer API Keys](/assets/media/embed-twitter/twitter-developers.jpg)
+{% image "/assets/media/embed-twitter/twitter-developers", "Twitter Developer API Keys" %}
 
 Ich nutze `dotenv`, damit meine API-Zugangsdaten nicht öffentlich auf Github auftauchen. Meine `.env`-Datei ergänze ich also um vier Einträge:
 
@@ -243,7 +243,7 @@ Die Aktion ist dann "Make a web request". Trage unter der URL die gerade von Net
 
 So sieht der fertige Task bei mir aus:
 
-![IFTTT Einstellungen für automatischen Deploy in Netlify](/assets/media/embed-twitter/ifttt-settings.jpg)
+{% image "/assets/media/embed-twitter/ifttt-settings", "IFTTT Einstellungen für automatischen Deploy in Netlify" %}
 
 Viel Spaß beim Nachbauen!
 

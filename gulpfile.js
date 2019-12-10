@@ -27,6 +27,7 @@ gulp.task('build:dev', gulp.series(
   'generate',
   'css:dev',
   'js',
+  'icons',
   'images'
 ))
 
@@ -37,5 +38,6 @@ gulp.task('build:prod', gulp.series(
   'html:prod',
   'css:prod',
   'js',
+  'icons',
   'images'
 ))
