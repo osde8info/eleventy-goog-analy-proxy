@@ -40,7 +40,7 @@
 # Preview images
 [[redirects]]
   from = "/preview/:path"
-  to = "https://preview.d-hagemeier.com/:path"
+  to = "https://storage.cloud.google.com/previewimages/:path"
   status = 200
 
 # 404
