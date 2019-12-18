@@ -1,8 +1,8 @@
 ---
 title: "Social Media-Vorschaubilder automatisch generieren"
 permalink: /de/articles/social-media-vorschaubilder-generieren/index.html
-date: 2019-12-19T14:14:00-05:00
-dateModified: 2019-12-19T14:14:00-05:00
+date: 2019-12-19T18:14:00-05:00
+dateModified: 2019-12-19T18:14:00-05:00
 tags: ["code"]
 excerpt: "Link-Vorschaubilder für Twitter, Facebook oder WhatsApp automatisch mit NodeJS und Netlify generieren."
 
