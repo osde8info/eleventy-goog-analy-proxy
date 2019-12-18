@@ -56,7 +56,7 @@ gulp.task('images', () => {
       }
     ]
   }, {
-    quality: 70,
+    quality: 80,
     progressive: true,
     withMetadata: false,
     skipOnEnlargement: false,
