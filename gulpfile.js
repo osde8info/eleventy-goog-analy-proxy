@@ -9,7 +9,6 @@ require('./_tasks/opt-js.js');
 
 // Clean
 gulp.task('clean:build', function(){  return del('_site/**/*', { force: true }); })
-gulp.task('clean:cache', function(){  return del('_cache/**/*', { force: true }); })
 
 // Generate
 gulp.task('generate', shell.task('eleventy'))
@@ -31,8 +30,7 @@ gulp.task('build:dev', gulp.series(
 ))
 
 gulp.task('build:prod', gulp.series(
-//  'clean:build',
-//  'clean:cache',
+  'clean:build',
   'generate',
   'html:prod',
   'css:prod',
