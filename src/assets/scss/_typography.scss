@@ -68,21 +68,6 @@ i {
 	font-style: italic;
 }
 
-blockquote {
-	position: relative;
-	margin: 0 0 1.5em 0;
-	padding: .5em 0 .5em 1.5em;
-	font-style: italic;
-
-	&::after {
-		@extend %gradient-border-left;
-	}
-
-	p:last-child {
-		margin: 0;
-	}
-}
-
 address {
 	margin: 0 0 1.5em;
 }
@@ -106,16 +91,23 @@ big {
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-	content: "";
-}
-
 blockquote,
 q {
-	quotes: "" "";
+	position: relative;
+	@include var(background-color, opacity-2);
+	margin: 0 0 1.5em 0;
+	padding: .5em 0 .5em 1.5em;
+	font-style: italic;
+	&::before {
+		content: "";
+	}
+	&::after {
+		@extend %gradient-border-left;
+	}
+
+	p:last-child {
+		margin: 0;
+	}
 }
 
 hr {
