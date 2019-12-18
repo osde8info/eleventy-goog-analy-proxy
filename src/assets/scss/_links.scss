@@ -31,9 +31,6 @@ a:active {
             opacity: 1;
         }
     }
-    a[target=_blank]::after {
-        content: "↗";
-    }
 }
 
 .img-link {
