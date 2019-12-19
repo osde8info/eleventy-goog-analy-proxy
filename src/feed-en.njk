@@ -26,12 +26,10 @@ eleventyExcludeFromCollections: true
             {% for tag in post.data.tags %}<category term="{{ tag }}" />{% endfor %}
 
             <summary type="html"><![CDATA[
-                {{ post.data.excerpt | htmlToAbsoluteUrls(absolutePostUrl) | safe }}
-                <p>Read more: <a href="{{ absolutePostUrl }}" rel="canonical">{{ absolutePostUrl }}</a></p>
+                {{ post.data.excerpt | htmlToAbsoluteUrls(absolutePostUrl) | safe }}<p>Read more: <a href="{{ absolutePostUrl }}" rel="canonical">{{ absolutePostUrl }}</a></p>
             ]]></summary>
             <content type="html"><![CDATA[
-                <blockquote><p><em>This article was originally published <a href="{{ absolutePostUrl }}" rel="canonical">on my personal website</a>.</em></p></blockquote>
-                {{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | safe }}
+                <blockquote><p><em>This article was originally published <a href="{{ absolutePostUrl }}" rel="canonical">on my personal website</a>.</em></p></blockquote>{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | safe }}
             ]]></content>   
         </entry>
     {%- endfor -%}
