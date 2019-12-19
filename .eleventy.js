@@ -70,11 +70,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addShortcode("image", function(url, alt) {
     return `<figure role="group">
               <picture>
-                <source media="(min-width: 768px)" srcset="${url}-768.webp" type="image/webp">
-                <source media="(max-width: 480px)" srcset="${url}-480.webp" type="image/webp">
-                <source media="(max-width: 320px)" srcset="${url}-320.webp" type="image/webp">
-                <source srcset="${url}-original.jpg" type="image/jpeg"> 
-                <img src="${url}-original.jpg" alt="${alt}">
+                <source media="(min-width: 768px)" srcset="https://www.d-hagemeier.com${url}-768.webp" type="image/webp">
+                <source media="(max-width: 480px)" srcset="https://www.d-hagemeier.com${url}-480.webp" type="image/webp">
+                <source media="(max-width: 320px)" srcset="https://www.d-hagemeier.com${url}-320.webp" type="image/webp">
+                <source srcset="https://www.d-hagemeier.com${url}-original.jpg" type="image/jpeg"> 
+                <img src="https://www.d-hagemeier.com${url}-original.jpg" alt="${alt}">
               </picture>
               <figcaption>${alt}</figcaption>
             </figure>`
