@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Source code for personal website of Dennis Hagemeier",
   "author": "Dennis Hagemeier <hello@d-hagemeier.com> (https://www.d-hagemeier.com/)",
-  "license": "MIT",
+  "license": "GNU General Public License v3.0",
   "repository": "git+https://github.com/dennishagemeier/d-hagemeier.git",
   "bugs": {
     "url": "https://github.com/dennishagemeier/d-hagemeier/issues"
