@@ -74,7 +74,7 @@ module.exports = function(eleventyConfig) {
                 <source media="(max-width: 480px)" srcset="https://www.d-hagemeier.com${url}-480.webp" type="image/webp">
                 <source media="(max-width: 320px)" srcset="https://www.d-hagemeier.com${url}-320.webp" type="image/webp">
                 <source srcset="https://www.d-hagemeier.com${url}-original.jpg" type="image/jpeg"> 
-                <img src="https://www.d-hagemeier.com${url}-original.jpg" alt="${alt}">
+                <img src="https://www.d-hagemeier.com${url}-original.jpg" alt="${alt}" loading="lazy">
               </picture>
               <figcaption>${alt}</figcaption>
             </figure>`
