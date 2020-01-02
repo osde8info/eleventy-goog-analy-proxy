@@ -3,7 +3,8 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const moment = require('moment');
 const pluginTOC = require('eleventy-plugin-nesting-toc');
-const wmfilters = require('./_11ty/webmention-filter')
+const customfilter = require('./_11ty/custom-filter');
+const wmfilter = require('./_11ty/webmention-filter');
 
 module.exports = function(eleventyConfig) {
 
@@ -17,43 +18,15 @@ module.exports = function(eleventyConfig) {
     return collection.getFilteredByGlob('./src/articles-de/*').filter(function(item) { return !!item.data.permalink; });
   });
 
-  // Twitter: Exclude answers
-  eleventyConfig.addFilter("tweetExcludeAnswers", obj => {
-    const result = obj.filter(el => el.text.charAt(0) !== "@");
-    return result;
-  });
-  
-  // Twitter: Remove link
-  eleventyConfig.addFilter("tweetRemoveLink", obj => {
-    const result = obj.replace(/https:\/\/t.co\/\S*/gm, "");
-    return result;
-  });
-
-  // Add/remove hash
-  eleventyConfig.addFilter("addHash", obj => {
-    var result = "#" + obj;
-    return result;
-  });
-  eleventyConfig.addFilter("removeHash", obj => {
-    var result = obj.replace(/# /g, "");
-    return result;
-  });
-
-  // Webmention Filter
-  Object.keys(wmfilters).forEach(filterName => {
-    eleventyConfig.addFilter(filterName, wmfilters[filterName])
+  // Filter
+  Object.keys(customfilter).forEach(filterName => {
+    eleventyConfig.addFilter(filterName, customfilter[filterName])
   })
 
-  // Custom slug
-  eleventyConfig.addFilter("pslug", obj => {
-    var result = obj.trim().toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=_'`~()]/g, '').replace(/\s+/g, '-');
-    return result;
-  });
-
-  // Date formatting
-  eleventyConfig.addFilter("date", function(dateObj, fromformat , toformat, language = "en") { 
-    return moment(dateObj, fromformat).locale(language).format(toformat);
-  });
+  // Webmention Filter
+  Object.keys(wmfilter).forEach(filterName => {
+    eleventyConfig.addFilter(filterName, wmfilter[filterName])
+  })
   
   // Shortcode Icons
   eleventyConfig.addShortcode("icon", function(iconName, useInline) {
@@ -70,11 +43,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addShortcode("image", function(url, alt) {
     return `<figure role="group">
               <picture>
-                <source media="(min-width: 768px)" srcset="https://www.d-hagemeier.com${url}-768.webp" type="image/webp">
-                <source media="(max-width: 480px)" srcset="https://www.d-hagemeier.com${url}-480.webp" type="image/webp">
-                <source media="(max-width: 320px)" srcset="https://www.d-hagemeier.com${url}-320.webp" type="image/webp">
-                <source srcset="https://www.d-hagemeier.com${url}-original.jpg" type="image/jpeg"> 
-                <img src="https://www.d-hagemeier.com${url}-original.jpg" alt="${alt}" loading="lazy">
+                <source media="(min-width: 768px)" srcset="${url}-768.webp" type="image/webp">
+                <source media="(max-width: 480px)" srcset="${url}-480.webp" type="image/webp">
+                <source media="(max-width: 320px)" srcset="${url}-320.webp" type="image/webp">
+                <source srcset="${url}-original.jpg" type="image/jpeg"> 
+                <img src="${url}-original.jpg" alt="${alt}" loading="lazy">
               </picture>
               <figcaption>${alt}</figcaption>
             </figure>`
