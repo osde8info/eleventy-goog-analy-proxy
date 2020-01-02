@@ -1,21 +1,41 @@
 /*--------------------------------------------------------------
 # Links
 --------------------------------------------------------------*/
-a,
-a:hover,
-a:focus,
-a:active {
-	@include var(color, text-primary);
-	text-decoration: none;
+a {
+	@include var(color, lum-10);
+    text-decoration: underline;
+
+    &:focus {
+        outline: 1px solid map-get($vars, yellow);
+    }
 }
 
+.content,
+.twitter,
+.comments {
+    a:hover,
+    a:focus { 
+        outline: 0;
+        @include var(background-color, lum-90);
+    }
+    a:active {
+        @include var(background-color, lum-70);
+    }
+}
+
+h1, h2, h3, h4, h5, h6 { 
+    .heading-anchor { text-decoration: none; }
+}
+a h2 {text-decoration: none;}
+
+/*
 .content,
 .twitter,
 .comments {
 	a {
         position: relative;
         z-index: 0;
-        @include var(color, text-primary);
+        @include var(color, lum-10);
         
         &::before {
             @extend %gradient-border-bottom;
@@ -32,6 +52,7 @@ a:active {
         }
     }
 }
+*/
 
 .img-link {
     &::before,

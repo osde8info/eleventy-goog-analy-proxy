@@ -4,7 +4,7 @@
 [data-current="archive"] article {
     margin-bottom: 2.5rem;
     padding-bottom: 3rem;
-    @include border(bottom, 1px, solid,opacity-10);
+    @include border(bottom, 1px, solid,lum-90);
 
     &:last-child {
         border: 0;
@@ -23,7 +23,7 @@
     flex-direction: column;
     position: relative;
     height: 60vh;
-    @include var(color, text-quaternary);
+    @include var(color, lum-10);
     margin-bottom: 1.5rem;
     padding-bottom: 15vh;
     @extend %gradient-bg;
@@ -48,7 +48,7 @@
         }
     }
     a {
-        @include var(color, text-quaternary);
+        @include var(color, lum-10);
     }
 }
 
@@ -77,11 +77,11 @@
     width: 100%;
     margin: 2.5rem 0 1.5rem 0;
     padding: 1rem 10% 0 10%;
-    @include var(background-color, opacity-2);
-    @include border(top, 2px, solid, opacity-10);
-    @include border(left, 2px, solid, opacity-10);
-    @include border(right, 2px, solid, opacity-10);
-    @include border(bottom, 2px, solid, opacity-10);
+    @include var(background-color, lum-90);
+    @include border(top, 2px, solid, lum-70);
+    @include border(left, 2px, solid, lum-70);
+    @include border(right, 2px, solid, lum-70);
+    @include border(bottom, 2px, solid, lum-70);
     border-radius: 5px;
 
     @include bp-laptop {

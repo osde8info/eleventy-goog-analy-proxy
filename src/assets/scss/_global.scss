@@ -26,14 +26,14 @@ html {
 	}
 }
 [data-theme="dark"] {
-	@each $term, $color in $vars-dark {
+	@each $term, $color in $vars-inv {
 		--#{$term}: #{$color};
 	}
 }
 
 body {
 	position: relative;
-	@include var(background-color, background);
+	@include var(background-color, lum-100);
 	padding-top: .5rem;
 	transition: color .2s ease-out, background-color .2s ease-out;
 
@@ -44,7 +44,7 @@ body {
 		top: 0;
 		width: 100%;
 		height: .5rem;
-		@include var(background, text-quaternary);
+		background: map-get($vars, lum-10);
 	}
 }
 
@@ -64,8 +64,8 @@ body {
 }
 
 ::selection {
-	@include var(background, text-primary);
-	@include var(color, background);
+	@include var(background, lum-10);
+	@include var(color, lum-100);
 }
 
 .container {
@@ -91,7 +91,7 @@ details {
   			height: 0; 
   			border-top: .5rem solid transparent;
   			border-bottom: .5rem solid transparent;
-  			border-left: .5rem solid map-get($vars, color-primary);
+  			border-left: .5rem solid map-get($vars, yellow);
 		}
 	}
 	summary::-webkit-details-marker {
@@ -102,5 +102,25 @@ details {
 		summary::before {
 			transform: rotate(90deg);
 		}
+	}
+}
+
+table {
+	width: auto;
+	overflow: auto;
+	border-collapse: collapse;
+	border-spacing: 0;
+	
+	th {
+		padding: .25em .5em;
+		text-align: left;
+		font-weight: 700;
+	}
+	td {
+		padding: .25em .5em;
+		@include border(top, 1px, solid, lum-10);
+		@include border(left, 1px, solid, lum-10);
+		@include border(right, 1px, solid, lum-10);
+		@include border(bottom, 1px, solid, lum-10);
 	}
 }

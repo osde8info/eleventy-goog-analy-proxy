@@ -9,16 +9,16 @@
 
     a {
         display: inline-block;
-		@include var(color, text-tertiary);
+		@include var(color, lum-100);
     }
 
     @include bp-laptop {
         position: fixed;
-        a { @include var(color, text-primary); }
+        a { @include var(color, lum-10); }
     }
 }
 .logo {
-    @include var(fill, text-primary);
+    @include var(fill, lum-10);
 
     svg {
         width: 3.9rem;
@@ -44,6 +44,7 @@
             position: relative;
             margin: .25em 0;
             padding: .25em 0;
+            text-decoration: none;
 
             &::after {
                 @extend %gradient-border-bottom;
@@ -61,22 +62,28 @@
     &-footer {
         position: fixed;
         bottom: 2rem;
-        @include var(color, text-secondary);
+        @include var(color, lum-40);
         font-size: .85em;
     
         a { 
-            @include var(color, text-primary);
+            @include var(color, lum-10);
             text-decoration: underline;
 
             &:hover,
             &:focus {
-                @include var(color, text-secondary);
+                @include var(color, lum-40);
             }
             &:active {
-                @include var(color, text-primary);
+                @include var(color, lum-10);
             }
         }
     }
+}
+
+.language-switch,
+.language-switch a {
+    @include var(color, lum-10);
+    text-decoration: none;
 }
 
 @include max-bp-laptop {
@@ -118,7 +125,7 @@
             top: 2rem;
             right: 2rem;
             z-index: 999;
-            @include var(fill, text-primary);
+            @include var(fill, lum-10);
             cursor: pointer;
 
             .icon-menu-close { display: none; }
@@ -146,6 +153,7 @@
         & ~ .language-switch,
         & ~ .language-switch a {
             color: #fff;
+            text-decoration: none;
         }
     }
 }
@@ -161,7 +169,7 @@ Theme Switch
         top: 2rem;
         right: 5rem;
         z-index: 999;
-        @include var(fill, text-primary);
+        @include var(fill, lum-10);
         cursor: pointer;
 
         svg {
@@ -193,7 +201,7 @@ Language Switch
     font-weight: 700;
 
     a {
-        @include var(color, text-primary);
+        @include var(color, lum-10);
 
         &:hover,
         &:active {

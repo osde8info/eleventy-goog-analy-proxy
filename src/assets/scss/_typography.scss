@@ -7,7 +7,7 @@ input,
 select,
 optgroup,
 textarea {
-	@include var(color, text-primary);
+	@include var(color, lum-10);
 	font-family: $mainFont;
 	font-size: 1rem;
 	font-weight: $baseFontWeight;
@@ -21,30 +21,18 @@ h4,
 h5,
 h6 {
 	clear: both;
-	margin: 0;
-	padding: 0;
+	margin: 0 0 .5em 0;
+	padding: 0 0 .5em 0;
+	line-height: 1.1;
 	font-weight: $headingFontWeight;
     font-family: $headingFont;
 }
 
-h1 { 
-	margin-bottom: .4em;
-	font-size: 2.0em;
-	line-height: 1.1;
-}
-h2 { 
-	padding-bottom: 1em;
-	font-size: 1.7em;
-}
-h3 { 
-	padding-bottom: 1em;
-	font-size: 1.5em; 
-}
-h4 { 
-	padding-bottom: 1em;
-	font-size: 1.3em; 
-}
-h5 { font-size: 1em; }
+h1 { font-size: 2.0em; }
+h2 { font-size: 1.7em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.3em; }
+h5 { font-size: 1.0em; }
 h6 { font-size: 0.8em; }
 
 summary h1,
@@ -94,7 +82,7 @@ big {
 blockquote,
 q {
 	position: relative;
-	@include var(background-color, opacity-2);
+	@include var(background-color, lum-90);
 	margin: 0 0 1.5em 0;
 	padding: .5em 0 .5em 1.5em;
 	font-style: italic;
@@ -198,7 +186,7 @@ figure {
 	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
 }
 figcaption {
-	@include var(color, text-secondary);
+	@include var(color, lum-40);
 	font-size: .8em;
 	font-style: italic;
     text-align: center;

@@ -68,26 +68,42 @@ Colors
 --------------------------------------------------------------*/
 
 $vars: (
-	color-primary: #ffc400,
-	color-secondary: #ff8010,
-	text-primary: #111,
-	text-secondary: #666,
-	text-tertiary: #fff,
-	text-quaternary: #111,
-	opacity-2: darken(#fff, 2%),
-	opacity-10: darken(#fff, 10%),
-	background: #fff
+	yellow: #ffc400,
+	orange: #ff8010,
+	lightgreen: #bbb514,
+	darkgreen: #809433,
+	lightblue: #408CFF,
+	darkblue: #1072A3,
+	lum-0: hsl(0, 0, 0%),
+	lum-10: hsl(0, 0, 10%),
+	lum-20: hsl(0, 0, 20%),
+	lum-30: hsl(0, 0, 30%),
+	lum-40: hsl(0, 0, 40%),
+	lum-50: hsl(0, 0, 50%),
+	lum-60: hsl(0, 0, 60%),
+	lum-70: hsl(0, 0, 70%),
+	lum-80: hsl(0, 0, 80%),
+	lum-90: hsl(0, 0, 90%),
+	lum-100: hsl(0, 0, 100%)
 );
-$vars-dark: (
-	color-primary: #ffc400,
-	color-secondary: #ff8010,
-	text-primary: #fff,
-	text-secondary: #ddd,
-	text-tertiary: #111,
-	text-quaternary: #111,
-	opacity-2: lighten(#111, 5%),
-	opacity-10: lighten(#111, 15%),
-	background: #111
+$vars-inv: (
+	yellow: #ffc400,
+	orange: #ff8010,
+	lightgreen: #bbb514,
+	darkgreen: #809433,
+	lightblue: #408CFF,
+	darkblue: #1072A3,
+	lum-0: hsl(0, 0, 100%),
+	lum-10: hsl(0, 0, 90%),
+	lum-20: hsl(0, 0, 80%),
+	lum-30: hsl(0, 0, 70%),
+	lum-40: hsl(0, 0, 60%),
+	lum-50: hsl(0, 0, 50%),
+	lum-60: hsl(0, 0, 40%),
+	lum-70: hsl(0, 0, 30%),
+	lum-80: hsl(0, 0, 20%),
+	lum-90: hsl(0, 0, 10%),
+	lum-100: hsl(0, 0, 0%)
 );
 
 @mixin var($property, $varName) {
@@ -105,9 +121,9 @@ $vars-dark: (
 Presets
 */
 %gradient-bg {
-	background-color: map-get($vars, color-primary);
-	background-image: linear-gradient(135deg, map-get($vars, color-primary) 0%, map-get($vars, color-secondary) 100%);
-	background-image: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+	background-color: map-get($vars, yellow);
+	background-image: linear-gradient(135deg, map-get($vars, yellow) 0%, map-get($vars, orange) 100%);
+	background-image: linear-gradient(135deg, var(--yellow) 0%, var(--orange) 100%);
 }
 
 %gradient-border-top {

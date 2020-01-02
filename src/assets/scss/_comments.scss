@@ -6,10 +6,10 @@
     width: 100%;
     margin: 0 auto;
     padding: 1rem 10%;
-    @include var(background-color, opacity-2);
-    @include border(top, 2px, solid, opacity-10);
-    @include border(left, 2px, solid, opacity-10);
-    @include border(right, 2px, solid, opacity-10);
+    @include var(background-color, lum-90);
+    @include border(top, 2px, solid, lum-70);
+    @include border(left, 2px, solid, lum-70);
+    @include border(right, 2px, solid, lum-70);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 
@@ -47,7 +47,7 @@
 .webmentions__facepile {
     margin-bottom: 1rem;
     padding-bottom: 1.5rem;
-    @include border(bottom, 2px, solid, opacity-10 );
+    @include border(bottom, 2px, solid, lum-70 );
 }
 
 .webmention,
@@ -63,10 +63,10 @@
         width: 48px;
         height: 48px;
         overflow: hidden;
-        @include border(top, 2px, solid, background );
-        @include border(left, 2px, solid, background );
-        @include border(right, 2px, solid, background );
-        @include border(bottom, 2px, solid, background );
+        @include border(top, 2px, solid, lum-100 );
+        @include border(left, 2px, solid, lum-100 );
+        @include border(right, 2px, solid, lum-100 );
+        @include border(bottom, 2px, solid, lum-100 );
         border-radius: 5px;
 
         transition: transform .2s ease;
@@ -95,9 +95,9 @@
 .webmention--own {
     img {
         filter: grayscale(0);
-        @include border(top, 2px, solid, color-primary);
-        @include border(left, 2px, solid, color-primary);
-        @include border(right, 2px, solid, color-primary);
-        @include border(bottom, 2px, solid, color-primary);
+        @include border(top, 2px, solid, yellow);
+        @include border(left, 2px, solid, yellow);
+        @include border(right, 2px, solid, yellow);
+        @include border(bottom, 2px, solid, yellow);
     }
 }
